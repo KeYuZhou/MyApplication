@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             case R.id.login:
 
                 //简单跳转 数据传递待实现
-                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                Intent intent = new Intent(MainActivity.this, NavigateActivity.class);
                 startActivity(intent);
         }
         }

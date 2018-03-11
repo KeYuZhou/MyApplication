@@ -24,17 +24,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BookInfoActivity"
-            android:label="@string/title_activity_book_info" />
-        <activity
-            android:name=".MapActivity"
+            android:name=".FragmentMap"
             android:label="@string/title_activity_map" />
         <activity
-            android:name=".SearchActivity"
+            android:name=".NavigateActivity"
             android:label="@string/title_activity_search" />
-        <activity
-            android:name=".ReaderCircleActivity"
-            android:label="@string/title_activity_reader_circle"></activity>
     </application>
 
 </manifest>
