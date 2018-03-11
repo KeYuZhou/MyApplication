@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.content.Intent;
 
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
@@ -80,6 +81,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             case R.id.bt_pwd_clear:
                 password.setText("");
                 break;
+
+            case R.id.login:
+
+                //简单跳转 数据传递待实现
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
         }
         }
 }

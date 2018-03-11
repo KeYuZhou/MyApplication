@@ -7,13 +7,24 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <style name="logoText">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#6d6d6d</item>
         <item name="android:background">@drawable/xjtlu_logo</item>
     </style>
+
     <style name="myThem" parent="android:Theme">
         <item name="android:background">@drawable/xjtlu_shape</item>
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
