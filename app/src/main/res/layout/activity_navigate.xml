@@ -8,12 +8,31 @@
     tools:context="com.example.keyu.myapplication.NavigateActivity">
 
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
     <FrameLayout
         android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
 
+
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="0dp">
 
 
         <TextView
@@ -29,70 +48,54 @@
 
 
         <!--<SearchView-->
-            <!--android:id="@+id/searchIC"-->
-            <!--android:layout_width="368dp"-->
-            <!--android:layout_height="45dp"-->
-            <!--android:layout_marginRight="0dp"-->
-            <!--android:layout_marginLeft="0dp"-->
-            <!--android:gravity="bottom"-->
-            <!--android:orientation="horizontal"-->
-            <!--android:visibility="visible"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--android:id="@+id/searchIC"-->
+        <!--android:layout_width="368dp"-->
+        <!--android:layout_height="45dp"-->
+        <!--android:layout_marginRight="0dp"-->
+        <!--android:layout_marginLeft="0dp"-->
+        <!--android:gravity="bottom"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:visibility="visible"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
 
-            <!--android:queryHint="Search Here"-->
+        <!--android:queryHint="Search Here"-->
 
-            <!--tools:layout_editor_absoluteY="3dp" />-->
+        <!--tools:layout_editor_absoluteY="3dp" />-->
 
         <!--<EditText-->
-            <!--android:id="@+id/editText3"-->
-            <!--android:layout_width="215dp"-->
-            <!--android:layout_height="46dp"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:ems="10"-->
-            <!--android:inputType="text|textPersonName"-->
-            <!--android:singleLine="true"-->
-            <!--android:textColorLink="@color/colorPrimary"-->
-            <!--android:visibility="visible"-->
+        <!--android:id="@+id/editText3"-->
+        <!--android:layout_width="215dp"-->
+        <!--android:layout_height="46dp"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:ems="10"-->
+        <!--android:inputType="text|textPersonName"-->
+        <!--android:singleLine="true"-->
+        <!--android:textColorLink="@color/colorPrimary"-->
+        <!--android:visibility="visible"-->
 
 
-            <!--app:layout_constraintBottom_toTopOf="@+id/navigation"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintHorizontal_bias="0.094"-->
-            <!--app:layout_constraintLeft_toLeftOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/searchIC"-->
-            <!--app:layout_constraintVertical_bias="0.509" />-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/navigation"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.094"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/searchIC"-->
+        <!--app:layout_constraintVertical_bias="0.509" />-->
 
         <!--<Button-->
-            <!--android:id="@+id/button"-->
-            <!--android:layout_width="88dp"-->
-            <!--android:layout_height="48dp"-->
-            <!--android:text="Go"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintHorizontal_bias="0.831"-->
-            <!--app:layout_constraintLeft_toLeftOf="parent"-->
-            <!--app:layout_constraintRight_toRightOf="parent"-->
-            <!--app:layout_constraintTop_toTopOf="parent"-->
-            <!--app:layout_constraintVertical_bias="0.498" />-->
+        <!--android:id="@+id/button"-->
+        <!--android:layout_width="88dp"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:text="Go"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.831"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.498" />-->
 
     </FrameLayout>
-
-
-
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
-
 
 
 </android.support.constraint.ConstraintLayout>
