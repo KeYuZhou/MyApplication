@@ -49,14 +49,14 @@ public class FragmentOne extends Fragment {
 
     }
 
-    
-    public void onListItemClick(ListView listView, View v, int position, long id) {
-        String item = (String) listView.getAdapter().getItem(position);
-        if (getActivity() instanceof OnItem1SelectedListener) {
-            ((OnItem1SelectedListener) getActivity()).OnItem1SelectedListener(item);
-        }
-        getFragmentManager().popBackStack();
-    }
+
+//    public void onListItemClick(ListView listView, View v, int position, long id) {
+//        String item = (String) listView.getAdapter().getItem(position);
+//        if (getActivity() instanceof OnItem1SelectedListener) {
+//            ((OnItem1SelectedListener) getActivity()).OnItem1SelectedListener(item);
+//        }
+//        getFragmentManager().popBackStack();
+//    }
 
 
     @Override
