@@ -23,6 +23,21 @@
     <string name="title_activity_login">Sign in</string>
 
 
+
+    <!--search book list-->
+    <string-array name="Books">
+        <item>CSE201</item>
+        <item>CSE202</item>
+        <item>CSE203</item>
+        <item>CSE204</item>
+        <item>CSE205</item>
+        <item>CSE206</item>
+
+    </string-array>
+
+
+
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
