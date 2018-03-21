@@ -52,12 +52,12 @@ public class NavigateActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //handleIntent(getIntent());
-
-        Intent intent = getIntent();
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            String query = intent.getStringExtra(SearchManager.QUERY);
-            doMySearch(query);
-        }
+//
+//        Intent intent = getIntent();
+//        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+//            String query = intent.getStringExtra(SearchManager.QUERY);
+//            doMySearch(query);
+//        }
 
 //        SearchView simpleSearchView = (SearchView) findViewById(R.id.searchIC); // inititate a search view
 //        CharSequence query = simpleSearchView.getQuery();
@@ -66,25 +66,25 @@ public class NavigateActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        setIntent(intent);
-        handleIntent(intent);
-    }
-
-    private void handleIntent(Intent intent) {
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            String query = intent.getStringExtra(SearchManager.QUERY);
-            doMySearch(query);
-        }
-    }
-
-    private void doMySearch(String query){
-
-        Intent intent = new Intent(NavigateActivity.this, MainActivity.class);
-        startActivity(intent);
-
-    }
+//    @Override
+//    protected void onNewIntent(Intent intent) {
+//        setIntent(intent);
+//        handleIntent(intent);
+//    }
+//
+//    private void handleIntent(Intent intent) {
+//        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+//            String query = intent.getStringExtra(SearchManager.QUERY);
+//            doMySearch(query);
+//        }
+//    }
+//
+//    private void doMySearch(String query){
+//
+//        Intent intent = new Intent(NavigateActivity.this, MainActivity.class);
+//        startActivity(intent);
+//
+//    }
 
     private void init(){
         FragmentOne fragmentOne=new FragmentOne();

@@ -27,14 +27,14 @@ import java.util.List;
 
 public class FragmentOne extends Fragment {
 
-    ArrayAdapter<String> adapter;
+
     List<String> mAllValues;
 
 
-    private SearchView mSearchView;
+
     private ListView mListView;
     private ArrayAdapter mAdapter;
-    private String [] data = {"Java","kotlin","C","C++","C#","Python","PHP","JavaScript"};
+
     private Context mContext;
 
 
@@ -49,15 +49,15 @@ public class FragmentOne extends Fragment {
 
     }
 
-//    @Override
-//    public void onListItemClick(ListView listView, View v, int position, long id) {
-//        String item = (String) listView.getAdapter().getItem(position);
-//        if (getActivity() instanceof OnItem1SelectedListener) {
-//            ((OnItem1SelectedListener) getActivity()).OnItem1SelectedListener(item);
-//        }
-//        getFragmentManager().popBackStack();
-//    }
-//
+    
+    public void onListItemClick(ListView listView, View v, int position, long id) {
+        String item = (String) listView.getAdapter().getItem(position);
+        if (getActivity() instanceof OnItem1SelectedListener) {
+            ((OnItem1SelectedListener) getActivity()).OnItem1SelectedListener(item);
+        }
+        getFragmentManager().popBackStack();
+    }
+
 
     @Override
     public void onDetach() {
@@ -121,17 +121,43 @@ public class FragmentOne extends Fragment {
             public boolean onQueryTextChange(String s) {
                 mAdapter.getFilter().filter(s);
 
+
+
+
+                if (s == null || s.trim().isEmpty()) {
+                    resetSearch();
+                    return false;
+                }
+
+                List<String> filteredValues = new ArrayList<String>(mAllValues);
+                for (String value : mAllValues) {
+                    if (!value.toLowerCase().contains(s.toLowerCase())) {
+                        filteredValues.remove(value);
+                    }
+                }
+
+                mAdapter = new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, filteredValues);
+                mListView.setAdapter(mAdapter);
+
                 return false;
+
+
+
+
+
             }
         });
         searchView.setQueryHint("Search");
 
         super.onCreateOptionsMenu(menu, inflater);
 
-        super.onCreateOptionsMenu(menu, inflater);
+        //super.onCreateOptionsMenu(menu, inflater);
     }
 
-
+    public void resetSearch() {
+        mAdapter = new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, mAllValues);
+        mListView.setAdapter(mAdapter);
+    }
 
 //read from database
     private void populateList(){
