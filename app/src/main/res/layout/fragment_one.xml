@@ -25,6 +25,20 @@
             android:layout_weight="1" />
 
 
+
+        <!--<ListView-->
+            <!--android:id="@android:id/list"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@android:id/empty"-->
+            <!--android:text="No results found."-->
+            <!--android:gravity="center"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
+
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -16,6 +16,10 @@ public class NavigateActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
 
+    FragmentOne fragmentOne=new FragmentOne();
+    Fragment fragmentTwo=new FragmentTwo();
+    Fragment fragmentThree=new FragmentThree();
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -87,47 +91,64 @@ public class NavigateActivity extends AppCompatActivity {
 //    }
 
     private void init(){
-        FragmentOne fragmentOne=new FragmentOne();
-        Fragment fragmentTwo=new FragmentTwo();
-        Fragment fragmentThree=new FragmentThree();
+
         FragmentTransaction beginTransaction=getFragmentManager().beginTransaction();
-        beginTransaction.add(R.id.content,fragmentOne).add(R.id.content,fragmentTwo).add(R.id.content,fragmentThree);//开启一个事务将fragment动态加载到组件
-        beginTransaction.hide(fragmentOne).hide(fragmentTwo).hide(fragmentThree);//隐藏fragment
-        beginTransaction.addToBackStack(null);//返回到上一个显示的fragment
+       // beginTransaction.add(R.id.content,fragmentOne).add(R.id.content,fragmentTwo).add(R.id.content,fragmentThree);//开启一个事务将fragment动态加载到组件
+
+
+        beginTransaction.add(R.id.content, fragmentOne,"1");
+
+       // beginTransaction.hide(fragmentOne).hide(fragmentTwo).hide(fragmentThree);//隐藏fragment
+       // beginTransaction.addToBackStack(null);//返回到上一个显示的fragment
         beginTransaction.commit();//每一个事务最后操作必须是commit（），否则看不见效果
         showNav(R.id.navigation_search);
     }
 
     private void showNav(int navid){
-
         FragmentOne fragmentOne=new FragmentOne();
         Fragment fragmentTwo=new FragmentTwo();
         Fragment fragmentThree=new FragmentThree();
 
+       // onAttachFragment(fragmentOne);
+
         FragmentTransaction beginTransaction=getFragmentManager().beginTransaction();
-        beginTransaction.add(R.id.content,fragmentOne).add(R.id.content,fragmentTwo).add(R.id.content,fragmentThree);//开启一个事务将fragment动态加载到组件
+       // beginTransaction.add(R.id.content,fragmentOne).add(R.id.content,fragmentTwo).add(R.id.content,fragmentThree);//开启一个事务将fragment动态加载到组件
 
         switch (navid){
             case R.id.navigation_search:
-                beginTransaction.hide(fragmentTwo).hide(fragmentThree);
-                beginTransaction.show(fragmentOne);
-                beginTransaction.addToBackStack(null);
+//                beginTransaction.hide(fragmentTwo).hide(fragmentThree);
+//                beginTransaction.show(fragmentOne);
+//                beginTransaction.addToBackStack(null);
+
+                beginTransaction.replace(R.id.content, fragmentOne, "1").commit();
                 beginTransaction.commit();
                 break;
             case R.id.navigation_map:
-                beginTransaction.hide(fragmentOne).hide(fragmentThree);
-                beginTransaction.show(fragmentTwo);
-                beginTransaction.addToBackStack(null);
+//                beginTransaction.hide(fragmentOne).hide(fragmentThree);
+//                beginTransaction.show(fragmentTwo);
+//                beginTransaction.addToBackStack(null);
+                beginTransaction.replace(R.id.content, fragmentTwo, "2").commit();
                 beginTransaction.commit();
                 break;
             case R.id.navigation_book:
-                beginTransaction.hide(fragmentTwo).hide(fragmentOne);
-                beginTransaction.show(fragmentThree);
-                beginTransaction.addToBackStack(null);
+//                beginTransaction.hide(fragmentTwo).hide(fragmentOne);
+//                beginTransaction.show(fragmentThree);
+//                beginTransaction.addToBackStack(null);
+                beginTransaction.replace(R.id.content, fragmentThree, "3").commit();
                 beginTransaction.commit();
                 break;
         }
     }
+
+
+//
+//    @Override
+//    public void onAttachFragment(Fragment fragment) {
+//        super.onAttachFragment(fragment);
+//        if (fragment instanceof  FragmentOne){
+//            fragmentOne = (FragmentOne) fragment;
+//        }
+//    }
 
 
 

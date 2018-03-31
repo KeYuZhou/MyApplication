@@ -27,4 +27,20 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+
+    <!--Toolbar主题配置-->
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textSize">16sp</item> <!-- menu字号 -->
+        <item name="android:textStyle">bold</item><!-- menu粗体 -->
+        <item name="actionMenuTextColor">@android:color/white</item> <!-- menu字体颜色,不要加android前缀，否则4.4以前无效 -->
+        <item name="android:textColorPrimary">@android:color/white</item> <!-- 改变menu图标及隐藏菜单字体颜色 -->
+    </style>
+
+
+
+
+
+
+
 </resources>

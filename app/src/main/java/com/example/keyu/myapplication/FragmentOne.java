@@ -2,8 +2,10 @@ package com.example.keyu.myapplication;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -12,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -36,6 +39,7 @@ public class FragmentOne extends Fragment {
     private ArrayAdapter mAdapter;
 
     private Context mContext;
+
 
 
 
@@ -74,6 +78,13 @@ public class FragmentOne extends Fragment {
         View view=inflater.inflate(R.layout.fragment_one,container,false);
 
 
+
+//        ListView listView = (ListView) view.findViewById(android.R.id.list);
+//        TextView emptyTextView = (TextView) view.findViewById(android.R.id.empty);
+//        listView.setEmptyView(emptyTextView);
+//
+
+
         ArrayList<String> arrayBook =new ArrayList<>();
         arrayBook.addAll(Arrays.asList(getResources().getStringArray(R.array.Books)));
 
@@ -84,6 +95,15 @@ public class FragmentOne extends Fragment {
 
 
 
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+//                Intent intent = new Intent(getActivity(),MainActivity.class);
+//                startActivity(intent);
+            }
+        });
 
 
 
@@ -95,8 +115,30 @@ public class FragmentOne extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_search, menu);
-        MenuItem searchItem = menu.findItem(R.id.search_books);
-        SearchView searchView = (SearchView) searchItem.getActionView();
+        final MenuItem searchItem = menu.findItem(R.id.search_books);
+        final SearchView searchView = (SearchView) searchItem.getActionView();
+
+
+        searchItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem menuItem) {
+
+
+
+                return true;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem menuItem) {
+                return true;
+            }
+        });
+
+
+
+
+
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
@@ -114,7 +156,7 @@ public class FragmentOne extends Fragment {
                 beginTransaction.addToBackStack(null);
                 beginTransaction.commit();
 
-                return false;
+                return true;
             }
 
             @Override
@@ -151,7 +193,21 @@ public class FragmentOne extends Fragment {
 
         super.onCreateOptionsMenu(menu, inflater);
 
-        //super.onCreateOptionsMenu(menu, inflater);
+        super.onCreateOptionsMenu(menu, inflater);
+
+
+//        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+//            @Override
+//            public boolean onClose() {
+//                // TODO: 处理一些关闭搜索框后的逻辑，比如还原之前数据
+//                return false;
+//            }
+//        });
+
+
+
+
+
     }
 
     public void resetSearch() {
@@ -408,5 +464,7 @@ public class FragmentOne extends Fragment {
         mAllValues.add("Zambia");
         mAllValues.add("Zimbabwe");
 
+//        mAdapter = new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, mAllValues);
+//        mListView.setAdapter(mAdapter);
     }
 }
