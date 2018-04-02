@@ -1,4 +1,4 @@
-#Mon Apr 02 17:33:02 CST 2018
+#Mon Apr 02 19:30:58 CST 2018
 base.0=/Users/effy/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

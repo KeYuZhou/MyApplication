@@ -22,9 +22,9 @@ public final class R {
         public static final int squaredFinder = 0x7f030124;
     }
     public static final class color {
-        public static final int viewfinder_border = 0x7f050062;
-        public static final int viewfinder_laser = 0x7f050063;
-        public static final int viewfinder_mask = 0x7f050064;
+        public static final int viewfinder_border = 0x7f050063;
+        public static final int viewfinder_laser = 0x7f050064;
+        public static final int viewfinder_mask = 0x7f050065;
     }
     public static final class integer {
         public static final int viewfinder_border_length = 0x7f090009;

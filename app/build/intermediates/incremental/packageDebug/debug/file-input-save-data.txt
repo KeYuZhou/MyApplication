@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Apr 02 17:33:03 CST 2018
+#Mon Apr 02 19:30:59 CST 2018
 4.path=lib/arm64-v8a/libzbarjni.so
 13.baseType=DIRECTORY
 8.set=NATIVE_RESOURCE
