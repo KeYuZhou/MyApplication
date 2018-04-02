@@ -1,16 +1,127 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.chirag.slidingtabsusingviewpager.Tab1">
+    tools:context="com.example.chirag.slidingtabsusingviewpager.Tab1"
+    android:orientation="horizontal">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tab 1"
-        android:layout_centerInParent="true"
-        android:textSize="30dp"
-        />
 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="20dp">
+        <!--242dp-->
+        <ImageView
+            android:id="@+id/ivInternet"
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="25dp"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/tv_bookname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ivInternet"
+            android:layout_marginLeft="19dp"
+            android:layout_marginStart="19dp"
+            android:layout_toEndOf="@+id/ivInternet"
+            android:layout_toRightOf="@+id/ivInternet"
+
+            android:textSize="25sp" />
+        <!--android:text="IOS 5 bian cheng ru men jing dian : kai fang iPhone yu iPad ying yong"-->
+        <TextView
+            android:id="@+id/tv_authorname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_bookname"
+            android:layout_alignStart="@+id/tv_bookname"
+            android:layout_below="@+id/tv_bookname"
+            android:layout_marginTop="15dp"
+            android:text="Wei-Meng Lee zhu ; Song Mei yi." />
+
+        <TextView
+            android:id="@+id/tv_callNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_authorname"
+            android:layout_alignStart="@+id/tv_authorname"
+            android:layout_below="@+id/tv_authorname"
+            android:layout_marginTop="15dp"
+            android:text="QA76.76.D47./YZH/32/CN" />
+
+        <TextView
+            android:id="@+id/tv_publicationName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_callNo"
+            android:layout_alignStart="@+id/tv_callNo"
+            android:layout_below="@+id/tv_callNo"
+            android:layout_marginTop="15dp"
+            android:text="Ren ming you dian chu ban she,2014." />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_publicationName"
+            android:layout_alignStart="@+id/tv_publicationName"
+            android:layout_below="@+id/tv_publicationName"
+            android:layout_marginTop="14dp"
+            android:rating="3.4" />
+
+        <TextView
+            android:id="@+id/tv_contentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/ratingBar"
+            android:layout_marginTop="44dp"
+            android:layout_toEndOf="@+id/ivInternet"
+            android:layout_toRightOf="@+id/ivInternet"
+            android:text="CONTENT"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_contentTitle"
+            android:layout_alignStart="@+id/tv_contentTitle"
+            android:layout_alignTop="@+id/tv_contentTitle"
+            android:layout_marginTop="41dp"
+            android:text="this book is so amazing!" />
+        <!--<TextView-->
+        <!--android:id="@+id/tv_location"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@+id/tv_publicationName"-->
+        <!--android:layout_marginTop="15dp"-->
+
+        <!--android:layout_alignStart="@+id/tv_publicationName"-->
+        <!--android:text="Floor 9" />-->
+
+        <!--android:layout_alignParentBottom="true"-->
+    </RelativeLayout>
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!---->
+     <!---->
+        <!--android:padding="20dp">-->
+
+       <!---->
+<!--&lt;!&ndash;  android:layout_marginBottom="140dp"-->
+   <!--android:layout_below="@+id/tv_location"-->
+   <!--android:layout_alignParentLeft="true"&ndash;&gt;-->
+       <!---->
+    <!--</RelativeLayout>-->
+</LinearLayout>
