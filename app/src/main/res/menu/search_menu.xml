@@ -4,10 +4,14 @@
 
     <item
         android:id="@+id/action_search"
-        android:orderInCategory="1"
-        myapp:showAsAction="always"
-        myapp:actionViewClass="android.widget.SearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:iconifiedByDefault="false"
-        android:title="Search" />
+        android:orderInCategory="1"
+        android:title="Search Here"
 
+        myapp:actionViewClass="android.widget.SearchView"
+        myapp:showAsAction="always" />
+
+    
 </menu>

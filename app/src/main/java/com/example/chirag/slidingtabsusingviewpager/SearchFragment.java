@@ -66,7 +66,7 @@ public class SearchFragment extends ListFragment implements SearchView.OnQueryTe
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setOnQueryTextListener(this);
-        searchView.setQueryHint("Search");
+        searchView.setQueryHint("Search Here");
 
 
         searchView.setOnCloseListener(new SearchView.OnCloseListener() {

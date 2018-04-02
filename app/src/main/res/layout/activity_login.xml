@@ -28,7 +28,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="50dp"
+        android:padding="30dp"
+
+
+
 
         android:background="@color/colorPrimaryDark">
         <TextView
@@ -42,7 +45,7 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:textColor="#fff"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:text="Have you ever encountered such a problem that it is so hard to find out the book you want among mountains of books in the library? Have you ever spent more than 30 minutes finding a book but finished reading it within 3 minutes? This app will help you locate the book at once and save your time!  "/>
 
 
@@ -111,20 +114,33 @@
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
-            <TextView
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/pink"
-                android:text="Don't have an account? SIGN UP"
-                android:textSize="15sp"/>
+                android:gravity="center">
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/pink"
+                    android:text="Don't have an account?"
+                    android:textSize="15sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/pink"
+                    android:text=" SIGN UP"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
 
             <Button
                 android:layout_gravity="center"
                 android:background="@drawable/buttonstylepink"
                 android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
-                android:layout_width="140dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"

@@ -3,6 +3,7 @@ package com.example.chirag.slidingtabsusingviewpager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -93,6 +94,8 @@ public class Tab1 extends Fragment {
                 ivInternet.setImageBitmap(bmp);
             }
         };
+
+
     }
 
     @Override
