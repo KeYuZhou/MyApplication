@@ -5,25 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.chirag.slidingtabsusingviewpager.MainActivity">
-    <!--<android.support.v7.widget.Toolbar-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/toolbar"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--android:minHeight="?attr/actionBarSize"-->
-        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light">-->
+    tools:context="com.example.chirag.slidingtabsusingviewpager.LoginActivity">
 
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Library Book Locator"-->
-            <!--android:textSize="20dp"/>-->
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:background="@color/colorPrimary"-->
+    <!--android:minHeight="?attr/actionBarSize"-->
+    <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+    <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Library Book Locator"-->
+    <!--android:textSize="20dp"/>-->
 
 
     <!--</android.support.v7.widget.Toolbar>-->
-<!--&lt;!&ndash; Login progress &ndash;&gt;-->
+    <!--&lt;!&ndash; Login progress &ndash;&gt;-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +53,8 @@
 
 
     </LinearLayout>
+
+
 
     <!--<Button-->
         <!--android:textColor="#fff"-->
@@ -86,12 +89,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <AutoCompleteTextView
-                    android:id="@+id/email"
+                <EditText
+                    android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_email"
-                    android:inputType="textEmailAddress"
+                    android:hint="Username"
+
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -126,6 +129,7 @@
                     android:text="Don't have an account?"
                     android:textSize="15sp"/>
                 <TextView
+                    android:id="@+id/tv_sign_up"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"

@@ -3,10 +3,13 @@ package com.example.chirag.slidingtabsusingviewpager;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,8 +20,7 @@ import android.view.View;
 import android.widget.TextView;
 
 
-
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements Tab1.OnFragmentInteractionListener,Tab2.OnFragmentInteractionListener,Tab3.OnFragmentInteractionListener, NavigationView.OnNavigationItemSelectedListener {
     private Fragment fragment = null;
     private FragmentManager fragmentManager;
 
@@ -38,6 +40,38 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+//
+//        TabLayout tabLayout = (TabLayout)findViewById(R.id.tablayout);
+//        tabLayout.addTab(tabLayout.newTab().setText("Book Info"));
+//        tabLayout.addTab(tabLayout.newTab().setText("Map"));
+//        tabLayout.addTab(tabLayout.newTab().setText("Insight"));
+//        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+//
+//        final ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
+//        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+//        viewPager.setAdapter(adapter);
+//        viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+//
+//        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//                viewPager.setCurrentItem(tab.getPosition());
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
+
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,11 +81,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(HomeActivity.this, ZXingScannerActivity.class);
 
                 startActivity(intent);
-
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
             }
         });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -62,7 +96,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        displayView(1);
+        displayView(0);
 
         //displayView(0); // call search fragment.
     }
@@ -138,6 +172,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case 1:
                 fragment = new InitialFragment();
                 fragmentTags = "initial";
+            case 2:
+
 //            case 2:
 //                fragment = new BookInfoFragment();
 //                fragmentTags="bookInfo";
@@ -150,6 +186,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             fragmentManager.beginTransaction().replace(R.id.content_frame, fragment, fragmentTags).commit();
         }
 
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
     }
 }

@@ -28,6 +28,10 @@ import java.util.Random;
  * Use the {@link Tab1#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+
+//TODO: 作为book info界面的接口， 未解决问题：从网上获得图书图片无法显示（ivIntenet)，该线程在之前的版本能够获得图片，但是现在的版本不行，我不知道是怎么回事
+
 public class Tab1 extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -120,9 +124,8 @@ public class Tab1 extends Fragment {
 //listView.setAdapter(customAdapter);
 
         Bundle bundle = getArguments();
-       // String data = bundle.getString("query"); //搜索词条
         String data = getActivity().getIntent().getStringExtra("query");
-
+//data 为用户的搜索词条 bookname authorname等信息通过data来检索
         TextView tv_bookname = (TextView) layout.findViewById(R.id.tv_bookname);
         TextView tv_authorname = (TextView) layout.findViewById(R.id.tv_authorname);
         TextView tv_publicationname = (TextView) layout.findViewById(R.id.tv_publicationName);
@@ -138,6 +141,7 @@ public class Tab1 extends Fragment {
 //                //清空之前获取的数据
 //            tvMsgType.setText("");
         ivInternet.setImageBitmap(null);
+
         //定义一个线程类
         new Thread() {
             @Override

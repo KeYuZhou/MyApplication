@@ -43,13 +43,13 @@ public class InitialFragment extends ListFragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fragmentManager=getFragmentManager();
-
-
-                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-
-                fragmentTransaction.add(R.id.content_frame, new SearchFragment(),"search");
-                fragmentTransaction.commit();
+//                FragmentManager fragmentManager=getFragmentManager();
+//
+//
+//                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+//
+//                fragmentTransaction.add(R.id.content_frame, new SearchFragment(),"search");
+//                fragmentTransaction.commit();
 
 
 
