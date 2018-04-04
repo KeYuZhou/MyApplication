@@ -22,7 +22,7 @@ public final class R {
         public static final int item_touch_helper_swipe_escape_velocity = 0x7f060089;
     }
     public static final class id {
-        public static final int item_touch_helper_previous_elevation = 0x7f080060;
+        public static final int item_touch_helper_previous_elevation = 0x7f080062;
     }
     public static final class string {
         public static final int app_name = 0x7f0d0022;

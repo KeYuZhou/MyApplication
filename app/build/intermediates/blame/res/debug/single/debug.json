@@ -2256,6 +2256,10 @@
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b5fb6afa4b5f904f7f2e21cacb791344/res/drawable-xxxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_my_moment_card.xml.flat",
+        "source": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/res/layout/my_moment_card.xml"
+    },
+    {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b5fb6afa4b5f904f7f2e21cacb791344/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },

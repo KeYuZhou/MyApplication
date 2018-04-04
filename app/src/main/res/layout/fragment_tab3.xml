@@ -5,12 +5,11 @@
     tools:context="com.example.chirag.slidingtabsusingviewpager.Tab3">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tab 3"
-        android:layout_centerInParent="true"
-        android:textSize="30dp"
-        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/comment_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
