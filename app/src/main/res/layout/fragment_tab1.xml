@@ -2,117 +2,150 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.chirag.slidingtabsusingviewpager.Tab1"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.chirag.slidingtabsusingviewpager.Tab1">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <LinearLayout
+    <!--book info-->
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:background="@color/colorPrimaryDark">
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp">
 
-        <ImageView
-            android:id="@+id/ivInternet"
-            android:layout_width="50dp"
-            android:layout_height="80dp"
-            android:layout_margin="10dp"
-            android:padding="30dp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-            <TextView
-                android:id="@+id/tv_bookname"
+            android:background="@color/colorPrimaryDark"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/ivInternet"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:padding="30dp" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="IOS 5 bian cheng ru men jing dian : kai fang iPhone yu iPad ying yong"
-                android:textSize="20sp"
-                android:textColor="#fff"/>
-            <TextView
-                android:id="@+id/tv_authorname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Wei-Meng Lee zhu ; Song Mei yi."
-                android:textColor="#fff"/>
+                android:orientation="vertical"
+                android:padding="10dp">
 
-            <TextView
-                android:id="@+id/tv_callNo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/tv_bookname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="IOS 5 bian cheng ru men jing dian : kai fang iPhone yu iPad ying yong"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
 
-                android:text="QA76.76.D47./YZH/32/CN"
-                android:textColor="#fff"/>
+                <TextView
+                    android:id="@+id/tv_authorname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Wei-Meng Lee zhu ; Song Mei yi."
+                    android:textColor="#fff" />
 
-            <TextView
-                android:id="@+id/tv_publicationName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:text="Ren ming you dian chu ban she,2014." />
+                <TextView
+                    android:id="@+id/tv_callNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
 
-            <RatingBar
-                android:id="@+id/ratingBar"
-                style="@style/Widget.AppCompat.RatingBar.Indicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:rating="3.4" />
+                    android:text="QA76.76.D47./YZH/32/CN"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:id="@+id/tv_publicationName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ren ming you dian chu ban she,2014."
+                    android:textColor="#fff" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rating="3.4" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
+    </android.support.v7.widget.CardView>
+    <!--book location-->
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="30dp"
-        android:orientation="vertical">
-
-
-
-
-        <TextView
-            android:id="@+id/tv_contentTitle"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="30dp">
 
 
+            <TextView
 
-            android:text="CONTENT"
-            android:textSize="20dp" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/tv_content"
+
+                android:text="LOCATION"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Floor 9, Bookshelf QE, Layer 2" />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+    <!--book douban content-->
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="30dp">
 
-            android:text="this book is so amazing!" />
-        <!--<TextView-->
-        <!--android:id="@+id/tv_location"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignLeft="@+id/tv_publicationName"-->
-        <!--android:layout_marginTop="15dp"-->
 
-        <!--android:layout_alignStart="@+id/tv_publicationName"-->
-        <!--android:text="Floor 9" />-->
+            <TextView
+                android:id="@+id/tv_contentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-        <!--android:layout_alignParentBottom="true"-->
-    </LinearLayout>
 
-    <!--<RelativeLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!---->
-     <!---->
-        <!--android:padding="20dp">-->
+                android:text="CONTENT"
+                android:textSize="20dp" />
 
-       <!---->
-<!--&lt;!&ndash;  android:layout_marginBottom="140dp"-->
-   <!--android:layout_below="@+id/tv_location"-->
-   <!--android:layout_alignParentLeft="true"&ndash;&gt;-->
-       <!---->
-    <!--</RelativeLayout>-->
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="this book is so amazing!" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
 </LinearLayout>

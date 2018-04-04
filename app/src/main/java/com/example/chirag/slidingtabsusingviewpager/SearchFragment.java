@@ -7,6 +7,8 @@ import android.app.ListFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -34,7 +36,8 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
     String[] values={"china","usa","uk"};
    //private ArrayAdapter<String> mAdapter;
     private Context mContext;
-    ListView listView;
+    //ListView listView;
+    RecyclerView recyclerView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,14 +62,26 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.search_fragment, container, false);
 
+        recyclerView = layout.findViewById(R.id.recyclerView);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
 
-        ExpandableLayout expandableLayout = (ExpandableLayout)layout.findViewById(R.id.expandable_layout);
-        expandableLayout.setOnExpandListener(new ExpandableLayout.OnExpandListener() {
-            @Override
-            public void onExpand(boolean expanded) {
-                //Toast.makeText(getActivity(),"expand?"+expanded,Toast.LENGTH_SHORT).show();
-            }
-        });
+        recyclerView.setLayoutManager(linearLayoutManager);
+        SummonerAdapter summonerAdapter = new SummonerAdapter(getActivity());
+      //  RecommendAdapter recommendAdapter = new RecommendAdapter();
+        recyclerView.setAdapter(summonerAdapter);
+
+
+
+
+
+
+//        ExpandableLayout expandableLayout = (ExpandableLayout)layout.findViewById(R.id.expandable_layout);
+//        expandableLayout.setOnExpandListener(new ExpandableLayout.OnExpandListener() {
+//            @Override
+//            public void onExpand(boolean expanded) {
+//                //Toast.makeText(getActivity(),"expand?"+expanded,Toast.LENGTH_SHORT).show();
+//            }
+//        });
         return layout;
     }
 
@@ -74,7 +89,7 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.search_menu, menu);
         MenuItem searchItem = menu.findItem(R.id.action_search);
-       // MaterialSearchView searchView = (MaterialSearchView) searchItem.getActionView();
+
         MaterialSearchView searchView = getActivity().findViewById(R.id.search_view);
         searchView.setMenuItem(searchItem);
 
@@ -90,7 +105,7 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
             public void onSearchViewShown() {
 
 
-                listView = (ListView) getView().findViewById(android.R.id.list);
+              //  listView = (ListView) getView().findViewById(android.R.id.list);
 
 
 
@@ -109,6 +124,8 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 //                fragmentTransaction.commit();
             }
         });
+
+
 
 
         super.onCreateOptionsMenu(menu, inflater);
@@ -440,6 +457,7 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 //        mAdapter = new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, mAllValues);
 //        listView.setAdapter(mAdapter);
     }
+
 
 }
 

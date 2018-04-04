@@ -196,7 +196,7 @@ public class BookInfoFragment extends ListFragment {
 //            return 0;
 //        }
 //
-//        @Override
+//        @Override2
 //        public View getView(int i, View view, ViewGroup viewGroup) {
 //
 //            view = getActivity().getLayoutInflater().inflate(R.layout.book_info_1, null);
