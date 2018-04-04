@@ -37,6 +37,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.gabrielsamojlo.keyboarddismisser.KeyboardDismisser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -82,6 +83,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //KeyboardDismisser.useWith(this);
+
+
         // Set up the login form.
         mEmailView = (EditText) findViewById(R.id.username);
         populateAutoComplete();
@@ -360,6 +365,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             } else {
                                 Log.e("TAG", "fail");
                                 //登入失败的操作写在这里***
+
                             }
                         } catch (JSONException e) {
 

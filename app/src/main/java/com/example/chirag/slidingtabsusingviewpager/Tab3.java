@@ -74,6 +74,7 @@ public class Tab3 extends Fragment {
 
 
         return inflater.inflate(R.layout.fragment_tab3, container, false);
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

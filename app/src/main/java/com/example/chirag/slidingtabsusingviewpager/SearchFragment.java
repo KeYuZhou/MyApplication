@@ -67,7 +67,7 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
         recyclerView.setLayoutManager(linearLayoutManager);
         SummonerAdapter summonerAdapter = new SummonerAdapter(getActivity());
-      //  RecommendAdapter recommendAdapter = new RecommendAdapter();
+
         recyclerView.setAdapter(summonerAdapter);
 
 
