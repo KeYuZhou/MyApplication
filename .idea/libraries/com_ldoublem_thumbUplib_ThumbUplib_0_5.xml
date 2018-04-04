@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.ldoublem.thumbUplib:ThumbUplib-0.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ldoublem.thumbUplib/ThumbUplib/0.5/679362afdadedd2f452535a17a8ed22c2ac9ca50/ThumbUplib-0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -7,7 +7,7 @@ INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/Android
 MERGED from [me.dm7.barcodescanner:zxing:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zxing-1.9.8.aar/cbf474172ef14963670bfa73131c498a/AndroidManifest.xml:2:1-13:12
 MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zbar-1.9.8.aar/7ae878f629c4d9c472c8e67ec024751a/AndroidManifest.xml:2:1-13:12
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/AndroidManifest.xml:2:1-13:12
-MERGED from [com.wx.goodview:goodview:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/goodview-1.0.0.aar/ae9ace7b8048e262f9841f2649b28ab0/AndroidManifest.xml:2:1-17:12
+MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b5fb6afa4b5f904f7f2e21cacb791344/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/29026e88adb46f5a86deb2fd7c04df72/AndroidManifest.xml:2:1-11:12
@@ -79,8 +79,8 @@ MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transf
 MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zbar-1.9.8.aar/7ae878f629c4d9c472c8e67ec024751a/AndroidManifest.xml:11:5-20
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/AndroidManifest.xml:11:5-20
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/AndroidManifest.xml:11:5-20
-MERGED from [com.wx.goodview:goodview:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/goodview-1.0.0.aar/ae9ace7b8048e262f9841f2649b28ab0/AndroidManifest.xml:11:5-15:19
-MERGED from [com.wx.goodview:goodview:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/goodview-1.0.0.aar/ae9ace7b8048e262f9841f2649b28ab0/AndroidManifest.xml:11:5-15:19
+MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:11:5-15:19
+MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b5fb6afa4b5f904f7f2e21cacb791344/AndroidManifest.xml:25:5-29:19
@@ -185,8 +185,8 @@ MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transf
 MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zbar-1.9.8.aar/7ae878f629c4d9c472c8e67ec024751a/AndroidManifest.xml:7:5-9:41
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/AndroidManifest.xml:7:5-9:41
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/AndroidManifest.xml:7:5-9:41
-MERGED from [com.wx.goodview:goodview:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/goodview-1.0.0.aar/ae9ace7b8048e262f9841f2649b28ab0/AndroidManifest.xml:7:5-9:41
-MERGED from [com.wx.goodview:goodview:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/goodview-1.0.0.aar/ae9ace7b8048e262f9841f2649b28ab0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:7:5-9:41
+MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b5fb6afa4b5f904f7f2e21cacb791344/AndroidManifest.xml:21:5-23:78
