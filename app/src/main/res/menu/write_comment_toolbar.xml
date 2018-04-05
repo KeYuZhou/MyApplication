@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item-->
+    <!--android:id="@+id/action_cancel"-->
+
+    <!--android:icon="@drawable/ic_cancel_black_24dp"-->
+
+    <!--app:showAsAction="ifRoom|collapseActionView"-->
+    <!--android:title="cancel" />-->
+
+    <!-- Settings, should always be in the overflow -->
+    <item
+
+        android:id="@+id/action_submit"
+        android:icon="@drawable/ic_send_black_24dp"
+        android:title="submit"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+
+</menu>

@@ -1,45 +1,48 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-60:12
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-62:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-62:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-62:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-62:12
 MERGED from [me.dm7.barcodescanner:zxing:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zxing-1.9.8.aar/cbf474172ef14963670bfa73131c498a/AndroidManifest.xml:2:1-13:12
 MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zbar-1.9.8.aar/7ae878f629c4d9c472c8e67ec024751a/AndroidManifest.xml:2:1-13:12
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/textUtilsLib-v2.1.5.aar/34d9a7657b6bf706c37f35f08a003563/AndroidManifest.xml:2:1-19:12
 MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:2:1-17:12
+MERGED from [com.afollestad.material-dialogs:core:0.9.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/AndroidManifest.xml:2:1-15:12
+MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/library-1.4.2.aar/770f5a7df34e5ae1ff20fb8b7a2783fd/AndroidManifest.xml:6:1-16:12
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b5fb6afa4b5f904f7f2e21cacb791344/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:appcompat-v7:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/29026e88adb46f5a86deb2fd7c04df72/AndroidManifest.xml:2:1-11:12
 MERGED from [me.dm7.barcodescanner:core:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-1.9.8.aar/f59f8271545a6e201375d97efcd478e0/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/transition-26.0.0-alpha1.aar/2a53c8cefe0153c4a3586eb7b3f5620c/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/05f606a441bf7770410213629597641b/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/776f61f7cf5b655a219fc54fa84088dc/AndroidManifest.xml:17:1-31:12
 MERGED from [com.github.SilenceDut:ExpandableLayout:1.2.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/ExpandableLayout-1.2.0.aar/bfe51fd1b31d44046d6d4c294f8a26c6/AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:multidex:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/c39a8ded0d42efc9f38df224df5f44a1/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0-alpha1.aar/f4b260524345ffd042f25ded7215cecc/AndroidManifest.xml:17:1-26:12
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0262bace86ca91253da9e744dc8c6dd0/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0ca32a61a5bd0763067ecaa0ae3a44bd/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/b16a3c786f52142e65404b326da68d98/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/1b0fb9557db4d2dc46be1b101bde4726/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/e54087d71fd24ef573035f46a9c980b9/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/fd826b78021075d676f2a1a53893d701/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3d080d41ebaa2d31a1f87d2f396cedfd/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:recyclerview-v7:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.1.aar/6d63ac0844a72e78bd866fdbe53437b0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.1.aar/88b7d0f92070b04baa86c67c1861a3f4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.1.aar/f47480bce2e3342306d5e92b61d0b96d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/2b51bdbc54c604eda0a0e51f2a48f755/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.1.aar/c37c30ff33c9170b0eb23e2839ed3af1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.1.aar/926f3167ed9543352e04a6d5a09d352d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.1.aar/73abe0c50108117f01f93cc42527f912/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b8a66b0455789465fcf3ff03195ff6a3/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8f1cbc3862a87cb41199061d90a9c89a/AndroidManifest.xml:17:1-30:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-62:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-62:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-62:12
 	package
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:3:5-59
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-60:12
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-62:12
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-60:12
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-62:12
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:11-69
@@ -68,113 +71,107 @@ ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidMan
 	android:name
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:11:19-67
 uses-permission#android.permission.INTERNET
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:12:5-67
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:13:5-67
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:12:22-64
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:13:22-64
 application
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:14:5-58:19
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:15:5-60:19
 MERGED from [me.dm7.barcodescanner:zxing:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zxing-1.9.8.aar/cbf474172ef14963670bfa73131c498a/AndroidManifest.xml:11:5-20
 MERGED from [me.dm7.barcodescanner:zxing:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zxing-1.9.8.aar/cbf474172ef14963670bfa73131c498a/AndroidManifest.xml:11:5-20
 MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zbar-1.9.8.aar/7ae878f629c4d9c472c8e67ec024751a/AndroidManifest.xml:11:5-20
 MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zbar-1.9.8.aar/7ae878f629c4d9c472c8e67ec024751a/AndroidManifest.xml:11:5-20
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/AndroidManifest.xml:11:5-20
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/AndroidManifest.xml:11:5-20
+MERGED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/textUtilsLib-v2.1.5.aar/34d9a7657b6bf706c37f35f08a003563/AndroidManifest.xml:13:5-17:19
+MERGED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/textUtilsLib-v2.1.5.aar/34d9a7657b6bf706c37f35f08a003563/AndroidManifest.xml:13:5-17:19
 MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:11:5-15:19
 MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:11:5-15:19
+MERGED from [com.afollestad.material-dialogs:core:0.9.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/AndroidManifest.xml:13:5-20
+MERGED from [com.afollestad.material-dialogs:core:0.9.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/AndroidManifest.xml:13:5-20
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b5fb6afa4b5f904f7f2e21cacb791344/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b5fb6afa4b5f904f7f2e21cacb791344/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/29026e88adb46f5a86deb2fd7c04df72/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/29026e88adb46f5a86deb2fd7c04df72/AndroidManifest.xml:9:5-20
 MERGED from [me.dm7.barcodescanner:core:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-1.9.8.aar/f59f8271545a6e201375d97efcd478e0/AndroidManifest.xml:11:5-20
 MERGED from [me.dm7.barcodescanner:core:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-1.9.8.aar/f59f8271545a6e201375d97efcd478e0/AndroidManifest.xml:11:5-20
 MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/transition-26.0.0-alpha1.aar/2a53c8cefe0153c4a3586eb7b3f5620c/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/transition-26.0.0-alpha1.aar/2a53c8cefe0153c4a3586eb7b3f5620c/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-v4:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/05f606a441bf7770410213629597641b/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/05f606a441bf7770410213629597641b/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/776f61f7cf5b655a219fc54fa84088dc/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/776f61f7cf5b655a219fc54fa84088dc/AndroidManifest.xml:29:5-20
 MERGED from [com.github.SilenceDut:ExpandableLayout:1.2.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/ExpandableLayout-1.2.0.aar/bfe51fd1b31d44046d6d4c294f8a26c6/AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.SilenceDut:ExpandableLayout:1.2.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/ExpandableLayout-1.2.0.aar/bfe51fd1b31d44046d6d4c294f8a26c6/AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0262bace86ca91253da9e744dc8c6dd0/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0262bace86ca91253da9e744dc8c6dd0/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0ca32a61a5bd0763067ecaa0ae3a44bd/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0ca32a61a5bd0763067ecaa0ae3a44bd/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/b16a3c786f52142e65404b326da68d98/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/b16a3c786f52142e65404b326da68d98/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/1b0fb9557db4d2dc46be1b101bde4726/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/1b0fb9557db4d2dc46be1b101bde4726/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/e54087d71fd24ef573035f46a9c980b9/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/e54087d71fd24ef573035f46a9c980b9/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/fd826b78021075d676f2a1a53893d701/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/fd826b78021075d676f2a1a53893d701/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3d080d41ebaa2d31a1f87d2f396cedfd/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3d080d41ebaa2d31a1f87d2f396cedfd/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/2b51bdbc54c604eda0a0e51f2a48f755/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/2b51bdbc54c604eda0a0e51f2a48f755/AndroidManifest.xml:29:5-20
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8f1cbc3862a87cb41199061d90a9c89a/AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8f1cbc3862a87cb41199061d90a9c89a/AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:19:9-35
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:20:9-35
 	android:label
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:17:9-41
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:18:9-41
 	android:roundIcon
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:18:9-54
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:19:9-54
 	android:icon
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:16:9-43
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:17:9-43
 	android:allowBackup
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:20:9-40
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:21:9-40
 activity#com.example.chirag.slidingtabsusingviewpager.LoginActivity
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:21:9-30:20
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:22:9-31:20
 	android:label
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:23:13-57
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:24:13-57
 	android:theme
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:24:13-56
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:25:13-56
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:22:13-42
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:23:13-42
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:25:13-29:29
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:26:17-69
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:26:25-66
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:28:17-77
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:28:27-74
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:29:27-74
 activity#com.example.chirag.slidingtabsusingviewpager.HomeActivity
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:31:9-40:20
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:32:9-41:20
 	android:label
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:33:13-45
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:34:13-45
 	android:theme
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:34:13-56
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:35:13-56
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:32:13-41
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:33:13-41
 intent-filter#android.intent.action.VIEW+android.intent.category.DEFAULT
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:35:13-39:29
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:36:13-40:29
 action#android.intent.action.VIEW
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:36:17-69
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:37:17-69
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:36:25-66
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:37:25-66
 category#android.intent.category.DEFAULT
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:38:17-76
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:39:17-76
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:38:27-73
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:39:27-73
 activity#com.example.chirag.slidingtabsusingviewpager.ZXingScannerActivity
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:41:9-47:20
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:42:9-48:20
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:41:19-55
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:42:19-55
 activity#com.example.chirag.slidingtabsusingviewpager.MainActivity
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:48:9-56:20
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:49:9-57:20
 	android:theme
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:50:13-56
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:51:13-56
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:49:13-41
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:50:13-41
 activity#com.example.chirag.slidingtabsusingviewpager.RegisterActivity
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:57:9-63
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:58:9-54
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:57:19-51
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:58:19-51
+activity#com.example.chirag.slidingtabsusingviewpager.WriteCommentActivity
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:59:9-67
+	android:name
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:59:19-55
 uses-sdk
 INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
@@ -185,48 +182,54 @@ MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transf
 MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zbar-1.9.8.aar/7ae878f629c4d9c472c8e67ec024751a/AndroidManifest.xml:7:5-9:41
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/AndroidManifest.xml:7:5-9:41
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/textUtilsLib-v2.1.5.aar/34d9a7657b6bf706c37f35f08a003563/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/textUtilsLib-v2.1.5.aar/34d9a7657b6bf706c37f35f08a003563/AndroidManifest.xml:7:5-9:41
 MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:7:5-9:41
 MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:7:5-9:41
+MERGED from [com.afollestad.material-dialogs:core:0.9.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/AndroidManifest.xml:8:5-11:75
+MERGED from [com.afollestad.material-dialogs:core:0.9.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/AndroidManifest.xml:8:5-11:75
+MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/library-1.4.2.aar/770f5a7df34e5ae1ff20fb8b7a2783fd/AndroidManifest.xml:12:5-14:41
+MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/library-1.4.2.aar/770f5a7df34e5ae1ff20fb8b7a2783fd/AndroidManifest.xml:12:5-14:41
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b5fb6afa4b5f904f7f2e21cacb791344/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b5fb6afa4b5f904f7f2e21cacb791344/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/29026e88adb46f5a86deb2fd7c04df72/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/29026e88adb46f5a86deb2fd7c04df72/AndroidManifest.xml:5:5-7:41
 MERGED from [me.dm7.barcodescanner:core:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-1.9.8.aar/f59f8271545a6e201375d97efcd478e0/AndroidManifest.xml:7:5-9:41
 MERGED from [me.dm7.barcodescanner:core:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-1.9.8.aar/f59f8271545a6e201375d97efcd478e0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/transition-26.0.0-alpha1.aar/2a53c8cefe0153c4a3586eb7b3f5620c/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/transition-26.0.0-alpha1.aar/2a53c8cefe0153c4a3586eb7b3f5620c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/05f606a441bf7770410213629597641b/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/05f606a441bf7770410213629597641b/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/776f61f7cf5b655a219fc54fa84088dc/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/776f61f7cf5b655a219fc54fa84088dc/AndroidManifest.xml:21:5-23:54
 MERGED from [com.github.SilenceDut:ExpandableLayout:1.2.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/ExpandableLayout-1.2.0.aar/bfe51fd1b31d44046d6d4c294f8a26c6/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.SilenceDut:ExpandableLayout:1.2.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/ExpandableLayout-1.2.0.aar/bfe51fd1b31d44046d6d4c294f8a26c6/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:multidex:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/c39a8ded0d42efc9f38df224df5f44a1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/c39a8ded0d42efc9f38df224df5f44a1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0-alpha1.aar/f4b260524345ffd042f25ded7215cecc/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0-alpha1.aar/f4b260524345ffd042f25ded7215cecc/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0262bace86ca91253da9e744dc8c6dd0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0262bace86ca91253da9e744dc8c6dd0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0ca32a61a5bd0763067ecaa0ae3a44bd/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0ca32a61a5bd0763067ecaa0ae3a44bd/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/b16a3c786f52142e65404b326da68d98/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/b16a3c786f52142e65404b326da68d98/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/1b0fb9557db4d2dc46be1b101bde4726/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/1b0fb9557db4d2dc46be1b101bde4726/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-utils:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/e54087d71fd24ef573035f46a9c980b9/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/e54087d71fd24ef573035f46a9c980b9/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-ui:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/fd826b78021075d676f2a1a53893d701/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/fd826b78021075d676f2a1a53893d701/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3d080d41ebaa2d31a1f87d2f396cedfd/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3d080d41ebaa2d31a1f87d2f396cedfd/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:recyclerview-v7:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.1.aar/6d63ac0844a72e78bd866fdbe53437b0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.1.aar/6d63ac0844a72e78bd866fdbe53437b0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.1.aar/88b7d0f92070b04baa86c67c1861a3f4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.1.aar/88b7d0f92070b04baa86c67c1861a3f4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.1.aar/f47480bce2e3342306d5e92b61d0b96d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.1.aar/f47480bce2e3342306d5e92b61d0b96d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/2b51bdbc54c604eda0a0e51f2a48f755/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/2b51bdbc54c604eda0a0e51f2a48f755/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.1.aar/c37c30ff33c9170b0eb23e2839ed3af1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.1.aar/c37c30ff33c9170b0eb23e2839ed3af1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.1.aar/926f3167ed9543352e04a6d5a09d352d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.1.aar/926f3167ed9543352e04a6d5a09d352d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.1.aar/73abe0c50108117f01f93cc42527f912/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.1.aar/73abe0c50108117f01f93cc42527f912/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b8a66b0455789465fcf3ff03195ff6a3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b8a66b0455789465fcf3ff03195ff6a3/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8f1cbc3862a87cb41199061d90a9c89a/AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8f1cbc3862a87cb41199061d90a9c89a/AndroidManifest.xml:20:5-22:41
 INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:23:9-59
+		ADDED from [com.afollestad.material-dialogs:core:0.9.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/AndroidManifest.xml:11:9-72
 	android:targetSdkVersion
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
@@ -235,30 +238,18 @@ INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/Android
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.CALL_PHONE
+ADDED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/textUtilsLib-v2.1.5.aar/34d9a7657b6bf706c37f35f08a003563/AndroidManifest.xml:11:5-69
+	android:name
+		ADDED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/textUtilsLib-v2.1.5.aar/34d9a7657b6bf706c37f35f08a003563/AndroidManifest.xml:11:22-66
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/transition-26.0.0-alpha1.aar/2a53c8cefe0153c4a3586eb7b3f5620c/AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/transition-26.0.0-alpha1.aar/2a53c8cefe0153c4a3586eb7b3f5620c/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-v4:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/05f606a441bf7770410213629597641b/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-v4:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/05f606a441bf7770410213629597641b/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0-alpha1.aar/f4b260524345ffd042f25ded7215cecc/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0-alpha1.aar/f4b260524345ffd042f25ded7215cecc/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0262bace86ca91253da9e744dc8c6dd0/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0262bace86ca91253da9e744dc8c6dd0/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0ca32a61a5bd0763067ecaa0ae3a44bd/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0ca32a61a5bd0763067ecaa0ae3a44bd/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/b16a3c786f52142e65404b326da68d98/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/b16a3c786f52142e65404b326da68d98/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/1b0fb9557db4d2dc46be1b101bde4726/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/1b0fb9557db4d2dc46be1b101bde4726/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/e54087d71fd24ef573035f46a9c980b9/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/e54087d71fd24ef573035f46a9c980b9/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/fd826b78021075d676f2a1a53893d701/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/fd826b78021075d676f2a1a53893d701/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3d080d41ebaa2d31a1f87d2f396cedfd/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3d080d41ebaa2d31a1f87d2f396cedfd/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/776f61f7cf5b655a219fc54fa84088dc/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/776f61f7cf5b655a219fc54fa84088dc/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/2b51bdbc54c604eda0a0e51f2a48f755/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/2b51bdbc54c604eda0a0e51f2a48f755/AndroidManifest.xml:25:5-27:41
 	android:value
 		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:27:9-38
 	android:name

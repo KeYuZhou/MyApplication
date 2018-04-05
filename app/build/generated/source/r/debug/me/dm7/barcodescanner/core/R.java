@@ -8,30 +8,30 @@ package me.dm7.barcodescanner.core;
 
 public final class R {
     public static final class attr {
-        public static final int borderAlpha = 0x7f03003d;
-        public static final int borderColor = 0x7f03003e;
-        public static final int borderLength = 0x7f03003f;
-        public static final int borderWidth = 0x7f030040;
-        public static final int cornerRadius = 0x7f030078;
-        public static final int finderOffset = 0x7f0300a5;
-        public static final int laserColor = 0x7f0300ca;
-        public static final int laserEnabled = 0x7f0300cb;
-        public static final int maskColor = 0x7f030110;
-        public static final int roundedCorner = 0x7f030136;
-        public static final int shouldScaleToFill = 0x7f030145;
-        public static final int squaredFinder = 0x7f030150;
+        public static final int borderAlpha = 0x7f03003e;
+        public static final int borderColor = 0x7f03003f;
+        public static final int borderLength = 0x7f030040;
+        public static final int borderWidth = 0x7f030041;
+        public static final int cornerRadius = 0x7f030079;
+        public static final int finderOffset = 0x7f0300a9;
+        public static final int laserColor = 0x7f0300ce;
+        public static final int laserEnabled = 0x7f0300cf;
+        public static final int maskColor = 0x7f030115;
+        public static final int roundedCorner = 0x7f030176;
+        public static final int shouldScaleToFill = 0x7f030185;
+        public static final int squaredFinder = 0x7f030194;
     }
     public static final class color {
-        public static final int viewfinder_border = 0x7f05006a;
-        public static final int viewfinder_laser = 0x7f05006b;
-        public static final int viewfinder_mask = 0x7f05006c;
+        public static final int viewfinder_border = 0x7f050071;
+        public static final int viewfinder_laser = 0x7f050072;
+        public static final int viewfinder_mask = 0x7f050073;
     }
     public static final class integer {
         public static final int viewfinder_border_length = 0x7f09000a;
         public static final int viewfinder_border_width = 0x7f09000b;
     }
     public static final class styleable {
-        public static final int[] BarcodeScannerView = { 0x7f03003d, 0x7f03003e, 0x7f03003f, 0x7f030040, 0x7f030078, 0x7f0300a5, 0x7f0300ca, 0x7f0300cb, 0x7f030110, 0x7f030136, 0x7f030145, 0x7f030150 };
+        public static final int[] BarcodeScannerView = { 0x7f03003e, 0x7f03003f, 0x7f030040, 0x7f030041, 0x7f030079, 0x7f0300a9, 0x7f0300ce, 0x7f0300cf, 0x7f030115, 0x7f030176, 0x7f030185, 0x7f030194 };
         public static final int BarcodeScannerView_borderAlpha = 0;
         public static final int BarcodeScannerView_borderColor = 1;
         public static final int BarcodeScannerView_borderLength = 2;

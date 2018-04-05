@@ -33,6 +33,17 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        if (getSupportActionBar() != null) {
+            // Enable the Up button
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        //getSupportActionBar().setHomeButtonEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tablayout);
         tabLayout.addTab(tabLayout.newTab().setText("Book Info"));
@@ -68,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
             public void onClick(View view) {//go to barcode scan
 
 
-                Intent intent = new Intent(MainActivity.this, ZXingScannerActivity.class);
+                Intent intent = new Intent(MainActivity.this, WriteCommentActivity.class);
 
                 startActivity(intent);
 

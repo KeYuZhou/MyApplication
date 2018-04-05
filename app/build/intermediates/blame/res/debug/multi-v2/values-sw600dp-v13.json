@@ -38,13 +38,20 @@
             "outputFile": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b5fb6afa4b5f904f7f2e21cacb791344/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,124,193,263,337,413,472,543",
-                        "endColumns": "68,68,69,73,75,58,70,67",
-                        "endOffsets": "119,188,258,332,408,467,538,606"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "51",
+                        "endOffsets": "102"
+                    },
+                    "to": {
+                        "startLines": "18",
+                        "startColumns": "4",
+                        "startOffsets": "1170",
+                        "endColumns": "51",
+                        "endOffsets": "1217"
                     }
                 },
                 {
@@ -58,12 +65,22 @@
                         "endOffsets": "110,180,251,323,381,439,545,609,672,854"
                     },
                     "to": {
-                        "startLines": "10,11,12,13,14,15,16,17,18,19",
+                        "startLines": "10,11,12,13,14,15,16,17,19,20",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "611,671,741,812,884,942,1000,1106,1170,1233",
-                        "endLines": "10,11,12,13,14,15,16,17,18,22",
+                        "startOffsets": "611,671,741,812,884,942,1000,1106,1222,1285",
+                        "endLines": "10,11,12,13,14,15,16,17,19,23",
                         "endColumns": "59,69,70,71,57,57,105,63,62,12",
-                        "endOffsets": "666,736,807,879,937,995,1101,1165,1228,1410"
+                        "endOffsets": "666,736,807,879,937,995,1101,1165,1280,1462"
+                    }
+                },
+                {
+                    "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,193,263,337,413,472,543",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "119,188,258,332,408,467,538,606"
                     }
                 }
             ]

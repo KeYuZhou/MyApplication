@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:ns1="http://schemas.android.com/tools">
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
     <attr format="reference" name="constraintSet"/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -92,6 +92,54 @@
         <flag name="basic" value="4"/>
         <flag name="chains" value="8"/>
     </attr>
+    <attr format="color" name="md_background_color"/>
+    <attr format="reference" name="md_btn_negative_selector"/>
+    <attr format="reference" name="md_btn_neutral_selector"/>
+    <attr format="reference" name="md_btn_positive_selector"/>
+    <attr format="color" name="md_btn_ripple_color"/>
+    <attr format="reference" name="md_btn_stacked_selector"/>
+    <attr format="enum" name="md_btnstacked_gravity">
+    <enum name="start" value="0"/>
+    <enum name="center" value="1"/>
+    <enum name="end" value="2"/>
+  </attr>
+    <attr format="enum" name="md_buttons_gravity">
+    <enum name="start" value="0"/>
+    <enum name="center" value="1"/>
+    <enum name="end" value="2"/>
+  </attr>
+    <attr format="color" name="md_content_color"/>
+    <attr format="enum" name="md_content_gravity">
+    <enum name="start" value="0"/>
+    <enum name="center" value="1"/>
+    <enum name="end" value="2"/>
+  </attr>
+    <attr format="boolean" name="md_dark_theme"/>
+    <attr format="color" name="md_divider"/>
+    <attr format="color" name="md_divider_color"/>
+    <attr format="reference" name="md_icon"/>
+    <attr format="boolean" name="md_icon_limit_icon_to_default_size"/>
+    <attr format="dimension" name="md_icon_max_size"/>
+    <attr format="color" name="md_item_color"/>
+    <attr format="enum" name="md_items_gravity">
+    <enum name="start" value="0"/>
+    <enum name="center" value="1"/>
+    <enum name="end" value="2"/>
+  </attr>
+    <attr format="color" name="md_link_color"/>
+    <attr format="reference" name="md_list_selector"/>
+    <attr format="string" name="md_medium_font"/>
+    <attr format="color" name="md_negative_color"/>
+    <attr format="color" name="md_neutral_color"/>
+    <attr format="color" name="md_positive_color"/>
+    <attr format="string" name="md_regular_font"/>
+    <attr format="color" name="md_title_color"/>
+    <attr format="enum" name="md_title_gravity">
+    <enum name="start" value="0"/>
+    <enum name="center" value="1"/>
+    <enum name="end" value="2"/>
+  </attr>
+    <attr format="color" name="md_widget_color"/>
     <attr format="string" name="title"/>
     <bool name="abc_action_bar_embed_tabs">true</bool>
     <bool name="abc_allow_stacked_button_bar">true</bool>
@@ -152,9 +200,15 @@
     <color name="material_grey_800">#ff424242</color>
     <color name="material_grey_850">#ff303030</color>
     <color name="material_grey_900">#ff212121</color>
+    <color name="md_btn_selected">#33969696</color>
+    <color name="md_btn_selected_dark">#40CBCBCB</color>
+    <color name="md_divider_black">#10000000</color>
+    <color name="md_divider_white">#10FFFFFF</color>
+    <color name="md_edittext_error">#DD2C00</color>
+    <color name="md_material_blue_600">#2196F3</color>
+    <color name="md_material_blue_800">#1565C0</color>
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
-    <color name="notification_material_background_media_default_color">#ff424242</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -230,6 +284,8 @@
             <enum name="multiply" value="14"/>
             
             <enum name="screen" value="15"/>
+            
+            <enum name="add" value="16"/>
         </attr></declare-styleable>
     <declare-styleable name="AppCompatSeekBar"><attr name="android:thumb"/><attr format="reference" name="tickMark"/><attr format="color" name="tickMarkTint"/><attr name="tickMarkTintMode">
             
@@ -326,6 +382,8 @@
             <enum name="multiply" value="14"/>
             
             <enum name="screen" value="15"/>
+            
+            <enum name="add" value="16"/>
         </attr></declare-styleable>
     <declare-styleable name="ConstraintLayout_Layout"><attr name="android:orientation"/><attr name="android:minWidth"/><attr name="android:minHeight"/><attr name="android:maxWidth"/><attr name="android:maxHeight"/><attr name="layout_optimizationLevel"/><attr name="constraintSet"/><attr name="layout_constraintGuide_begin"/><attr name="layout_constraintGuide_end"/><attr name="layout_constraintGuide_percent"/><attr name="layout_constraintLeft_toLeftOf"/><attr name="layout_constraintLeft_toRightOf"/><attr name="layout_constraintRight_toLeftOf"/><attr name="layout_constraintRight_toRightOf"/><attr name="layout_constraintTop_toTopOf"/><attr name="layout_constraintTop_toBottomOf"/><attr name="layout_constraintBottom_toTopOf"/><attr name="layout_constraintBottom_toBottomOf"/><attr name="layout_constraintBaseline_toBaselineOf"/><attr name="layout_constraintStart_toEndOf"/><attr name="layout_constraintStart_toStartOf"/><attr name="layout_constraintEnd_toStartOf"/><attr name="layout_constraintEnd_toEndOf"/><attr name="layout_goneMarginLeft"/><attr name="layout_goneMarginTop"/><attr name="layout_goneMarginRight"/><attr name="layout_goneMarginBottom"/><attr name="layout_goneMarginStart"/><attr name="layout_goneMarginEnd"/><attr name="layout_constraintHorizontal_bias"/><attr name="layout_constraintVertical_bias"/><attr name="layout_constraintWidth_default"/><attr name="layout_constraintHeight_default"/><attr name="layout_constraintWidth_min"/><attr name="layout_constraintWidth_max"/><attr name="layout_constraintHeight_min"/><attr name="layout_constraintHeight_max"/><attr name="layout_constraintLeft_creator"/><attr name="layout_constraintTop_creator"/><attr name="layout_constraintRight_creator"/><attr name="layout_constraintBottom_creator"/><attr name="layout_constraintBaseline_creator"/><attr name="layout_constraintDimensionRatio"/><attr name="layout_constraintHorizontal_weight"/><attr name="layout_constraintVertical_weight"/><attr name="layout_constraintHorizontal_chainStyle"/><attr name="layout_constraintVertical_chainStyle"/><attr name="layout_editor_absoluteX"/><attr name="layout_editor_absoluteY"/></declare-styleable>
     <declare-styleable name="ConstraintSet"><attr name="android:orientation"/><attr name="android:id"/><attr name="android:visibility"/><attr name="android:alpha"/><attr name="android:elevation"/><attr name="android:rotationX"/><attr name="android:rotationY"/><attr name="android:scaleX"/><attr name="android:scaleY"/><attr name="android:transformPivotX"/><attr name="android:transformPivotY"/><attr name="android:translationX"/><attr name="android:translationY"/><attr name="android:translationZ"/><attr name="android:layout_width"/><attr name="android:layout_height"/><attr name="android:layout_marginStart"/><attr name="android:layout_marginBottom"/><attr name="android:layout_marginTop"/><attr name="android:layout_marginEnd"/><attr name="android:layout_marginLeft"/><attr name="android:layout_marginRight"/><attr name="layout_constraintGuide_begin"/><attr name="layout_constraintGuide_end"/><attr name="layout_constraintGuide_percent"/><attr name="layout_constraintLeft_toLeftOf"/><attr name="layout_constraintLeft_toRightOf"/><attr name="layout_constraintRight_toLeftOf"/><attr name="layout_constraintRight_toRightOf"/><attr name="layout_constraintTop_toTopOf"/><attr name="layout_constraintTop_toBottomOf"/><attr name="layout_constraintBottom_toTopOf"/><attr name="layout_constraintBottom_toBottomOf"/><attr name="layout_constraintBaseline_toBaselineOf"/><attr name="layout_constraintStart_toEndOf"/><attr name="layout_constraintStart_toStartOf"/><attr name="layout_constraintEnd_toStartOf"/><attr name="layout_constraintEnd_toEndOf"/><attr name="layout_goneMarginLeft"/><attr name="layout_goneMarginTop"/><attr name="layout_goneMarginRight"/><attr name="layout_goneMarginBottom"/><attr name="layout_goneMarginStart"/><attr name="layout_goneMarginEnd"/><attr name="layout_constraintHorizontal_bias"/><attr name="layout_constraintVertical_bias"/><attr name="layout_constraintWidth_default"/><attr name="layout_constraintHeight_default"/><attr name="layout_constraintWidth_min"/><attr name="layout_constraintWidth_max"/><attr name="layout_constraintHeight_min"/><attr name="layout_constraintHeight_max"/><attr name="layout_constraintLeft_creator"/><attr name="layout_constraintTop_creator"/><attr name="layout_constraintRight_creator"/><attr name="layout_constraintBottom_creator"/><attr name="layout_constraintBaseline_creator"/><attr name="layout_constraintDimensionRatio"/><attr name="layout_constraintHorizontal_weight"/><attr name="layout_constraintVertical_weight"/><attr name="layout_constraintHorizontal_chainStyle"/><attr name="layout_constraintVertical_chainStyle"/><attr name="layout_editor_absoluteX"/><attr name="layout_editor_absoluteY"/></declare-styleable>
@@ -394,6 +452,7 @@
         </attr></declare-styleable>
     <declare-styleable name="DesignTheme"><attr format="reference" name="bottomSheetDialogTheme"/><attr format="reference" name="bottomSheetStyle"/><attr format="color" name="textColorError"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="arrowHeadLength"/><attr format="dimension" name="arrowShaftLength"/><attr format="dimension" name="barLength"/><attr format="dimension" name="thickness"/></declare-styleable>
+    <declare-styleable name="EmojiLayout"><attr format="integer|reference" name="richIndicatorFocus"/><attr format="integer|reference" name="richIndicatorUnFocus"/><attr format="string" name="richDeleteIconName"/><attr format="dimension" name="richMarginBottom"/><attr format="dimension" name="richMarginTop"/><attr format="integer|reference" name="richLayoutNumColumns"/><attr format="integer|reference" name="richLayoutNumRows"/></declare-styleable>
     <declare-styleable name="ExpandableLayout"><attr format="integer|reference" name="expDuration"/><attr format="boolean" name="expWithParentScroll"/><attr format="boolean" name="expExpandScrollTogether"/></declare-styleable>
     <declare-styleable name="FloatingActionButton"><attr name="backgroundTint"/><attr name="backgroundTintMode"/><attr format="color" name="rippleColor"/><attr name="fabSize">
             
@@ -416,7 +475,7 @@
     <declare-styleable name="FontFamilyFont"><attr name="fontStyle">
             <enum name="normal" value="0"/>
             <enum name="italic" value="1"/>
-        </attr><attr format="reference" name="font"/><attr format="integer" name="fontWeight"/></declare-styleable>
+        </attr><attr format="reference" name="font"/><attr format="integer" name="fontWeight"/><attr name="android:fontStyle"/><attr name="android:font"/><attr name="android:fontWeight"/></declare-styleable>
     <declare-styleable name="ForegroundLinearLayout"><attr name="android:foreground"/><attr name="android:foregroundGravity"/><attr format="boolean" name="foregroundInsidePadding"/></declare-styleable>
     <declare-styleable name="LinearConstraintLayout"><attr name="android:orientation"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat"><attr name="android:orientation"/><attr name="android:gravity"/><attr name="android:baselineAligned"/><attr name="android:baselineAlignedChildIndex"/><attr name="android:weightSum"/><attr format="boolean" name="measureWithLargestChild"/><attr name="divider"/><attr name="showDividers">
@@ -427,6 +486,42 @@
         </attr><attr format="dimension" name="dividerPadding"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat_Layout"><attr name="android:layout_width"/><attr name="android:layout_height"/><attr name="android:layout_weight"/><attr name="android:layout_gravity"/></declare-styleable>
     <declare-styleable name="ListPopupWindow"><attr name="android:dropDownVerticalOffset"/><attr name="android:dropDownHorizontalOffset"/></declare-styleable>
+    <declare-styleable name="MDRootLayout"><attr format="boolean" name="md_reduce_padding_no_title_no_buttons"/></declare-styleable>
+    <declare-styleable name="MaterialProgressBar"><attr format="enum" name="mpb_progressStyle">
+            <enum name="circular" value="0"/>
+            <enum name="horizontal" value="1"/>
+        </attr><attr format="boolean" name="mpb_setBothDrawables"/><attr format="boolean" name="mpb_useIntrinsicPadding"/><attr format="boolean" name="mpb_showProgressBackground"/><attr format="enum" name="mpb_determinateCircularProgressStyle">
+            <enum name="normal" value="0"/>
+            <enum name="dynamic" value="1"/>
+        </attr><attr format="color|reference" name="mpb_progressTint"/><attr format="enum" name="mpb_progressTintMode">
+            <enum name="src_over" value="3"/>
+            <enum name="src_in" value="5"/>
+            <enum name="src_atop" value="9"/>
+            <enum name="multiply" value="14"/>
+            <enum name="screen" value="15"/>
+            <enum name="add" value="16"/>
+        </attr><attr format="color|reference" name="mpb_secondaryProgressTint"/><attr format="enum" name="mpb_secondaryProgressTintMode">
+            <enum name="src_over" value="3"/>
+            <enum name="src_in" value="5"/>
+            <enum name="src_atop" value="9"/>
+            <enum name="multiply" value="14"/>
+            <enum name="screen" value="15"/>
+            <enum name="add" value="16"/>
+        </attr><attr format="color|reference" name="mpb_progressBackgroundTint"/><attr format="enum" name="mpb_progressBackgroundTintMode">
+            <enum name="src_over" value="3"/>
+            <enum name="src_in" value="5"/>
+            <enum name="src_atop" value="9"/>
+            <enum name="multiply" value="14"/>
+            <enum name="screen" value="15"/>
+            <enum name="add" value="16"/>
+        </attr><attr format="color|reference" name="mpb_indeterminateTint"/><attr format="enum" name="mpb_indeterminateTintMode">
+            <enum name="src_over" value="3"/>
+            <enum name="src_in" value="5"/>
+            <enum name="src_atop" value="9"/>
+            <enum name="multiply" value="14"/>
+            <enum name="screen" value="15"/>
+            <enum name="add" value="16"/>
+        </attr></declare-styleable>
     <declare-styleable name="MaterialSearchView"><attr format="integer" name="searchBackground"/><attr format="integer" name="searchVoiceIcon"/><attr format="integer" name="searchCloseIcon"/><attr format="integer" name="searchBackIcon"/><attr format="integer" name="searchSuggestionIcon"/><attr format="integer" name="searchSuggestionBackground"/><attr name="android:hint"/><attr name="android:textColor"/><attr name="android:textColorHint"/></declare-styleable>
     <declare-styleable name="MenuGroup"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:checkableBehavior"/><attr name="android:visible"/><attr name="android:enabled"/></declare-styleable>
     <declare-styleable name="MenuItem"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:title"/><attr name="android:titleCondensed"/><attr name="android:icon"/><attr name="android:alphabeticShortcut"/><attr name="alphabeticModifiers">
@@ -474,6 +569,8 @@
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
     <declare-styleable name="RecycleListView"><attr format="dimension" name="paddingBottomNoButtons"/><attr format="dimension" name="paddingTopNoTitle"/></declare-styleable>
     <declare-styleable name="RecyclerView"><attr format="string" name="layoutManager"/><attr name="android:orientation"/><attr name="android:descendantFocusability"/><attr format="integer" name="spanCount"/><attr format="boolean" name="reverseLayout"/><attr format="boolean" name="stackFromEnd"/><attr format="boolean" name="fastScrollEnabled"/><attr format="reference" name="fastScrollVerticalThumbDrawable"/><attr format="reference" name="fastScrollVerticalTrackDrawable"/><attr format="reference" name="fastScrollHorizontalThumbDrawable"/><attr format="reference" name="fastScrollHorizontalTrackDrawable"/></declare-styleable>
+    <declare-styleable name="RichEditText"><attr format="integer" name="richMaxLength"/><attr format="dimension" name="richIconSize"/><attr format="reference" name="editTextAtUtilJumpListener"/><attr format="reference" name="richEditTopicList"/><attr format="reference" name="richEditNameList"/><attr format="string" name="richEditColorAtUser"/><attr format="string" name="richEditColorTopic"/></declare-styleable>
+    <declare-styleable name="RichTextView"><attr format="boolean" name="needNumberShow"/><attr format="boolean" name="needUrlShow"/><attr format="string" name="richText"/><attr format="reference" name="topicList"/><attr format="reference" name="nameList"/><attr format="color" name="atColor"/><attr format="color" name="topicColor"/><attr format="color" name="linkColor"/><attr format="integer|reference" name="emojiSize"/><attr format="integer|reference" name="emojiVerticalAlignment"/><attr format="reference" name="spanUrlCallBackListener"/><attr format="reference" name="spanAtUserCallBackListener"/><attr format="reference" name="spanTopicCallBackListener"/><attr format="reference" name="spanCreateListener"/></declare-styleable>
     <declare-styleable name="ScrimInsetsFrameLayout"><attr format="color|reference" name="insetForeground"/></declare-styleable>
     <declare-styleable name="ScrollingViewBehavior_Layout"><attr format="dimension" name="behavior_overlapTop"/></declare-styleable>
     <declare-styleable name="SearchView"><attr format="reference" name="layout"/><attr format="boolean" name="iconifiedByDefault"/><attr name="android:maxWidth"/><attr format="string" name="queryHint"/><attr format="string" name="defaultQueryHint"/><attr name="android:imeOptions"/><attr name="android:inputType"/><attr format="reference" name="closeIcon"/><attr format="reference" name="goIcon"/><attr format="reference" name="searchIcon"/><attr format="reference" name="searchHintIcon"/><attr format="reference" name="voiceIcon"/><attr format="reference" name="commitIcon"/><attr format="reference" name="suggestionRowLayout"/><attr format="reference" name="queryBackground"/><attr format="reference" name="submitBackground"/><attr name="android:focusable"/></declare-styleable>
@@ -546,6 +643,8 @@
             <enum name="multiply" value="14"/>
             
             <enum name="screen" value="15"/>
+            
+            <enum name="add" value="16"/>
         </attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
@@ -625,6 +724,7 @@
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
+    <dimen name="circular_progress_border">4dp</dimen>
     <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
     <dimen name="compat_button_inset_vertical_material">6dp</dimen>
     <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
@@ -683,6 +783,42 @@
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="md_action_corner_radius">2dp</dimen>
+    <dimen name="md_bg_corner_radius">2dp</dimen>
+    <dimen name="md_button_frame_vertical_padding">8dp</dimen>
+    <dimen name="md_button_height">48dp</dimen>
+    <dimen name="md_button_inset_horizontal">4dp</dimen>
+    <dimen name="md_button_inset_vertical">6dp</dimen>
+    <dimen name="md_button_min_width">72dp</dimen>
+    <dimen name="md_button_padding_frame_side">12dp</dimen>
+    <dimen name="md_button_padding_horizontal">8dp</dimen>
+    <dimen name="md_button_padding_horizontal_internalexternal">32dp</dimen>
+    <dimen name="md_button_padding_vertical">4dp</dimen>
+    <dimen name="md_button_textpadding_horizontal">1dp</dimen>
+    <dimen name="md_button_textsize">14sp</dimen>
+    <dimen name="md_content_padding_bottom">8dp</dimen>
+    <dimen name="md_content_padding_top">8dp</dimen>
+    <dimen name="md_content_textsize">16sp</dimen>
+    <dimen name="md_dialog_frame_margin">24dp</dimen>
+    <dimen name="md_dialog_horizontal_margin">28dp</dimen>
+    <dimen name="md_dialog_max_width">356dp</dimen>
+    <dimen name="md_dialog_vertical_margin">52dp</dimen>
+    <dimen name="md_divider_height">1dp</dimen>
+    <dimen name="md_icon_margin">16dp</dimen>
+    <dimen name="md_icon_max_size">48dp</dimen>
+    <dimen name="md_listitem_control_margin">6dp</dimen>
+    <dimen name="md_listitem_height">48dp</dimen>
+    <dimen name="md_listitem_margin_left">24dp</dimen>
+    <dimen name="md_listitem_textsize">16sp</dimen>
+    <dimen name="md_listitem_vertical_margin">12dp</dimen>
+    <dimen name="md_listitem_vertical_margin_choice">8dp</dimen>
+    <dimen name="md_neutral_button_margin">12dp</dimen>
+    <dimen name="md_notitle_vertical_padding">16dp</dimen>
+    <dimen name="md_notitle_vertical_padding_more">20dp</dimen>
+    <dimen name="md_simplelistitem_padding_top">8dp</dimen>
+    <dimen name="md_title_frame_margin_bottom">12dp</dimen>
+    <dimen name="md_title_frame_margin_bottom_less">6dp</dimen>
+    <dimen name="md_title_textsize">20sp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>
@@ -721,6 +857,7 @@
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
     <item name="split_action_bar" type="id"/>
+    <item name="tag_transition_group" type="id"/>
     <item name="text" type="id"/>
     <item name="text2" type="id"/>
     <item name="textinput_counter" type="id"/>
@@ -744,8 +881,6 @@
     <integer name="viewfinder_border_length">60</integer>
     <integer name="viewfinder_border_width">4</integer>
     <string name="abc_action_bar_home_description">Navigate home</string>
-    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
-    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
     <string name="abc_action_menu_overflow_description">More options</string>
     <string name="abc_action_mode_done">Done</string>
@@ -772,7 +907,7 @@
     <string name="abc_searchview_description_submit">Submit query</string>
     <string name="abc_searchview_description_voice">Voice search</string>
     <string name="abc_shareactionprovider_share_with">Share with</string>
-    <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
+    <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_name">Test-api</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
@@ -1855,6 +1990,57 @@
     <style name="CardView.Light">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
     </style>
+    <style name="MD_ActionButton">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">@dimen/md_button_height</item>
+    <item name="android:layout_gravity">center_vertical</item>
+  </style>
+    <style name="MD_ActionButton.Text" ns2:ignore="NewApi">
+    <item name="android:textSize">@dimen/md_button_textsize</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:layout_gravity">center_vertical</item>
+    <item name="android:gravity">center</item>
+    <item name="android:stateListAnimator">@null</item>
+    <item name="android:background">@null</item>
+    <item name="android:minWidth">@dimen/md_button_min_width</item>
+    <item name="android:paddingLeft">@dimen/md_button_textpadding_horizontal</item>
+    <item name="android:paddingRight">@dimen/md_button_textpadding_horizontal</item>
+  </style>
+    <style name="MD_ActionButtonStacked" ns2:ignore="NewApi" parent="@style/MD_ActionButton">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:paddingLeft">@dimen/md_button_padding_horizontal_internalexternal</item>
+    <item name="android:paddingStart">@dimen/md_button_padding_horizontal_internalexternal
+    </item>
+    <item name="android:paddingRight">@dimen/md_button_padding_horizontal_internalexternal
+    </item>
+    <item name="android:paddingEnd">@dimen/md_button_padding_horizontal_internalexternal</item>
+  </style>
+    <style name="MD_Dark" parent="Theme.AppCompat.Dialog.Alert">
+    <item name="md_divider">@color/md_divider_white</item>
+    <item name="md_list_selector">@drawable/md_selector_dark</item>
+    <item name="md_btn_stacked_selector">@drawable/md_selector_dark</item>
+    <item name="md_btn_positive_selector">@drawable/md_btn_selector_dark</item>
+    <item name="md_btn_neutral_selector">@drawable/md_btn_selector_dark</item>
+    <item name="md_btn_negative_selector">@drawable/md_btn_selector_dark</item>
+
+    <item name="android:windowAnimationStyle">@style/MD_WindowAnimation</item>
+    <item name="android:backgroundDimEnabled">true</item>
+  </style>
+    <style name="MD_Light" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <item name="md_divider">@color/md_divider_black</item>
+    <item name="md_list_selector">@drawable/md_selector</item>
+    <item name="md_btn_stacked_selector">@drawable/md_selector</item>
+    <item name="md_btn_positive_selector">@drawable/md_btn_selector</item>
+    <item name="md_btn_neutral_selector">@drawable/md_btn_selector</item>
+    <item name="md_btn_negative_selector">@drawable/md_btn_selector</item>
+
+    <item name="android:windowAnimationStyle">@style/MD_WindowAnimation</item>
+    <item name="android:backgroundDimEnabled">true</item>
+  </style>
+    <style name="MD_WindowAnimation">
+    <item name="android:windowEnterAnimation">@anim/popup_enter</item>
+    <item name="android:windowExitAnimation">@anim/popup_exit</item>
+  </style>
     <style name="MSV_ImageButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
@@ -2034,22 +2220,6 @@
     <style name="TextAppearance.AppCompat.Medium" parent="Base.TextAppearance.AppCompat.Medium"/>
     <style name="TextAppearance.AppCompat.Medium.Inverse" parent="Base.TextAppearance.AppCompat.Medium.Inverse"/>
     <style name="TextAppearance.AppCompat.Menu" parent="Base.TextAppearance.AppCompat.Menu"/>
-    <style name="TextAppearance.AppCompat.Notification" parent="@android:style/TextAppearance.StatusBar.EventContent"/>
-    <style name="TextAppearance.AppCompat.Notification.Info">
-        <item name="android:textSize">12sp</item>
-        <item name="android:textColor">?android:attr/textColorSecondary</item>
-    </style>
-    <style name="TextAppearance.AppCompat.Notification.Info.Media"/>
-    <style name="TextAppearance.AppCompat.Notification.Line2" parent="TextAppearance.AppCompat.Notification.Info"/>
-    <style name="TextAppearance.AppCompat.Notification.Line2.Media" parent="TextAppearance.AppCompat.Notification.Info.Media"/>
-    <style name="TextAppearance.AppCompat.Notification.Media"/>
-    <style name="TextAppearance.AppCompat.Notification.Time">
-        <item name="android:textSize">12sp</item>
-        <item name="android:textColor">?android:attr/textColorSecondary</item>
-    </style>
-    <style name="TextAppearance.AppCompat.Notification.Time.Media"/>
-    <style name="TextAppearance.AppCompat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
-    <style name="TextAppearance.AppCompat.Notification.Title.Media"/>
     <style name="TextAppearance.AppCompat.SearchResult.Subtitle" parent="Base.TextAppearance.AppCompat.SearchResult.Subtitle">
     </style>
     <style name="TextAppearance.AppCompat.SearchResult.Title" parent="Base.TextAppearance.AppCompat.SearchResult.Title">
@@ -2091,17 +2261,12 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
-    <style name="TextAppearance.Compat.Notification.Info.Media"/>
     <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
-    <style name="TextAppearance.Compat.Notification.Line2.Media" parent="TextAppearance.Compat.Notification.Info.Media"/>
-    <style name="TextAppearance.Compat.Notification.Media"/>
     <style name="TextAppearance.Compat.Notification.Time">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
-    <style name="TextAppearance.Compat.Notification.Time.Media"/>
     <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
-    <style name="TextAppearance.Compat.Notification.Title.Media"/>
     <style name="TextAppearance.Design.CollapsingToolbar.Expanded" parent="TextAppearance.AppCompat.Display1">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
@@ -2294,7 +2459,7 @@
     </style>
     <style name="Widget.Design.BottomSheet.Modal" parent="android:Widget">
         <item name="android:background">?android:attr/colorBackground</item>
-        <item name="android:elevation" ns1:ignore="NewApi">@dimen/design_bottom_sheet_modal_elevation</item>
+        <item name="android:elevation" ns2:ignore="NewApi">@dimen/design_bottom_sheet_modal_elevation</item>
         <item name="behavior_peekHeight">auto</item>
         <item name="behavior_hideable">true</item>
         <item name="behavior_skipCollapsed">false</item>
@@ -2345,5 +2510,58 @@
         <item name="passwordToggleDrawable">@drawable/design_password_eye</item>
         <item name="passwordToggleTint">@color/design_tint_password_toggle</item>
         <item name="passwordToggleContentDescription">@string/password_toggle_content_description</item>
+    </style>
+    <style name="Widget.MaterialProgressBar.ProgressBar" parent="android:Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@null</item>
+        <!-- We have support for determinate circular progress drawable. -->
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:maxWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:maxHeight">48dp</item>
+    </style>
+    <style name="Widget.MaterialProgressBar.ProgressBar.Horizontal" parent="android:Widget.ProgressBar.Horizontal">
+        <!--
+        Disabled for correct behavior on Android 4.x, see
+        https://github.com/android/platform_frameworks_base/commit/911743652b597057a1bd7ef8a921e9ff8dce0f4a#diff-149f45c5ff2d3185bb79688ba17bc432L536
+        <item name="android:progressDrawable">@null</item>
+        -->
+        <item name="android:indeterminateDrawable">@null</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
+    </style>
+    <style name="Widget.MaterialProgressBar.ProgressBar.Horizontal.NoPadding">
+        <item name="android:minHeight">4dp</item>
+        <item name="android:maxHeight">4dp</item>
+    </style>
+    <style name="Widget.MaterialProgressBar.ProgressBar.Large">
+        <item name="android:minWidth">76dp</item>
+        <item name="android:maxWidth">76dp</item>
+        <item name="android:minHeight">76dp</item>
+        <item name="android:maxHeight">76dp</item>
+    </style>
+    <style name="Widget.MaterialProgressBar.ProgressBar.Large.NoPadding">
+        <item name="android:minWidth">66.5dp</item>
+        <item name="android:maxWidth">66.5dp</item>
+        <item name="android:minHeight">66.5dp</item>
+        <item name="android:maxHeight">66.5dp</item>
+    </style>
+    <style name="Widget.MaterialProgressBar.ProgressBar.NoPadding">
+        <item name="android:minWidth">42dp</item>
+        <item name="android:maxWidth">42dp</item>
+        <item name="android:minHeight">42dp</item>
+        <item name="android:maxHeight">42dp</item>
+    </style>
+    <style name="Widget.MaterialProgressBar.ProgressBar.Small">
+        <item name="android:minWidth">16dp</item>
+        <item name="android:maxWidth">16dp</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
+    </style>
+    <style name="Widget.MaterialProgressBar.ProgressBar.Small.NoPadding">
+        <item name="android:minWidth">14dp</item>
+        <item name="android:maxWidth">14dp</item>
+        <item name="android:minHeight">14dp</item>
+        <item name="android:maxHeight">14dp</item>
     </style>
 </resources>

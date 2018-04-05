@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chirag.slidingtabsusingviewpager.WriteCommentActivity"
+
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <com.shuyu.textutillib.RichEditText
+        android:id="@+id/emoji_edit_text2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@color/grey"
+        android:gravity="left"
+        android:hint="What's on your mind？"
+        android:maxLines="7"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:richMaxLength="2000" />
+
+    <!--<com.shuyu.textutillib.EmojiLayout-->
+    <!--android:id="@+id/emojiLayout2"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="250dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:visibility="gone"-->
+    <!--app:richIndicatorFocus="@drawable/page_indicator_focused"-->
+    <!--app:richIndicatorUnFocus="@drawable/page_indicator_unfocused"-->
+    <!--app:richMarginBottom="8dp"-->
+    <!--app:richMarginTop="15dp" />-->
+
+
+</LinearLayout>

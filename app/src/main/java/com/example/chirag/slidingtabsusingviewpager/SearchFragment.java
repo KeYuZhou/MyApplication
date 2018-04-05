@@ -62,6 +62,7 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.search_fragment, container, false);
 
+
         recyclerView = layout.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
 
