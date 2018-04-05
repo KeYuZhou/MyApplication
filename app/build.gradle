@@ -5,7 +5,7 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.example.chirag.slidingtabsusingviewpager"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -46,4 +46,9 @@ dependencies {
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
     compile 'com.github.CarGuo.RickText:textUtilsLib:v2.1.5'
     compile 'com.ldoublem.thumbUplib:ThumbUplib:0.5'
+    compile 'com.github.czy1121:turncardlistview:1.0.0'
+
+    compile 'me.yuqirong:cardswipelayout:1.0.0'
+
+    compile 'com.github.HalfStackDeveloper:SwipeCardRecyclerView:v1.0.1'
 }

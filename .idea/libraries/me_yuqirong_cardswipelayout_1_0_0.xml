@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="me.yuqirong:cardswipelayout-1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/cardswipelayout-1.0.0.aar/8bf7d95b16e2e38f0da169883114ca3a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/cardswipelayout-1.0.0.aar/8bf7d95b16e2e38f0da169883114ca3a/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.yuqirong/cardswipelayout/1.0.0/3d203ee243be4dddd3cb37c2fe565d5756c9cdba/cardswipelayout-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

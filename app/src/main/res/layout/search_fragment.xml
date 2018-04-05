@@ -5,6 +5,8 @@
     android:orientation="vertical"
     android:background="#fff">
 
+
+    <!--<ListView-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -12,9 +14,16 @@
 
     </android.support.v7.widget.RecyclerView>
 
+    <com.github.czy1121.view.TurnCardListView
+        android:id="@+id/card_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!--<com.wangxiandeng.swipecardrecyclerview.SwipeCardRecyclerView-->
+    <!--android:id="@+id/recyclerView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+    <!--</com.wangxiandeng.swipecardrecyclerview.SwipeCardRecyclerView>-->
 
-
-    <!--<ListView-->
         <!--android:id="@android:id/list"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"/>-->

@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,21 +25,32 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 ;
+import com.github.czy1121.view.TurnCardListView;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.silencedut.expandablelayout.ExpandableLayout;
+import com.wangxiandeng.swipecardrecyclerview.ItemRemovedListener;
+import com.wangxiandeng.swipecardrecyclerview.SwipeCardLayoutManager;
+import com.wangxiandeng.swipecardrecyclerview.SwipeCardRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.SimpleTimeZone;
 
+import me.yuqirong.cardswipelayout.CardItemTouchHelperCallback;
+import me.yuqirong.cardswipelayout.CardLayoutManager;
+import me.yuqirong.cardswipelayout.OnSwipeListener;
+
 public class SearchFragment extends Fragment implements MaterialSearchView.OnQueryTextListener, MenuItem.OnActionExpandListener {
 
     List<String> mAllValues;
-    String[] values={"china","usa","uk"};
-   //private ArrayAdapter<String> mAdapter;
+    String[] values = {"china", "usa", "uk"};
+    //private ArrayAdapter<String> mAdapter;
     private Context mContext;
     //ListView listView;
     RecyclerView recyclerView;
+
+
+    String accountNo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,7 +60,12 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
         populateList();
 
+        Bundle bundle = this.getArguments();
 
+        // 步骤2:获取某一值
+        // accountNo = bundle.getString("message");
+        accountNo = getActivity().getIntent().getStringExtra("accountNo");
+        Log.e("searchFragment", accountNo);
     }
 
 
@@ -57,23 +75,108 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.search_fragment, container, false);
+        final View layout = inflater.inflate(R.layout.search_fragment, container, false);
 
+        //  SwipeCardRecyclerView recyclerView;
 
         recyclerView = layout.findViewById(R.id.recyclerView);
+
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
 
         recyclerView.setLayoutManager(linearLayoutManager);
         SummonerAdapter summonerAdapter = new SummonerAdapter(getActivity());
-
         recyclerView.setAdapter(summonerAdapter);
 
+//        final List<String> list = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            list.add(String.valueOf(i));
+//        }
+//       MyAdapter myAdapter =new MyAdapter(layout.getContext(),list);
+//
+//
+//       recyclerView.setAdapter(myAdapter);
+//        recyclerView.setRemovedListener(new ItemRemovedListener() {
+//            @Override
+//            public void onRightRemoved() {
+////                Toast.makeText(MainActivity.this, list.get(list.size() - 1) + " was right removed", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onLeftRemoved() {
+////                Toast.makeText(MainActivity.this, list.get(list.size() - 1) + " was left removed", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+//
+//        CardItemTouchHelperCallback cardCallback = new CardItemTouchHelperCallback(recyclerView.getAdapter(), summonerAdapter.dateList);
+//        ItemTouchHelper touchHelper = new ItemTouchHelper(cardCallback); CardLayoutManager cardLayoutManager = new CardLayoutManager(recyclerView, touchHelper);
+//        recyclerView.setLayoutManager(cardLayoutManager);
+//        touchHelper.attachToRecyclerView(recyclerView);
+//
+//        cardCallback.setOnSwipedListener(new OnSwipeListener<String>() {
+//                                             @Override
+//                                             public void onSwiping(RecyclerView.ViewHolder viewHolder, float ratio, int direction) {
+//
+//
+//                                             }
+//
+//                                             @Override
+//                                             public void onSwiped(RecyclerView.ViewHolder viewHolder, String s, int direction) {
+//
+//                                             }
+//
+//                                             @Override
+//                                             public void onSwipedClear() {
+//
+//                                             }
+//                                         }
+//        );
 
 
+        TurnCardListView list = (TurnCardListView) layout.findViewById(R.id.card_list);
 
+        list.setOnTurnListener(new TurnCardListView.OnTurnListener() {
+            @Override
+            public void onTurned(int position) {
+                //Toast.makeText(MainActivity.this, "position = " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        list.setAdapter(new BaseAdapter() {
+            int[] colors = {0xffFF9800, 0xff3F51B5, 0xff673AB7, 0xff006064, 0xffC51162, 0xffFFEB3B, 0xff795548, 0xff9E9E9E};
+
+            @Override
+            public int getCount() {
+                return colors.length;
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return position;
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return position;
+            }
+
+            @Override
+            public View getView(int position, View child, ViewGroup parent) {
+
+                child = LayoutInflater.from(parent.getContext()).inflate(R.layout.daily_recommend, parent, false);
+
+
+                ((TextView) child.findViewById(R.id.pos)).setText("" + position);
+                child.findViewById(R.id.image).setBackgroundColor(colors[position]);
+                //        child = LayoutInflater.from(parent.getContext()).inflate(R.layout.daily_recommend, parent, false);
+
+                return child;
+            }
+        });
 
 
 //        ExpandableLayout expandableLayout = (ExpandableLayout)layout.findViewById(R.id.expandable_layout);
@@ -100,15 +203,12 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
         searchView.setHint("Search Here");
 
 
-
         searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
             @Override
             public void onSearchViewShown() {
 
 
-              //  listView = (ListView) getView().findViewById(android.R.id.list);
-
-
+                //  listView = (ListView) getView().findViewById(android.R.id.list);
 
 
             }
@@ -127,8 +227,6 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
         });
 
 
-
-
         super.onCreateOptionsMenu(menu, inflater);
 
         super.onCreateOptionsMenu(menu, inflater);
@@ -136,8 +234,6 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-
-
 
 
         Bundle bundle = new Bundle();
@@ -154,11 +250,13 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
         imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
 
 
-     //   fragmentTransaction.remove(fragment);
+        //   fragmentTransaction.remove(fragment);
 
 
-        Intent intent = new Intent(getActivity(),MainActivity.class);
-        intent.putExtra("query",query);
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        intent.putExtra("query", query);
+        intent.putExtra("accountNo", accountNo);
+        Log.e("searchFragemnt2", accountNo);
         startActivity(intent);
 
 
@@ -461,24 +559,6 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //package com.example.chirag.slidingtabsusingviewpager;

@@ -15,6 +15,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,10 +26,18 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
     String[] values={"a","b","c","d"};
     MaterialSearchView searchView;
+
+    public String accountNo;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        accountNo = getIntent().getStringExtra("accountNo");
+        Log.e("mainActivity", accountNo);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -80,6 +89,9 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
 
                 Intent intent = new Intent(MainActivity.this, WriteCommentActivity.class);
+                intent.putExtra("accountNo", accountNo);
+
+
 
                 startActivity(intent);
 
@@ -178,22 +190,5 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         return false;
     }
 
-//    @Override
-//    public boolean onQueryTextSubmit(String query) {
-//        FragmentManager fragmentManager = getFragmentManager();
-//
-////
-////        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-////        fragmentTransaction.replace(R.id.content_frame, fragment, "bookinfo").commit();
-//
-//
-//
-//        return false;
-//    }
-//
-//    @Override
-//    public boolean onQueryTextChange(String newText) {
-//
-//        return false;
-//    }
+
 }

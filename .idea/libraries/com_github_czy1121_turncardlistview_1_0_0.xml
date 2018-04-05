@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.github.czy1121:turncardlistview-1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/turncardlistview-1.0.0.aar/1bce74b0381fe54cd81dd1cf07da5f5f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/turncardlistview-1.0.0.aar/1bce74b0381fe54cd81dd1cf07da5f5f/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.czy1121/turncardlistview/1.0.0/772c2dd8a4a63f0978fb5c2f548525ff9d7e876a/turncardlistview-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,5 +1,6 @@
 package com.example.chirag.slidingtabsusingviewpager;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +41,8 @@ public class Tab1 extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
+
+    String accountNo;
     private String mParam1;
     private String mParam2;
 
@@ -71,6 +75,7 @@ public class Tab1 extends Fragment {
         return fragment;
     }
 
+    @SuppressLint("HandlerLeak")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,25 +85,31 @@ public class Tab1 extends Fragment {
         }
 
         mContext = getActivity();
+        accountNo = getActivity().getIntent().getStringExtra("accountNo");
 
-        handler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                Bitmap bmp = null;
-                // 通过消息码确定使用什么方式传递图片信息
-                if (msg.what == 0) {
-                    bmp = (Bitmap) msg.obj;
-                    // tvMsgType.setText("使用obj传递数据");
-                } else {
-                    Bundle ble = msg.getData();
-                    bmp = (Bitmap) ble.get("bmp");
-                    // tvMsgType.setText("使用Bundle传递数据");
-                }
-                // 设置图片到ImageView中
-                ivInternet.setImageBitmap(bmp);
-            }
-        };
-
+//        handler = new Handler() {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                Bitmap bmp = null;
+//                // 通过消息码确定使用什么方式传递图片信息
+////                if (msg.what == 0) {
+////                    bmp = (Bitmap) msg.obj;
+////                    // tvMsgType.setText("使用obj传递数据");
+////                } else {
+//                    Bundle ble = msg.getData();
+//                    bmp = (Bitmap) ble.get("bmp");
+//                    // tvMsgType.setText("使用Bundle传递数据");
+//                //}
+//                // 设置图片到ImageView中
+//
+//                if (bmp == null){
+//                    Log.e("tag",msg.what+"");
+//                }
+//                ivInternet.setImageBitmap(bmp);
+//                Log.e("tag","here");
+//            }
+//        };
+//
 
     }
 
@@ -124,6 +135,8 @@ public class Tab1 extends Fragment {
 //listView.setAdapter(customAdapter);
 
         Bundle bundle = getArguments();
+
+
         String data = getActivity().getIntent().getStringExtra("query");
 //data 为用户的搜索词条 bookname authorname等信息通过data来检索
         TextView tv_bookname = (TextView) layout.findViewById(R.id.tv_bookname);
@@ -142,38 +155,40 @@ public class Tab1 extends Fragment {
 //            tvMsgType.setText("");
         ivInternet.setImageBitmap(null);
 
-        //定义一个线程类
-        new Thread() {
-            @Override
-            public void run() {
-                try {
-                    //获取网络图片
-                    InputStream inputStream = HttpUtils
-                            .getImageViewInputStream();
-                    Bitmap bitmap = BitmapFactory
-                            .decodeStream(inputStream);
-
-
-                    Message msg = new Message();
-                    Random rd = new Random();
-                    int ird = rd.nextInt(10);
-                    //通过一个随机数，随机选择通过什么方式传递图片信息到消息中
-                    if (ird / 2 == 0) {
-                        msg.what = 0;
-                        msg.obj = bitmap;
-                    } else {
-                        Bundle bun = new Bundle();
-                        bun.putParcelable("bmp", bitmap);
-                        msg.what = 1;
-                        msg.setData(bun);
-                    }
-                    //发送消息
-                    handler.sendMessage(msg);
-                } catch (Exception e) {
-
-                }
-            }
-        }.start();
+//        //定义一个线程类
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                try {
+//                    //获取网络图片
+//                    InputStream inputStream = HttpUtils
+//                            .getImageViewInputStream();
+//
+//                    Bitmap bitmap = BitmapFactory
+//                            .decodeStream(inputStream);
+//
+//
+//                    Message msg = new Message();
+//                    Random rd = new Random();
+//                 //   int ird = rd.nextInt(10);
+//                    //通过一个随机数，随机选择通过什么方式传递图片信息到消息中
+////                    if (ird / 2 == 0) {
+////                        msg.what = 0;
+////                        msg.obj = bitmap;
+////                    } else {
+//                        Bundle bun = new Bundle();
+//                        bun.putParcelable("bmp", bitmap);
+//                        msg.what = 1;
+//                        msg.setData(bun);
+////                    }
+//                    //发送消息
+//                   // handler.sendMessage(msg);
+//                    ivInternet.setImageBitmap(bitmap);
+//                } catch (Exception e) {
+//
+//                }
+//            }
+//        }.start();
 
         return layout;
 

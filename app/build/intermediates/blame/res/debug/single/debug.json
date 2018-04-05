@@ -524,6 +524,10 @@
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/textUtilsLib-v2.1.5.aar/34d9a7657b6bf706c37f35f08a003563/res/layout/rich_smile_image_row_expression.xml"
     },
     {
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_layout_item.xml.flat",
+        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/SwipeCardRecyclerView-v1.0.1.aar/a056a5229e486274f09698cbd98a235f/res/layout/layout_item.xml"
+    },
+    {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-ldrtl-xxxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
     },
@@ -2942,6 +2946,10 @@
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-mdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_daily_recommend.xml.flat",
+        "source": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/res/layout/daily_recommend.xml"
     },
     {
         "merged": "/Users/effy/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_send_black_24dp.png.flat",

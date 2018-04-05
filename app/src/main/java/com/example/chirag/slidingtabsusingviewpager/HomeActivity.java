@@ -14,6 +14,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +31,7 @@ public class HomeActivity extends AppCompatActivity implements Tab1.OnFragmentIn
     private TextView mTxtResult;
 
     private String mResult = "";
+    public String accountNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,10 @@ public class HomeActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        accountNo = getIntent().getStringExtra("accountNo");
+        Log.e("Logint 2 Homew", "success");
+
+
 
 
 //
@@ -79,7 +85,7 @@ public class HomeActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
 
                 Intent intent = new Intent(HomeActivity.this, ZXingScannerActivity.class);
-
+                intent.putExtra("accountNo", accountNo);
                 startActivity(intent);
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
@@ -166,7 +172,11 @@ public class HomeActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         switch (position) {
             case 0:
                 fragment = new SearchFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("accountNo", accountNo);
+                Log.e("Home 2 Search", "success");
                 fragmentTags = "search";
+                fragment.setArguments(bundle);
                 break;
 
             case 1:

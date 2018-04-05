@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,7 @@ public class Tab3 extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    String accountNo;
     private OnFragmentInteractionListener mListener;
 
     RecyclerView commentRecycler;
@@ -65,6 +67,8 @@ public class Tab3 extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        accountNo = getActivity().getIntent().getStringExtra("accountNo");
+        Log.e("Tab3", accountNo);
     }
 
     @Override
@@ -76,8 +80,13 @@ public class Tab3 extends Fragment {
         commentRecycler = view.findViewById(R.id.comment_recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         commentRecycler.setLayoutManager(linearLayoutManager);
-        CommentAdapter commentAdapter = new CommentAdapter(getActivity());
+        CommentAdapter commentAdapter = new CommentAdapter(getActivity(), accountNo);
         commentRecycler.setAdapter(commentAdapter);
+
+
+        commentAdapter.addItem(3);
+
+
 
 
         return view;

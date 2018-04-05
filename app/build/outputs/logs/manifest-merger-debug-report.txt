@@ -9,6 +9,8 @@ MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transf
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/AndroidManifest.xml:2:1-13:12
 MERGED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/textUtilsLib-v2.1.5.aar/34d9a7657b6bf706c37f35f08a003563/AndroidManifest.xml:2:1-19:12
 MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.czy1121:turncardlistview:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/turncardlistview-1.0.0.aar/1bce74b0381fe54cd81dd1cf07da5f5f/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.HalfStackDeveloper:SwipeCardRecyclerView:v1.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/SwipeCardRecyclerView-v1.0.1.aar/a056a5229e486274f09698cbd98a235f/AndroidManifest.xml:2:1-17:12
 MERGED from [com.afollestad.material-dialogs:core:0.9.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/AndroidManifest.xml:2:1-15:12
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/library-1.4.2.aar/770f5a7df34e5ae1ff20fb8b7a2783fd/AndroidManifest.xml:6:1-16:12
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:17:1-31:12
@@ -19,6 +21,7 @@ MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/effy/.gradle/c
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/776f61f7cf5b655a219fc54fa84088dc/AndroidManifest.xml:17:1-31:12
 MERGED from [com.github.SilenceDut:ExpandableLayout:1.2.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/ExpandableLayout-1.2.0.aar/bfe51fd1b31d44046d6d4c294f8a26c6/AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:17:1-28:12
+MERGED from [me.yuqirong:cardswipelayout:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardswipelayout-1.0.0.aar/8bf7d95b16e2e38f0da169883114ca3a/AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.support:multidex:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/c39a8ded0d42efc9f38df224df5f44a1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:recyclerview-v7:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.1.aar/6d63ac0844a72e78bd866fdbe53437b0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.1.aar/88b7d0f92070b04baa86c67c1861a3f4/AndroidManifest.xml:17:1-22:12
@@ -86,6 +89,8 @@ MERGED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle
 MERGED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/textUtilsLib-v2.1.5.aar/34d9a7657b6bf706c37f35f08a003563/AndroidManifest.xml:13:5-17:19
 MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:11:5-15:19
 MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.HalfStackDeveloper:SwipeCardRecyclerView:v1.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/SwipeCardRecyclerView-v1.0.1.aar/a056a5229e486274f09698cbd98a235f/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.HalfStackDeveloper:SwipeCardRecyclerView:v1.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/SwipeCardRecyclerView-v1.0.1.aar/a056a5229e486274f09698cbd98a235f/AndroidManifest.xml:11:5-15:19
 MERGED from [com.afollestad.material-dialogs:core:0.9.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/AndroidManifest.xml:13:5-20
 MERGED from [com.afollestad.material-dialogs:core:0.9.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/AndroidManifest.xml:13:5-20
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/AndroidManifest.xml:29:5-20
@@ -102,6 +107,8 @@ MERGED from [com.github.SilenceDut:ExpandableLayout:1.2.0] /Users/effy/.gradle/c
 MERGED from [com.github.SilenceDut:ExpandableLayout:1.2.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/ExpandableLayout-1.2.0.aar/bfe51fd1b31d44046d6d4c294f8a26c6/AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:22:5-26:19
+MERGED from [me.yuqirong:cardswipelayout:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardswipelayout-1.0.0.aar/8bf7d95b16e2e38f0da169883114ca3a/AndroidManifest.xml:11:5-15:19
+MERGED from [me.yuqirong:cardswipelayout:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardswipelayout-1.0.0.aar/8bf7d95b16e2e38f0da169883114ca3a/AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/2b51bdbc54c604eda0a0e51f2a48f755/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/2b51bdbc54c604eda0a0e51f2a48f755/AndroidManifest.xml:29:5-20
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8f1cbc3862a87cb41199061d90a9c89a/AndroidManifest.xml:24:5-28:19
@@ -186,6 +193,10 @@ MERGED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle
 MERGED from [com.github.CarGuo.RickText:textUtilsLib:v2.1.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/textUtilsLib-v2.1.5.aar/34d9a7657b6bf706c37f35f08a003563/AndroidManifest.xml:7:5-9:41
 MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:7:5-9:41
 MERGED from [com.ldoublem.thumbUplib:ThumbUplib:0.5] /Users/effy/.gradle/caches/transforms-1/files-1.1/ThumbUplib-0.5.aar/47207dc7f2cb9c005bdd93c9e6c58c64/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.czy1121:turncardlistview:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/turncardlistview-1.0.0.aar/1bce74b0381fe54cd81dd1cf07da5f5f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.czy1121:turncardlistview:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/turncardlistview-1.0.0.aar/1bce74b0381fe54cd81dd1cf07da5f5f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.HalfStackDeveloper:SwipeCardRecyclerView:v1.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/SwipeCardRecyclerView-v1.0.1.aar/a056a5229e486274f09698cbd98a235f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.HalfStackDeveloper:SwipeCardRecyclerView:v1.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/SwipeCardRecyclerView-v1.0.1.aar/a056a5229e486274f09698cbd98a235f/AndroidManifest.xml:7:5-9:41
 MERGED from [com.afollestad.material-dialogs:core:0.9.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/AndroidManifest.xml:8:5-11:75
 MERGED from [com.afollestad.material-dialogs:core:0.9.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/core-0.9.6.0.aar/f71c739851f8671b8c20044d6ca4a9ae/AndroidManifest.xml:8:5-11:75
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/library-1.4.2.aar/770f5a7df34e5ae1ff20fb8b7a2783fd/AndroidManifest.xml:12:5-14:41
@@ -206,6 +217,8 @@ MERGED from [com.github.SilenceDut:ExpandableLayout:1.2.0] /Users/effy/.gradle/c
 MERGED from [com.github.SilenceDut:ExpandableLayout:1.2.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/ExpandableLayout-1.2.0.aar/bfe51fd1b31d44046d6d4c294f8a26c6/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/38b69ac285ef4d1e0aed65936e4dfc6e/AndroidManifest.xml:20:5-44
+MERGED from [me.yuqirong:cardswipelayout:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardswipelayout-1.0.0.aar/8bf7d95b16e2e38f0da169883114ca3a/AndroidManifest.xml:7:5-9:41
+MERGED from [me.yuqirong:cardswipelayout:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardswipelayout-1.0.0.aar/8bf7d95b16e2e38f0da169883114ca3a/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:multidex:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/c39a8ded0d42efc9f38df224df5f44a1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/c39a8ded0d42efc9f38df224df5f44a1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.1.aar/6d63ac0844a72e78bd866fdbe53437b0/AndroidManifest.xml:20:5-44

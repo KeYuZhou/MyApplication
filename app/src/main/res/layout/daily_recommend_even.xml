@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.silencedut.expandablelayout.ExpandableLayout
+<android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:expWithParentScroll="true"
-    android:id="@+id/expandable_layout"
-    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
     android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
+    android:layout_marginRight="8dp">
+
+    <com.silencedut.expandablelayout.ExpandableLayout
+        android:id="@+id/expandable_layout"
+        app:expWithParentScroll="true"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
 
 
     <RelativeLayout
@@ -69,3 +72,4 @@
     </LinearLayout>
 
 </com.silencedut.expandablelayout.ExpandableLayout>
+</android.support.v7.widget.CardView>

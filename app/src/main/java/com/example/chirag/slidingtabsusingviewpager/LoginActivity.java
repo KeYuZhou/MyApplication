@@ -77,6 +77,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
 
+    String accountNo;
 
 
     @Override
@@ -90,6 +91,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // Set up the login form.
         mEmailView = (EditText) findViewById(R.id.username);
         populateAutoComplete();
+
 
         mPasswordView = (EditText) findViewById(R.id.password);
 //        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -109,9 +111,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             public void onClick(View view) {
 
 
-
-
-                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
 
 
@@ -119,15 +119,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         });
 
 
-       //sign_in_button
+        //sign_in_button
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 //attemptLogin(); //do sth
+                accountNo = mEmailView.getText().toString();
 
-                LoginRequest(mEmailView.getText().toString(),mPasswordView.getText().toString());
+                Log.e("TAG**********", accountNo);
 
+                LoginRequest(mEmailView.getText().toString(), mPasswordView.getText().toString());
 
 
             }
@@ -144,7 +146,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         getLoaderManager().initLoader(0, null, this);
     }
-//获得用户邮件权限 可以删除
+
+    //获得用户邮件权限 可以删除
     private boolean mayRequestContacts() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return true;
@@ -305,7 +308,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             cursor.moveToNext();
         }
 
-       // addEmailsToAutoComplete(emails);
+        // addEmailsToAutoComplete(emails);
     }
 
     @Override
@@ -334,9 +337,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
 
-
-
-    public  void LoginRequest(final String accountNumber, final String password) {
+    public void LoginRequest(final String accountNumber, final String password) {
         //请求地址
         String url = "http://39.107.109.19:8080/Groupweb/LoginServlet";
         String tag = "Login";
@@ -349,8 +350,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         requestQueue.cancelAll(tag);
 
 
-
-
         final StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
@@ -360,7 +359,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             String result = jsonObject.getString("Result");
                             if (result.equals("success")) {
                                 //做自己的登录成功操作，如页面跳转****
-                                Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+
+
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                intent.putExtra("accountNo", accountNo);
                                 startActivity(intent);
                             } else {
                                 Log.e("TAG", "fail");
@@ -394,8 +396,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         //将请求添加到队列中
         requestQueue.add(request);
     }
-
-
 
 
     /**

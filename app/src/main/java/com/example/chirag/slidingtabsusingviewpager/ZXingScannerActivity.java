@@ -27,11 +27,13 @@ public class ZXingScannerActivity extends AppCompatActivity implements ZXingScan
 	private ZXingScannerView scannerView;
 	private static int camId = Camera.CameraInfo.CAMERA_FACING_BACK;
 
+    String accountNo;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		scannerView = new ZXingScannerView(this);
+        accountNo = getIntent().getStringExtra("accountNo");
+        scannerView = new ZXingScannerView(this);
 		setContentView(scannerView);
 		int currentApiVersion = Build.VERSION.SDK_INT;
 

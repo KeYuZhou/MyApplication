@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.silencedut.expandablelayout.ExpandableLayout;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
@@ -28,7 +29,8 @@ public class SummonerAdapter extends RecyclerView.Adapter<SummonerAdapter.Summon
     private TextView rcm_book;
     private TextView rcm_background;
     private int dateSize = 10;
-    private String[] date= new String[dateSize];
+    String[] date = new String[dateSize];
+    ArrayList<String> dateList = new ArrayList<>();
     private String[] book={};
     private String[] background = {};
     private String[] pic_Urls = {};
@@ -60,7 +62,9 @@ public class SummonerAdapter extends RecyclerView.Adapter<SummonerAdapter.Summon
     private void setRcm_date(){
 
         date[0] = "Today";
+        dateList.add(date[0]);
         date[1] = "Yesterday";
+        dateList.add(date[1]);
         Calendar calendar = Calendar.getInstance();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -68,6 +72,7 @@ public class SummonerAdapter extends RecyclerView.Adapter<SummonerAdapter.Summon
         for (int i = 2; i<dateSize; i++){
             calendar.add(Calendar.DATE, -1);
             date[i] = dateFormat.format(calendar.getTime());
+            dateList.add(date[i]);
         }
     }
 
