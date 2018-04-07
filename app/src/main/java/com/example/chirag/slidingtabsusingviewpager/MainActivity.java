@@ -36,8 +36,10 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         setContentView(R.layout.activity_main);
 
 
+
         accountNo = getIntent().getStringExtra("accountNo");
         Log.e("mainActivity", accountNo);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -82,23 +84,6 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {//go to barcode scan
-
-
-                Intent intent = new Intent(MainActivity.this, WriteCommentActivity.class);
-                intent.putExtra("accountNo", accountNo);
-
-
-
-                startActivity(intent);
-
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-            }
-        });
 
 
 //        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

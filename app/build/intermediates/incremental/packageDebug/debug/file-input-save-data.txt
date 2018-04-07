@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Apr 06 00:59:40 CST 2018
+#Sat Apr 07 03:32:28 CST 2018
 4.path=lib/armeabi-v7a/libiconv.so
 13.baseType=DIRECTORY
 8.set=NATIVE_RESOURCE

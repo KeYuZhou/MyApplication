@@ -101,13 +101,17 @@ public class WriteCommentActivity extends AppCompatActivity {
 
                 comment(accountNo, "pipilu", richEditText.getRealText().toString());
 
-                Thread thread = new Thread();
+
 
 
                 Log.e("write comment", accountNo);
+                Intent intent1 = new Intent(WriteCommentActivity.this, MainActivity.class);
+                intent1.putExtra("refresh", "true");
 
+                Log.e("write comment 2", "true");
                 //TODO submit comment
 
+                // startActivity(intent1);
 
                 WriteCommentActivity.this.finish();
 

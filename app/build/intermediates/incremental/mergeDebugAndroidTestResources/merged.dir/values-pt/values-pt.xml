@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="__picker_all_image">Todas as images</string>
+    <string name="__picker_cancel">Cancelar</string>
+    <string name="__picker_confirm_to_delete">Deseja deletar?</string>
+    <string name="__picker_delete">Deletar</string>
+    <string name="__picker_deleted_a_photo">Feletar uma imagem</string>
+    <string name="__picker_done">@android:string/ok</string>
+    <string name="__picker_done_with_count">Ok(%1$d/%2$d)</string>
+    <string name="__picker_image_count">%1$d</string>
+    <string name="__picker_image_index">%1$d/%2$d</string>
+    <string name="__picker_over_max_count_tips">Apenas %1$d imagens podem ser selecionadas</string>
+    <string name="__picker_title">Imagens</string>
+    <string name="__picker_undo">Desfazer</string>
+    <string name="__picker_yes">Sim</string>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Navegar para a página inicial"</string>
     <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Navegar para cima"</string>
     <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Mais opções"</string>

@@ -51,4 +51,11 @@ dependencies {
     compile 'me.yuqirong:cardswipelayout:1.0.0'
 
     compile 'com.github.HalfStackDeveloper:SwipeCardRecyclerView:v1.0.1'
+
+    compile 'me.iwf.photopicker:PhotoPicker:0.9.12@aar'
+
+
+    compile 'com.github.bumptech.glide:glide:4.1.1'
+    compile 'me.kareluo.ui:popmenu:1.1.0'
+    compile 'com.daasuu:BubbleLayout:1.2.0'
 }

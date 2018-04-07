@@ -364,9 +364,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 intent.putExtra("accountNo", accountNo);
                                 startActivity(intent);
+
+
                             } else {
                                 Log.e("TAG", "fail");
                                 //登入失败的操作写在这里***
+
 
                             }
                         } catch (JSONException e) {

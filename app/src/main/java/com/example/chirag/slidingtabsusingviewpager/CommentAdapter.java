@@ -1,9 +1,13 @@
 package com.example.chirag.slidingtabsusingviewpager;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -22,7 +26,11 @@ import com.ldoublem.thumbUplib.ThumbUpView;
 import org.w3c.dom.Text;
 
 import java.net.ConnectException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
 import java.util.HashMap;
 
 import android.support.v7.app.AppCompatActivity;
@@ -49,38 +57,37 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
 /**
  * Created by effy on 2018/4/4.
  */
 
 public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentHolder> {
+    private final int TOP_COMMENT_VIEWTYPE = 2;
+    private final int COMMENT_VIEWTYPE = 0;
+    private final int MY_COMMENT_VIEWTYPE = 1;
+    private final int MY_TOP_COMMENT_VIEWTPE = 3;
+    ArrayList<BookComment> bookComments = new ArrayList<>();
+    String accountNo;
+    boolean isRemoved = false;
     private int hotCommentLen = 1;
     private int commentLen = 3;
     private int myCommentLen = 1;
-    private LayoutInflater mInflater;
-    private final int TOP_COMMENT_VIEWTYPE = 0;
-    private final int COMMENT_VIEWTYPE = 1;
-    private final int MY_COMMENT_VIEWTYPE = 2;
-    private final int MY_TOP_COMMENT_VIEWTPE = 3;
-
-    String accountNo;
 
     // public String accountNo = LoginActivity.user.getAccountNo();
-
-
+    private LayoutInflater mInflater;
     private String[] usernames = {"AAA", "BBB", "CCC", "DDD", "EEE"};
-
     private ArrayList<String> uns = new ArrayList<>();
-
     // private String[] replyusernames= {};
     private String[] replyusernames = {"FFF", "GGG"};
     private String[] replycontent = {"commentF", "comentG"};
     private HashMap<String, String> replymap = new HashMap<>();
 
-    public CommentAdapter(Context context, String accountNo) {
+    public CommentAdapter(Context context, String accountNo, ArrayList<BookComment> bookComments) {
+        this.bookComments = bookComments;
         this.mInflater = LayoutInflater.from(context);
         this.accountNo = accountNo;
-        initData();
+
 
     }
 
@@ -91,72 +98,47 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
     }
 
 
-
     @Override
-    public CommentHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //View item = mInflater.inflate(viewType==0?R.layout.hot_moment_card :R.layout.moment_card,parent,false);
-
+    public CommentHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
+        // BookComment bookComment = bookComments.get(viewType);
+        //int vt = bookComment.kind;
+        Log.e("viewtype", Integer.toString(viewType));
+        Log.e("kind", Integer.toString(viewType));
 
         if (viewType == TOP_COMMENT_VIEWTYPE) {
             //hotComment
-            View item = mInflater.inflate(R.layout.hot_moment_card, parent, false);
+            View item = mInflater.inflate(R.layout.my_top_comment_card, parent, false);
+
+
             return new CommentHolder(item);
 
         }
         if (viewType == MY_COMMENT_VIEWTYPE) {
             //myComment
-            View item = mInflater.inflate(R.layout.my_moment_card, parent, false);
-
-            TextView tv_delete = item.findViewById(R.id.tv_deleteBtn);
-            tv_delete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(view.getContext(), "!!!", Toast.LENGTH_SHORT).show();
-
-
-                }
-            });
+            View item = mInflater.inflate(R.layout.my_top_comment_card, parent, false);
 
             return new CommentHolder(item);
         }
         if (viewType == MY_TOP_COMMENT_VIEWTPE) {
             View item = mInflater.inflate(R.layout.my_top_comment_card, parent, false);
 
-            TextView tv_delete = item.findViewById(R.id.tv_deleteBtn);
-            tv_delete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(view.getContext(), "!!!", Toast.LENGTH_SHORT).show();
-
-                }
-            });
-
             return new CommentHolder(item);
 
         }
 
 
-        View item = mInflater.inflate(R.layout.others_moment_card, parent, false);
-
-
+        View item = mInflater.inflate(R.layout.my_top_comment_card, parent, false);
 
         return new CommentHolder(item);
+
     }
 
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 0) {
-            return TOP_COMMENT_VIEWTYPE;
-        }
-        if (position == 1) {
-            return MY_COMMENT_VIEWTYPE;
-        }
-        if (position == 2) {
-            return MY_TOP_COMMENT_VIEWTPE;
-        }
 
-        return COMMENT_VIEWTYPE;
+        return bookComments.get(position).kind;
+        //return position;
     }
 
     public void addItem(int position) {
@@ -170,78 +152,123 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
     }
 
 
-
+    @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(final CommentHolder holder, int position) {
+    public void onBindViewHolder(final CommentHolder holder, final int position) {
 
-        //  holder.username.setText(usernames[position]);
-        holder.username.setText(uns.get(position));
-        holder.likeNo.setText("1");
-        // holder.time.setText();
 
-        if (getItemViewType(position) == MY_TOP_COMMENT_VIEWTPE) {
-            holder.thumbUpView.setLike();
+        final BookComment bookComment = bookComments.get(position);
 
+
+        holder.username.setText(bookComment.usernmae);
+
+        holder.likeNo.setText(Integer.toString(bookComment.like));
+        holder.time.setText(bookComment.getTime());
+        holder.comment.setText(bookComment.content);
+
+        if (getItemViewType(position) == COMMENT_VIEWTYPE) {
+            holder.delete.setVisibility(View.GONE);
+            holder.top.setVisibility(View.GONE);
+        }
+        if (getItemViewType(position) == TOP_COMMENT_VIEWTYPE) {
+            holder.delete.setVisibility(View.GONE);
 
         }
+        if (getItemViewType(position) == MY_COMMENT_VIEWTYPE) {
+            holder.top.setVisibility(View.GONE);
+
+
+            holder.delete.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    bookComments.remove(position);
+                    notifyDataSetChanged();
+
+
+                }
+            });
+        }
+
+
+        if (bookComment.kind == MY_TOP_COMMENT_VIEWTPE) {
+
+            holder.delete.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    bookComments.remove(position);
+                    notifyDataSetChanged();
+
+
+                }
+            });
+//            holder.thumbUpView.setLike();
+
+        }
+
+
         holder.thumbUpView.setOnThumbUp(new ThumbUpView.OnThumbUp() {
             @Override
             public void like(boolean like) {
                 if (like) {
                     holder.likeNo.setText(String.valueOf(Integer.valueOf(holder.likeNo.getText().toString()) + 1));
+
+
                 } else {
 
                     holder.likeNo.setText(String.valueOf(Integer.valueOf(holder.likeNo.getText().toString()) - 1));
+//TODO: 点赞数据更改
 
                 }
             }
         });
+//Log.e("!!!!!","111111111111111111111111111111111111111");
 
 
-        if (replyusernames.length != 0) {
-            Log.e("replyusernames", Integer.toString(replyusernames.length));
-            final ReplyAdapter replyAdapter = new ReplyAdapter(holder.context, accountNo, replyusernames, replycontent);
+        ArrayList<Reply> rep = new ArrayList<>();
 
 
-            holder.listView.setAdapter(replyAdapter);
+        if (bookComment.id == 2) {
 
-            int totalHeight = refreshReplyViewSize(replyAdapter, holder.listView);
+            loadreply("2");//2是书评的id号码，此参数如如书评id
+            SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(mInflater.getContext());//复制粘贴
 
-            ViewGroup.LayoutParams params = holder.listView.getLayoutParams();
-            params.height = totalHeight + (holder.listView.getDividerHeight() * (replyAdapter.getCount() - 1));
-            //listView.getDividerHeight()获取子项间分隔符占用的高度
-            //params.height最后得到整个ListView完整显示需要的高度
-            holder.listView.setLayoutParams(params);
+            rep = Convertreply(m.getString("Response", ""), "2", "zhoukeyu");
 
+            // final ReplyAdapter replyAdapter = new ReplyAdapter(holder.context, accountNo, rep);
+
+            ReplyRecyclerAdapter replyRecyclerAdapter = new ReplyRecyclerAdapter(holder.context, accountNo, rep);
+            holder.recyclerView.setAdapter(replyRecyclerAdapter);
+
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(holder.context);
+            holder.recyclerView.setLayoutManager(linearLayoutManager);
+
+
+            Log.e("replyyyyy", Integer.toString(replyRecyclerAdapter.replyList.size()));
+
+
+            final ReplyRecyclerAdapter finalReplyRecyclerAdapter = replyRecyclerAdapter;
 
             holder.imgButton_comment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     // Toast.makeText(view.getContext(), "let's comment", Toast.LENGTH_SHORT).show();
                     MaterialDialog.Builder dialog = new MaterialDialog.Builder(view.getContext());
-                    dialog.title("Add Comment")
+                    dialog.title("Add Comment to " + bookComment.usernmae)
                             .positiveText("Submit")
                             .onPositive(new MaterialDialog.SingleButtonCallback() {
                                 @Override
                                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
 
-                                    Log.e("tag", dialog.getInputEditText().getText().toString());
-                                    Log.e("replyAdapter before", Integer.toString(replyAdapter.getCount()));
+//                                    Log.e("tag", dialog.getInputEditText().getText().toString());
+//                                    Log.e("replyAdapter before", Integer.toString(replyAdapter.getCount()));
 
                                     reply(accountNo, "2", dialog.getInputEditText().getText().toString());
-                                    replyAdapter.addItem(replyAdapter.getCount(), accountNo, dialog.getInputEditText().getText().toString());
+                                    //        public Reply(String username,String content,String commentID,Date date,Boolean us
+                                    Reply reply = new Reply(accountNo, dialog.getInputEditText().getText().toString(), "2", Calendar.getInstance().getTime(), true);
 
-
-                                    int totalHeight = refreshReplyViewSize(replyAdapter, holder.listView);
-
-                                    ViewGroup.LayoutParams params = holder.listView.getLayoutParams();
-                                    params.height = totalHeight + (holder.listView.getDividerHeight() * (replyAdapter.getCount() - 1));
-                                    //listView.getDividerHeight()获取子项间分隔符占用的高度
-                                    //params.height最后得到整个ListView完整显示需要的高度
-                                    holder.listView.setLayoutParams(params);
-                                    Log.e("replyAdapter size", Integer.toString(replyAdapter.getCount()));
-
-                                    Log.e("reply success", accountNo);
+                                    finalReplyRecyclerAdapter.addItem(finalReplyRecyclerAdapter.getItemCount(), reply);
                                 }
                             })
                             .negativeText("Cancel")
@@ -272,10 +299,87 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
             });
 
 
+//            holder.listView.setAdapter(replyAdapter);
+//
+//
+//            int totalHeight = refreshReplyViewSize(replyAdapter, holder.listView);
+//
+//            ViewGroup.LayoutParams params = holder.listView.getLayoutParams();
+//            params.height = totalHeight + (holder.listView.getDividerHeight() * (replyAdapter.getCount() - 1));
+//
+//            holder.listView.setLayoutParams(params);
+//            //  Reply reply = new Reply(accountNo,"ddd","2",Calendar.getInstance().getTime(),true);
+//
+//            //    Log.e("replyadpater!!",Integer.toString(replyAdapter.getCount()));
+//
+//
+//            holder.imgButton_comment.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    // Toast.makeText(view.getContext(), "let's comment", Toast.LENGTH_SHORT).show();
+//                    MaterialDialog.Builder dialog = new MaterialDialog.Builder(view.getContext());
+//                    dialog.title("Add Comment")
+//                            .positiveText("Submit")
+//                            .onPositive(new MaterialDialog.SingleButtonCallback() {
+//                                @Override
+//                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+//
+//                                    Log.e("tag", dialog.getInputEditText().getText().toString());
+//                                    Log.e("replyAdapter before", Integer.toString(replyAdapter.getCount()));
+//
+//                                    reply(accountNo, "2", dialog.getInputEditText().getText().toString());
+//                                    //        public Reply(String username,String content,String commentID,Date date,Boolean us
+//                                    Reply reply = new Reply(accountNo, dialog.getInputEditText().getText().toString(), "2", Calendar.getInstance().getTime(), true);
+//
+//
+//                                    replyAdapter.addItem(replyAdapter.getCount(), reply);
+//
+//
+//                                    int totalHeight = refreshReplyViewSize(replyAdapter, holder.listView);
+//
+//                                    ViewGroup.LayoutParams params = holder.listView.getLayoutParams();
+//                                    params.height = totalHeight + (holder.listView.getDividerHeight() * (replyAdapter.getCount() - 1));
+//                                    //listView.getDividerHeight()获取子项间分隔符占用的高度
+//                                    //params.height最后得到整个ListView完整显示需要的高度
+//                                    holder.listView.setLayoutParams(params);
+//
+//                                    Log.e("replyAdapter size", Integer.toString(replyAdapter.getCount()));
+//
+//                                    Log.e("reply success", accountNo);
+//                                }
+//                            })
+//                            .negativeText("Cancel")
+//                            .onNegative(new MaterialDialog.SingleButtonCallback() {
+//                                @Override
+//                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+//
+//                                }
+//                            })
+//
+//                            .cancelListener(new DialogInterface.OnCancelListener() {
+//                                @Override
+//                                public void onCancel(DialogInterface dialog) {
+//                                    dialog.dismiss();
+//                                }
+//                            })
+//                            .inputType(InputType.TYPE_TEXT_VARIATION_LONG_MESSAGE)
+//                            .input("Comment here", "", new MaterialDialog.InputCallback() {
+//                                @Override
+//                                public void onInput(@NonNull MaterialDialog dialog, CharSequence input) {
+//
+//                                }
+//                            })
+//                            .show();
+//
+//
+//                }
+//            });
+
+
         }
-
-
     }
+
+
 
     public int refreshReplyViewSize(ReplyAdapter replyAdapter, ListView listView) {
         int totalHeight = 0;
@@ -286,6 +390,98 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         }
         return totalHeight;
     }
+
+
+    private void sharedResponse(String response) {
+        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(mInflater.getContext());
+        SharedPreferences.Editor editor = m.edit();
+        editor.putString("Response", response);
+        editor.commit();
+    }//  此方法放在粘贴即可,跟上次一样
+
+
+    public void loadreply(final String CommentID) {//传入书评的id
+
+        String url = "http://39.107.109.19:8080/Groupweb/LoadReplyServlet";    //注①
+        String tag = "loadreply";    //注②
+
+//取得请求队列
+        RequestQueue requestQueue = Volley.newRequestQueue(mInflater.getContext());
+
+//防止重复请求，所以先取消tag标识的请求队列
+        requestQueue.cancelAll(tag);
+
+//创建StringRequest，定义字符串请求的请求方式为POST(省略第一个参数会默认为GET方式)
+        final StringRequest request = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+// Convertreply(response, CommentID);
+                        sharedResponse(response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+//做自己的响应错误操作，如Toast提示（“请稍后重试”等）
+                Log.e("TAG", error.getMessage(), error);
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+
+                params.put("CommentID", CommentID);
+
+
+                return params;
+            }
+        };
+
+//设置Tag标签
+        request.setTag(tag);
+
+//将请求添加到队列中
+        requestQueue.add(request);
+    }
+
+
+    private ArrayList<Reply> Convertreply(String response, String CommentID, String usernanme) {
+        ArrayList<Reply> reply = new ArrayList<Reply>();
+        try {
+            JSONObject jsonObject = (JSONObject) new JSONObject(response).get("params");  //注③
+            int number = Integer.parseInt(jsonObject.getString("number"));  //注④
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+
+            if (number == 0) {
+                Log.e("TAG", "fail");
+            } else {
+                Log.e("TAG", number + " f");
+                for (int i = 0; i < number; i++) {
+                    boolean user = false;
+                    if (usernanme.equals(jsonObject.getString(i + "username"))) {
+                        user = true;
+                    }
+                    try {
+                        reply.add(new Reply(jsonObject.getString(i + "username"),
+                                jsonObject.getString(i + "content"),
+                                CommentID, df.parse(jsonObject.getString(i + "date")), user));
+                    } catch (Exception e) {
+                        Log.e("TAG", "wrong");
+                    }
+
+                }
+                Collections.sort(reply, new ComReply());
+
+            }
+
+
+        } catch (JSONException e) {
+//做自己的请求异常操作，如Toast提示（“无网络连接”等）
+            Log.e("TAG", e.getMessage(), e);
+        }
+        return reply;
+    }
+
 
     public void reply(final String accountNumber, final String commentID, final String content) {
 //请求地址
@@ -345,7 +541,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
 
     @Override
     public int getItemCount() {
-        return uns.size();
+        return bookComments.size();
     }
 
     class CommentHolder extends RecyclerView.ViewHolder {
@@ -355,7 +551,12 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         private TextView likeNo;
         private ThumbUpView thumbUpView;
         private ImageView imgButton_comment;
-        private ListView listView;
+        //private ListView listView;
+        private TextView delete;
+        private TextView top;
+
+        private RecyclerView recyclerView;
+
 
         private Context context;
 
@@ -368,12 +569,19 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
             likeNo = itemView.findViewById(R.id.tv_likeNo);
             thumbUpView = itemView.findViewById(R.id.tpv);
             imgButton_comment = itemView.findViewById(R.id.imgbtn_comment);
-            listView = itemView.findViewById(R.id.lv_reply);
+            //  listView = itemView.findViewById(R.id.lv_reply);
+            delete = itemView.findViewById(R.id.tv_deleteBtn);
+            top = itemView.findViewById(R.id.tv_top);
+
+            recyclerView = itemView.findViewById(R.id.reply_recyclerView);
 
             context = itemView.getContext();
 
-
-
+//            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(itemView.getContext());
+//            recyclerView.setLayoutManager(linearLayoutManager);
+//
+//            ReplyRecyclerAdapter replyRecyclerAdapter = new ReplyRecyclerAdapter(itemView.getContext(),accountNo,null);
+//            recyclerView.setAdapter(replyRecyclerAdapter);
         }
 
 

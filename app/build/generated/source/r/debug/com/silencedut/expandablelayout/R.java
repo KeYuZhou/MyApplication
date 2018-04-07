@@ -8,31 +8,31 @@ package com.silencedut.expandablelayout;
 
 public final class R {
     public static final class attr {
-        public static final int expDuration = 0x7f030096;
-        public static final int expExpandScrollTogether = 0x7f030097;
-        public static final int expWithParentScroll = 0x7f030098;
-        public static final int layoutManager = 0x7f0300d1;
-        public static final int reverseLayout = 0x7f030166;
-        public static final int spanCount = 0x7f03018c;
-        public static final int stackFromEnd = 0x7f030196;
+        public static final int expDuration = 0x7f03009f;
+        public static final int expExpandScrollTogether = 0x7f0300a0;
+        public static final int expWithParentScroll = 0x7f0300a1;
+        public static final int layoutManager = 0x7f0300da;
+        public static final int reverseLayout = 0x7f030171;
+        public static final int spanCount = 0x7f030198;
+        public static final int stackFromEnd = 0x7f0301a2;
     }
     public static final class dimen {
-        public static final int item_touch_helper_max_drag_scroll_per_frame = 0x7f060088;
-        public static final int item_touch_helper_swipe_escape_max_velocity = 0x7f060089;
-        public static final int item_touch_helper_swipe_escape_velocity = 0x7f06008a;
+        public static final int item_touch_helper_max_drag_scroll_per_frame = 0x7f06008d;
+        public static final int item_touch_helper_swipe_escape_max_velocity = 0x7f06008e;
+        public static final int item_touch_helper_swipe_escape_velocity = 0x7f06008f;
     }
     public static final class id {
-        public static final int item_touch_helper_previous_elevation = 0x7f08006a;
+        public static final int item_touch_helper_previous_elevation = 0x7f080072;
     }
     public static final class string {
-        public static final int app_name = 0x7f0d0020;
+        public static final int app_name = 0x7f0d002d;
     }
     public static final class styleable {
-        public static final int[] ExpandableLayout = { 0x7f030096, 0x7f030097, 0x7f030098 };
+        public static final int[] ExpandableLayout = { 0x7f03009f, 0x7f0300a0, 0x7f0300a1 };
         public static final int ExpandableLayout_expDuration = 0;
         public static final int ExpandableLayout_expExpandScrollTogether = 1;
         public static final int ExpandableLayout_expWithParentScroll = 2;
-        public static final int[] RecyclerView = { 0x010100c4, 0x010100f1, 0x7f0300a3, 0x7f0300a4, 0x7f0300a5, 0x7f0300a6, 0x7f0300a7, 0x7f0300d1, 0x7f030166, 0x7f03018c, 0x7f030196 };
+        public static final int[] RecyclerView = { 0x010100c4, 0x010100f1, 0x7f0300ac, 0x7f0300ad, 0x7f0300ae, 0x7f0300af, 0x7f0300b0, 0x7f0300da, 0x7f030171, 0x7f030198, 0x7f0301a2 };
         public static final int RecyclerView_android_orientation = 0;
         public static final int RecyclerView_android_descendantFocusability = 1;
         public static final int RecyclerView_fastScrollEnabled = 2;

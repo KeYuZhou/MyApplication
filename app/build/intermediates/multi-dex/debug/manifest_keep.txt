@@ -1,3 +1,3 @@
-# Referenced at /Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/manifests/full/debug/AndroidManifest.xml:26
+# Referenced at /Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/manifests/full/debug/AndroidManifest.xml:28
 -keep class android.support.multidex.MultiDexApplication { <init>(...); }
 

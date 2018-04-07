@@ -19,6 +19,23 @@
             "outputFile": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt/values-pt.xml",
             "map": [
                 {
+                    "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/PhotoPicker-0.9.12.aar/dd1ef8f459eb6639f5296b2cdea9cb10/res/values-pt/values-pt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,118,171,242,294,366,427,494,548,607,707,758,809",
+                        "endColumns": "62,52,70,51,71,60,66,53,58,99,50,50,44",
+                        "endOffsets": "113,166,237,289,361,422,489,543,602,702,753,804,849"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,168,221,292,344,416,477,544,598,657,757,808,859",
+                        "endColumns": "62,52,70,51,71,60,66,53,58,99,50,50,44",
+                        "endOffsets": "163,216,287,339,411,472,539,593,652,752,803,854,899"
+                    }
+                },
+                {
                     "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b8a66b0455789465fcf3ff03195ff6a3/res/values-pt/values-pt.xml",
                     "from": {
                         "startLines": "2",
@@ -28,11 +45,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "33",
                         "startColumns": "4",
-                        "startOffsets": "1989",
+                        "startOffsets": "2788",
                         "endColumns": "100",
-                        "endOffsets": "2085"
+                        "endOffsets": "2884"
                     }
                 },
                 {
@@ -43,6 +60,13 @@
                         "startOffsets": "105,225,331,438,527,628,746,829,909,996,1103,1215,1317,1425,1532,1642,1804,1904",
                         "endColumns": "119,105,106,88,100,117,82,79,86,106,111,101,107,106,109,161,99,84",
                         "endOffsets": "220,326,433,522,623,741,824,904,991,1098,1210,1312,1420,1527,1637,1799,1899,1984"
+                    },
+                    "to": {
+                        "startLines": "15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "904,1024,1130,1237,1326,1427,1545,1628,1708,1795,1902,2014,2116,2224,2331,2441,2603,2703",
+                        "endColumns": "119,105,106,88,100,117,82,79,86,106,111,101,107,106,109,161,99,84",
+                        "endOffsets": "1019,1125,1232,1321,1422,1540,1623,1703,1790,1897,2009,2111,2219,2326,2436,2598,2698,2783"
                     }
                 }
             ]

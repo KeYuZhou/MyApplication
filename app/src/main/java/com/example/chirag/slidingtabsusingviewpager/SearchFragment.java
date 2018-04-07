@@ -136,47 +136,47 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 //        );
 
 
-        TurnCardListView list = (TurnCardListView) layout.findViewById(R.id.card_list);
-
-        list.setOnTurnListener(new TurnCardListView.OnTurnListener() {
-            @Override
-            public void onTurned(int position) {
-                //Toast.makeText(MainActivity.this, "position = " + position, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-        list.setAdapter(new BaseAdapter() {
-            int[] colors = {0xffFF9800, 0xff3F51B5, 0xff673AB7, 0xff006064, 0xffC51162, 0xffFFEB3B, 0xff795548, 0xff9E9E9E};
-
-            @Override
-            public int getCount() {
-                return colors.length;
-            }
-
-            @Override
-            public Object getItem(int position) {
-                return position;
-            }
-
-            @Override
-            public long getItemId(int position) {
-                return position;
-            }
-
-            @Override
-            public View getView(int position, View child, ViewGroup parent) {
-
-                child = LayoutInflater.from(parent.getContext()).inflate(R.layout.daily_recommend, parent, false);
-
-
-                ((TextView) child.findViewById(R.id.pos)).setText("" + position);
-                child.findViewById(R.id.image).setBackgroundColor(colors[position]);
-                //        child = LayoutInflater.from(parent.getContext()).inflate(R.layout.daily_recommend, parent, false);
-
-                return child;
-            }
-        });
+//        TurnCardListView list = (TurnCardListView) layout.findViewById(R.id.card_list);
+//
+//        list.setOnTurnListener(new TurnCardListView.OnTurnListener() {
+//            @Override
+//            public void onTurned(int position) {
+//                //Toast.makeText(MainActivity.this, "position = " + position, Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//
+//        list.setAdapter(new BaseAdapter() {
+//            int[] colors = {0xffFF9800, 0xff3F51B5, 0xff673AB7, 0xff006064, 0xffC51162, 0xffFFEB3B, 0xff795548, 0xff9E9E9E};
+//
+//            @Override
+//            public int getCount() {
+//                return colors.length;
+//            }
+//
+//            @Override
+//            public Object getItem(int position) {
+//                return position;
+//            }
+//
+//            @Override
+//            public long getItemId(int position) {
+//                return position;
+//            }
+//
+//            @Override
+//            public View getView(int position, View child, ViewGroup parent) {
+//
+//                child = LayoutInflater.from(parent.getContext()).inflate(R.layout.daily_recommend, parent, false);
+//
+//
+//                ((TextView) child.findViewById(R.id.pos)).setText("" + position);
+//                child.findViewById(R.id.image).setBackgroundColor(colors[position]);
+//                //        child = LayoutInflater.from(parent.getContext()).inflate(R.layout.daily_recommend, parent, false);
+//
+//                return child;
+//            }
+//        });
 
 
 //        ExpandableLayout expandableLayout = (ExpandableLayout)layout.findViewById(R.id.expandable_layout);
