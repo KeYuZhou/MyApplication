@@ -473,6 +473,17 @@
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="arrowHeadLength"/><attr format="dimension" name="arrowShaftLength"/><attr format="dimension" name="barLength"/><attr format="dimension" name="thickness"/></declare-styleable>
     <declare-styleable name="EmojiLayout"><attr format="integer|reference" name="richIndicatorFocus"/><attr format="integer|reference" name="richIndicatorUnFocus"/><attr format="string" name="richDeleteIconName"/><attr format="dimension" name="richMarginBottom"/><attr format="dimension" name="richMarginTop"/><attr format="integer|reference" name="richLayoutNumColumns"/><attr format="integer|reference" name="richLayoutNumRows"/></declare-styleable>
     <declare-styleable name="ExpandableLayout"><attr format="integer|reference" name="expDuration"/><attr format="boolean" name="expWithParentScroll"/><attr format="boolean" name="expExpandScrollTogether"/></declare-styleable>
+    <declare-styleable name="FJEditTextCount"><attr format="string" name="etText"/><attr format="string" name="etHint"/><attr format="color" name="etHintColor"/><attr format="dimension" name="etMinHeight"/><attr format="integer" name="etMaxLength"/><attr format="color" name="etLineColor"/><attr format="dimension" name="etTextSize"/><attr format="color" name="etTextColor"/><attr format="dimension" name="etPromptTextSize"/><attr format="color" name="etPromptTextColor"/><attr name="etType">
+            
+            <enum name="singular" value="0"/>
+            
+            <enum name="percentage" value="1"/>
+        </attr><attr name="etPromptPosition">
+            
+            <enum name="promptUp" value="0"/>
+            
+            <enum name="promptDn" value="1"/>
+        </attr></declare-styleable>
     <declare-styleable name="FloatingActionButton"><attr name="backgroundTint"/><attr name="backgroundTintMode"/><attr format="color" name="rippleColor"/><attr name="fabSize">
             
             <enum name="auto" value="-1"/>
@@ -952,6 +963,18 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="define_FontAwesome">year;author;libraryName;libraryWebsite</string>
+    <string name="define_font_fontawesome">com.mikepenz.fontawesome_typeface_library.FontAwesome</string>
+    <string name="library_FontAwesome_author">Dave Gandy</string>
+    <string name="library_FontAwesome_authorWebsite">https://materialdesignicons.com/</string>
+    <string name="library_FontAwesome_isOpenSource">true</string>
+    <string name="library_FontAwesome_libraryDescription">Font Awesome gives you scalable vector icons that can instantly be customized - size, color, drop shadow, and anything that can be done with the power of CSS.</string>
+    <string name="library_FontAwesome_libraryName">Font Awesome</string>
+    <string name="library_FontAwesome_libraryVersion">4.7.0.2</string>
+    <string name="library_FontAwesome_libraryWebsite">http://fontawesome.io/icons/</string>
+    <string name="library_FontAwesome_licenseId">sil_ofl_1_1</string>
+    <string name="library_FontAwesome_repositoryLink">https://github.com/FortAwesome/Font-Awesome</string>
+    <string name="library_FontAwesome_year"> </string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>

@@ -31,6 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 
 import android.support.v7.app.AppCompatActivity;
@@ -141,8 +142,9 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         //return position;
     }
 
-    public void addItem(int position) {
-        uns.add(position, accountNo);
+    public void addItem(int position, BookComment bookComment) {
+        // uns.add(position, accountNo);
+        bookComments.add(position, bookComment);
         notifyItemInserted(position);
     }
 
@@ -182,6 +184,10 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
                 @Override
                 public void onClick(View view) {
 
+                    Log.e("bookcomment id", Integer.toString(bookComment.id));
+
+                    DeleteComment(Integer.toString(bookComment.id));
+
                     bookComments.remove(position);
                     notifyDataSetChanged();
 
@@ -197,6 +203,8 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
                 @Override
                 public void onClick(View view) {
 
+                    Log.e("bookcomment id", Integer.toString(bookComment.id));
+                    DeleteComment(Integer.toString(bookComment.id));
                     bookComments.remove(position);
                     notifyDataSetChanged();
 
@@ -208,16 +216,36 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         }
 
 
+        loadupvote(bookComment.usernmae, Integer.toString(bookComment.id));//用户名和commentid
+
+        SharedPreferences m2 = PreferenceManager.getDefaultSharedPreferences(mInflater.getContext());
+
+        String s = m2.getString("upvoteResponse", "");
+
+
+        Log.e("response", s);
+
+
+        if (Convertloadupvote(s)) {
+            holder.thumbUpView.setLike();
+        }
+
+
+
+
         holder.thumbUpView.setOnThumbUp(new ThumbUpView.OnThumbUp() {
             @Override
             public void like(boolean like) {
                 if (like) {
                     holder.likeNo.setText(String.valueOf(Integer.valueOf(holder.likeNo.getText().toString()) + 1));
+                    //  loadupvote(bookComment.usernmae,Integer.toString(bookComment.id));//用户名和commentid
 
+                    upvote(accountNo, Integer.toString(bookComment.id));
 
                 } else {
 
                     holder.likeNo.setText(String.valueOf(Integer.valueOf(holder.likeNo.getText().toString()) - 1));
+                    Cancelupvote(Integer.toString(bookComment.id), accountNo);
 //TODO: 点赞数据更改
 
                 }
@@ -229,12 +257,12 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         ArrayList<Reply> rep = new ArrayList<>();
 
 
-        if (bookComment.id == 2) {
+//        if (bookComment.id == 2) {
 
-            loadreply("2");//2是书评的id号码，此参数如如书评id
+        loadreply(Integer.toString(bookComment.id));//2是书评的id号码，此参数如如书评id
             SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(mInflater.getContext());//复制粘贴
 
-            rep = Convertreply(m.getString("Response", ""), "2", "zhoukeyu");
+        rep = Convertreply(m.getString("Response", ""), Integer.toString(bookComment.id), accountNo);
 
             // final ReplyAdapter replyAdapter = new ReplyAdapter(holder.context, accountNo, rep);
 
@@ -264,7 +292,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
 //                                    Log.e("tag", dialog.getInputEditText().getText().toString());
 //                                    Log.e("replyAdapter before", Integer.toString(replyAdapter.getCount()));
 
-                                    reply(accountNo, "2", dialog.getInputEditText().getText().toString());
+                                    reply(accountNo, Integer.toString(bookComment.id), dialog.getInputEditText().getText().toString());
                                     //        public Reply(String username,String content,String commentID,Date date,Boolean us
                                     Reply reply = new Reply(accountNo, dialog.getInputEditText().getText().toString(), "2", Calendar.getInstance().getTime(), true);
 
@@ -376,9 +404,121 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
 //            });
 
 
-        }
+        //  }
     }
 
+    public void upvote(final String accountNumber, final String commentID) {
+        //请求地址
+        String url = "http://39.107.109.19:8080/Groupweb/UpvoteServlet";    //注①
+        String tag = "upvote";    //注②
+
+        //取得请求队列
+        RequestQueue requestQueue = Volley.newRequestQueue(mInflater.getContext());
+
+        //防止重复请求，所以先取消tag标识的请求队列
+        requestQueue.cancelAll(tag);
+
+        //创建StringRequest，定义字符串请求的请求方式为POST(省略第一个参数会默认为GET方式)
+        final StringRequest request = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = (JSONObject) new JSONObject(response).get("params");  //注③
+                            String result = jsonObject.getString("result");  //注④
+                            if (result.equals("upvoted")) {  //注⑤
+
+                                Log.e("TAG", "upvoted");
+                            } else if (result.equals("success")) {
+
+                                Log.e("upvoteTAG", "success");
+                            } else {
+                                Log.e("upvotetag", "fail");
+                            }
+                        } catch (JSONException e) {
+                            //做自己的请求异常操作，如Toast提示（“无网络连接”等）
+                            Log.e("TAG", e.getMessage(), e);
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //做自己的响应错误操作，如Toast提示（“请稍后重试”等）
+                Log.e("TAG", error.getMessage(), error);
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("username", accountNumber);  //注⑥
+                params.put("CommentID", commentID);
+
+                return params;
+            }
+        };
+
+        //设置Tag标签
+        request.setTag(tag);
+
+        //将请求添加到队列中
+        requestQueue.add(request);
+    }
+
+    public void Cancelupvote(final String commentID, final String username) {
+        //请求地址
+
+        String url = "http://39.107.109.19:8080/Groupweb/CancelupvoteServlet";    //注①
+        String tag = "cancelupvote";    //注②
+
+        //取得请求队列
+        RequestQueue requestQueue = Volley.newRequestQueue(mInflater.getContext());
+
+        //防止重复请求，所以先取消tag标识的请求队列
+        requestQueue.cancelAll(tag);
+
+        //创建StringRequest，定义字符串请求的请求方式为POST(省略第一个参数会默认为GET方式)
+        final StringRequest request = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = (JSONObject) new JSONObject(response).get("params");  //注③
+                            String result = jsonObject.getString("result");  //注④
+                            if (result.equals("success")) {  //注⑤
+
+                                Log.e("TAG", "success");
+                            } else {
+
+                                Log.e("TAG", "fail");
+                            }
+                        } catch (JSONException e) {
+                            //做自己的请求异常操作，如Toast提示（“无网络连接”等）
+                            Log.e("TAG", e.getMessage(), e);
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //做自己的响应错误操作，如Toast提示（“请稍后重试”等）
+                Log.e("TAG", error.getMessage(), error);
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+
+                params.put("CommentID", commentID);
+                params.put("username", username);
+                return params;
+            }
+        };
+
+        //设置Tag标签
+        request.setTag(tag);
+
+        //将请求添加到队列中
+        requestQueue.add(request);
+    }
 
 
     public int refreshReplyViewSize(ReplyAdapter replyAdapter, ListView listView) {
@@ -390,6 +530,151 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         }
         return totalHeight;
     }
+
+
+    public void DeleteComment(final String commentID) {
+//请求地址
+
+        String url = "http://39.107.109.19:8080/Groupweb/DeleteCommentServlet";    //注①
+        String tag = "reply";    //注②
+
+//取得请求队列
+        RequestQueue requestQueue = Volley.newRequestQueue(mInflater.getContext());
+
+//防止重复请求，所以先取消tag标识的请求队列
+        requestQueue.cancelAll(tag);
+
+//创建StringRequest，定义字符串请求的请求方式为POST(省略第一个参数会默认为GET方式)
+        final StringRequest request = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = (JSONObject) new JSONObject(response).get("params");  //注③
+                            String result = jsonObject.getString("result");  //注④
+                            if (result.equals("success")) {  //注⑤
+//成功
+                                Log.e("TAG", "success");
+                            } else {
+
+                                Log.e("delete comment", "fail");
+                            }
+                        } catch (JSONException e) {
+//做自己的请求异常操作，如Toast提示（“无网络连接”等）
+                            Log.e("TAG", e.getMessage(), e);
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+//做自己的响应错误操作，如Toast提示（“请稍后重试”等）
+                Log.e("TAG", error.getMessage(), error);
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+
+                params.put("CommentID", commentID);
+
+                return params;
+            }
+        };
+
+//设置Tag标签
+        request.setTag(tag);
+
+//将请求添加到队列中
+        requestQueue.add(request);
+    }
+
+    public void loadupvote(final String username, final String CommentID) {
+//请求地址
+        String url = "http://39.107.109.19:8080/Groupweb/LoadUpvoteServlet";    //注①
+        String tag = "loadreply";    //注②
+
+//取得请求队列
+        RequestQueue requestQueue = Volley.newRequestQueue(mInflater.getContext());
+
+//防止重复请求，所以先取消tag标识的请求队列
+        requestQueue.cancelAll(tag);
+
+//创建StringRequest，定义字符串请求的请求方式为POST(省略第一个参数会默认为GET方式)
+        final StringRequest request = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+// Convertreply(response, CommentID);
+
+                        sharedupvoteResponse(response);
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+//做自己的响应错误操作，如Toast提示（“请稍后重试”等）
+                Log.e("TAG", error.getMessage(), error);
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+
+                params.put("CommentID", CommentID);
+                params.put("username", username);
+
+
+                return params;
+            }
+        };
+
+//设置Tag标签
+        request.setTag(tag);
+
+//将请求添加到队列中
+        requestQueue.add(request);
+    }
+
+
+    private void sharedupvoteResponse(String response) {
+
+        Log.e("share", response);
+        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(mInflater.getContext());
+
+        SharedPreferences.Editor editor = m.edit();
+
+
+        editor.putString("upvoteResponse", response);
+
+
+        editor.commit();
+
+
+    }
+
+    private boolean Convertloadupvote(String response) {
+        ArrayList<Reply> reply = new ArrayList<Reply>();
+        try {
+            JSONObject jsonObject = (JSONObject) new JSONObject(response).get("params");  //注③
+            String result = jsonObject.getString("result");
+            if (result.equals("upvoted")) {
+                Log.e("upvoted", result);
+                return true;
+            } else {
+                Log.e("no", result);
+                return false;
+            }
+        } catch (JSONException e) {
+//做自己的请求异常操作，如Toast提示（“无网络连接”等）
+            Log.e("TAG", e.getMessage(), e);
+        }
+        return true;
+    }
+
+
+
+
+
 
 
     private void sharedResponse(String response) {

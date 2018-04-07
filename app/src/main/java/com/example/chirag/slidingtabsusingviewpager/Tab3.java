@@ -67,6 +67,7 @@ public class Tab3 extends Fragment {
     RecyclerView commentRecycler;
     ArrayList<BookComment> bookComments = new ArrayList<>();
 
+    CommentAdapter commentAdapter;
 
     public boolean shouldRefresh = false;
 
@@ -98,7 +99,31 @@ public class Tab3 extends Fragment {
 
 
         super.onResume();
-        //  onCreate(null);
+//        onDestroy();
+//        onCreate(null);
+
+//        Log.e("书评大小！！!on Resume1",Integer.toString(bookComments.size()));
+//
+//        loadbook("pipilu");
+//        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
+//
+//
+//
+//        bookComments=  convert(m.getString("commentResponse",""),accountNo);
+
+//        Log.e("response",m.getString("commentResponse",""));
+//        Log.e("书评大小！！!on Resume",Integer.toString(bookComments.size()));
+//
+//
+//        Calendar calendar = Calendar.getInstance();
+//        Date date1 = calendar.getTime();
+//        BookComment bc1 = new BookComment(0, "david", date1, "i am david", 1, 0);
+
+        //  bookComments.add(bc1);
+        //  commentAdapter.addItem(commentAdapter.getItemCount(),bc1);
+        //      commentAdapter.notifyDataSetChanged();
+
+
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -125,13 +150,18 @@ public class Tab3 extends Fragment {
             Log.e("should refresh?", "Yes");
         }
 
+        Log.e("书评大小！！!on Create 1", Integer.toString(bookComments.size()));
+        loadbook("pipilu");
+        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-//        loadbook("pipilu");
-//        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
-//
-//        bookComments=  convert(m.getString("Response",""),"zhoukeyu");
-//        Log.e("response",m.getString("Response",""));
-//        Log.e("书评大小！！!on create1",Integer.toString(bookComments.size()));
+        bookComments = convert(m.getString("commentResponse", ""), accountNo);
+
+
+        Log.e("response", m.getString("commentResponse", ""));
+        Log.e("书评大小！！!on create2", Integer.toString(bookComments.size()));
+
+
+
 
     }
 
@@ -203,26 +233,32 @@ public class Tab3 extends Fragment {
         BookComment bc4 = new BookComment(3, "effy", date2, "i am effy", 100, 3);
 
 
-        bookComments.add(bc1);
-        bookComments.add(bc2);
-        bookComments.add(bc3);
-        bookComments.add(bc4);
+//        bookComments.add(bc1);
+//        bookComments.add(bc2);
+//        bookComments.add(bc3);
+//        bookComments.add(bc4);
 
 
-        CommentAdapter commentAdapter = new CommentAdapter(getActivity(), accountNo, bookComments);
+        commentAdapter = new CommentAdapter(getActivity(), accountNo, bookComments);
 
         Log.e("书评大小！！!!!1", Integer.toString(bookComments.size()));
         commentRecycler.setAdapter(commentAdapter);
 
 
-        //commentAdapter.addItem(3);
-
+        //    commentAdapter.notifyDataSetChanged();
 
         return view;
 
     }
 
 
+    private void sharedcommentResponse(String response) {
+        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences.Editor editor = m.edit();
+
+        editor.putString("commentResponse", response);
+        editor.commit();
+    }//  此方法放在粘贴即可
     private void sharedResponse(String response) {
         SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
         SharedPreferences.Editor editor = m.edit();
@@ -245,7 +281,7 @@ public class Tab3 extends Fragment {
                     @Override
                     public void onResponse(String response) {
 
-                        sharedResponse(response);
+                        sharedcommentResponse(response);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -292,7 +328,7 @@ public class Tab3 extends Fragment {
                         if (jsonObject.getString(i + "username").equals(username)) {
                             kind = 1;
                         }
-                        if (Integer.parseInt(jsonObject.getString(i + "like")) > 10) {
+                        if (Integer.parseInt(jsonObject.getString(i + "like")) > 100) {
                             kind += 2;
                         }
 

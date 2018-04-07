@@ -22,19 +22,36 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <com.shuyu.textutillib.RichEditText
-        android:id="@+id/emoji_edit_text2"
+    <fj.edittextcount.lib.FJEditTextCount
+        android:id="@+id/fjEdit"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_margin="10dp"
-        android:padding="10dp"
+        android:layout_height="wrap_content"
         android:background="@color/grey"
-        android:gravity="left"
-        android:hint="What's on your mind？"
-        android:maxLines="7"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        app:richMaxLength="2000" />
+        app:etHint="What's on your mind?"
+        app:etLineColor="@color/colorPrimary"
+        app:etMaxLength="400"
+        app:etMinHeight="300dp"
+        app:etPromptTextColor="@color/colorPrimary"
+        app:etPromptTextSize="18sp"
+
+        app:etTextColor="@color/colorPrimaryDark"
+        app:etTextSize="20sp"
+        app:etType="percentage" />
+
+    <!--<com.shuyu.textutillib.RichEditText-->
+    <!--android:id="@+id/emoji_edit_text2"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="300dp"-->
+    <!--android:layout_margin="10dp"-->
+    <!--android:padding="10dp"-->
+    <!--android:background="@color/grey"-->
+    <!--android:gravity="left"-->
+    <!--android:hint="What's on your mind？"-->
+    <!--android:maxLines="7"-->
+    <!--android:textColor="@color/colorPrimaryDark"-->
+    <!--android:textColorHint="@color/colorPrimaryDark"-->
+    <!--app:richMaxLength="2000"-->
+    <!--/>-->
 
     <!--<com.shuyu.textutillib.EmojiLayout-->
     <!--android:id="@+id/emojiLayout2"-->

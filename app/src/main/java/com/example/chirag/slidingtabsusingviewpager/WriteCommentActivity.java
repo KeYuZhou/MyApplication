@@ -28,10 +28,12 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import fj.edittextcount.lib.FJEditTextCount;
+
 public class WriteCommentActivity extends AppCompatActivity {
     RichEditText richEditText;
     public String accountNo;
-
+    FJEditTextCount fjEdit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,27 +56,33 @@ public class WriteCommentActivity extends AppCompatActivity {
             }
         });
 
-        richEditText = (RichEditText) findViewById(R.id.emoji_edit_text2);
-//        EmojiLayout emojiLayout = new EmojiLayout();
-//        emojiLayout.setEditTextSmile(richEditText);
-        RichEditBuilder richEditBuilder = new RichEditBuilder();
-        richEditBuilder.setEditText(richEditText)
-//                .setTopicModels(topicModels)
-//                .setUserModels(nameList)
-                .setColorAtUser("#FF00C0")
-                .setColorTopic("#F0F0C0")
-                .setEditTextAtUtilJumpListener(new OnEditTextUtilJumpListener() {
-                    @Override
-                    public void notifyAt() {
-                        //  JumpUtil.goToUserList(MainActivity.this, MainActivity.REQUEST_USER_CODE_INPUT);
-                    }
 
-                    @Override
-                    public void notifyTopic() {
-                        // JumpUtil.goToTopicList(MainActivity.this, MainActivity.REQUEST_TOPIC_CODE_INPUT);
-                    }
-                })
-                .builder();
+        fjEdit = (FJEditTextCount) findViewById(R.id.fjEdit);
+
+
+//        richEditText = (RichEditText) findViewById(R.id.emoji_edit_text2);
+////        EmojiLayout emojiLayout = new EmojiLayout();
+////        emojiLayout.setEditTextSmile(richEditText);
+//        RichEditBuilder richEditBuilder = new RichEditBuilder();
+//        richEditBuilder.setEditText(richEditText)
+////                .setTopicModels(topicModels)
+////                .setUserModels(nameList)
+//
+//                .setColorAtUser("#FF00C0")
+//                .setColorTopic("#F0F0C0")
+//                .setEditTextAtUtilJumpListener(new OnEditTextUtilJumpListener() {
+//                    @Override
+//                    public void notifyAt() {
+//                        //  JumpUtil.goToUserList(MainActivity.this, MainActivity.REQUEST_USER_CODE_INPUT);
+//                    }
+//
+//                    @Override
+//                    public void notifyTopic() {
+//                        // JumpUtil.goToTopicList(MainActivity.this, MainActivity.REQUEST_TOPIC_CODE_INPUT);
+//                    }
+//                })
+//                .builder();
+
     }
 
     @Override
@@ -99,8 +107,8 @@ public class WriteCommentActivity extends AppCompatActivity {
                 // as a favorite...
                 //intent = new Intent(WriteCommentActivity.this,MainActivity.class);
 
-                comment(accountNo, "pipilu", richEditText.getRealText().toString());
-
+                //  comment(accountNo, "pipilu", richEditText.getRealText().toString());
+                comment(accountNo, "pipilu", fjEdit.getText().toString());
 
 
 
