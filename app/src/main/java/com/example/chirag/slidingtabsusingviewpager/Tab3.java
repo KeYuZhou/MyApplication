@@ -104,12 +104,15 @@ public class Tab3 extends Fragment {
 
 //        Log.e("书评大小！！!on Resume1",Integer.toString(bookComments.size()));
 //
-//        loadbook("pipilu");
-//        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
-//
-//
-//
-//        bookComments=  convert(m.getString("commentResponse",""),accountNo);
+        loadbook("pipilu");
+        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+        bookComments = convert(m.getString("commentResponse", ""), accountNo);
 
 //        Log.e("response",m.getString("commentResponse",""));
 //        Log.e("书评大小！！!on Resume",Integer.toString(bookComments.size()));
@@ -120,8 +123,8 @@ public class Tab3 extends Fragment {
 //        BookComment bc1 = new BookComment(0, "david", date1, "i am david", 1, 0);
 
         //  bookComments.add(bc1);
-        //  commentAdapter.addItem(commentAdapter.getItemCount(),bc1);
-        //      commentAdapter.notifyDataSetChanged();
+        //        commentAdapter.addItem(commentAdapter.getItemCount(),bc1);
+        commentAdapter.notifyDataSetChanged();
 
 
     }
@@ -133,7 +136,7 @@ public class Tab3 extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         accountNo = getActivity().getIntent().getStringExtra("accountNo");
-        Log.e("Tab3", accountNo);
+//        Log.e("Tab3", accountNo);
 
         String temp = getActivity().getIntent().getStringExtra("refresh");
 

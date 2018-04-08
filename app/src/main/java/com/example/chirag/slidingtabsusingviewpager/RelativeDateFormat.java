@@ -9,18 +9,20 @@ public class RelativeDateFormat {
     private static final long ONE_WEEK = 604800000L;
 
     private static final String ONE_SECOND_AGO = "s ago";
-    private static final String ONE_MINUTE_AGO = "min ag";
-    private static final String ONE_HOUR_AGO = "hour ago";
-    private static final String ONE_DAY_AGO = "day ago";
-    private static final String ONE_MONTH_AGO = "month ago";
-    private static final String ONE_YEAR_AGO = "year ago";
+    private static final String ONE_MINUTE_AGO = " min ag";
+    private static final String ONE_HOUR_AGO = " h ago";
+    private static final String ONE_DAY_AGO = " d ago";
+    private static final String ONE_MONTH_AGO = " m ago";
+    private static final String ONE_YEAR_AGO = " yr ago";
 
     public static String format(Date date) {
         long delta = new Date().getTime() - date.getTime();
+
         if (delta < 1L * ONE_MINUTE) {
             long seconds = toSeconds(delta);
             return (seconds <= 0 ? 1 : seconds) + ONE_SECOND_AGO;
         }
+
         if (delta < 45L * ONE_MINUTE) {
             long minutes = toMinutes(delta);
             return (minutes <= 0 ? 1 : minutes) + ONE_MINUTE_AGO;
@@ -30,7 +32,7 @@ public class RelativeDateFormat {
             return (hours <= 0 ? 1 : hours) + ONE_HOUR_AGO;
         }
         if (delta < 48L * ONE_HOUR) {
-            return "昨天";
+            return " Yesterday ";
         }
         if (delta < 30L * ONE_DAY) {
             long days = toDays(delta);

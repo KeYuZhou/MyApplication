@@ -56,15 +56,25 @@ public class ReplyRecyclerAdapter extends RecyclerView.Adapter<ReplyRecyclerAdap
 
 
     }
-
     @Override
-    public long getItemId(int position) {
+    public int getItemViewType(int position) {
         Reply reply = replyList.get(position);
         if (reply.user) {
             return ME_TYPE;
         }
         return OTHER_TYPE;
     }
+
+
+//
+//    @Override
+//    public long getItemId(int position) {
+//        Reply reply = replyList.get(position);
+//        if (reply.user) {
+//            return ME_TYPE;
+//        }
+//        return OTHER_TYPE;
+//    }
 
 
     @Override

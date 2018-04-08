@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.ContactsContract;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -52,18 +53,42 @@ public class RegisterActivity extends AppCompatActivity implements LoaderManager
 
 
         username = findViewById(R.id.et_username_sign_up);
-        password = findViewById(R.id.et_password_signup);
+
         username.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                    attemptRegister();
-                    return true;
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (username.getText().toString().length() >= 25) {
+                    username.setError("Username is tooo long");
+                    username.requestFocus();
                 }
+
                 return false;
             }
         });
+
+        password = findViewById(R.id.et_password_signup);
+//        username.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+//                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
+//                    attemptRegister();
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
         password_again = findViewById(R.id.et_password_again);
+        password_again.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (!password_again.getText().toString().equals(password.getText().toString())) {
+                    password_again.setError("Passwords don't match.");
+                    password_again.requestFocus();
+                }
+
+                return false;
+            }
+        });
 
 
         Button btn_register = findViewById(R.id.register_button);
@@ -173,7 +198,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderManager
         }
     }
 
-    public void register(final String accountNumber, final String password, final String email) {
+    public void register(final String accountNumber, final String passwords, final String email) {
 //请求地址
         String url = "http://39.107.109.19:8080/Groupweb/RegisterServlet";
         String tag = "register";
@@ -203,12 +228,27 @@ public class RegisterActivity extends AppCompatActivity implements LoaderManager
                                 startActivity(intent);
                             } else if (result.equals("uduplicated")) {
                                 username.setError("The username has been registered.");
+                                username.requestFocus();
+
 
 //此用户名字已经被注册了****
                             } else if (result.equals("eduplicated")) {
 
 //此邮箱已经被注册了***
                             } else {
+
+                                if (username.getText().toString().isEmpty()) {
+                                    username.setError("Please enter your username!");
+                                    username.requestFocus();
+                                }
+                                if (password.getText().toString().isEmpty()) {
+                                    password.setError("Please enter your passwords!");
+                                    password.requestFocus();
+                                }
+                                if (password_again.getText().toString().isEmpty()) {
+                                    password_again.setError("Please enter your passwords!");
+                                    password_again.requestFocus();
+                                }
 //注册失败
                             }
                         } catch (JSONException e) {
@@ -220,6 +260,9 @@ public class RegisterActivity extends AppCompatActivity implements LoaderManager
             @Override
             public void onErrorResponse(VolleyError error) {
 //做自己的响应错误操作，如Toast提示（“请稍后重试”等）
+                Snackbar.make(register_form, "Network Error", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null)
+                        .show();
                 Log.e("TAG", error.getMessage(), error);
             }
         }) {
@@ -227,7 +270,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderManager
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("AccountNumber", accountNumber);  //注⑥
-                params.put("Password", password);
+                params.put("Password", passwords);
                 params.put("Email", email);
                 return params;
             }

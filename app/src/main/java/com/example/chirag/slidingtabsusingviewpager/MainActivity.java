@@ -38,10 +38,11 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
 
         accountNo = getIntent().getStringExtra("accountNo");
-        Log.e("mainActivity", accountNo);
+//        Log.e("mainActivity", accountNo);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {

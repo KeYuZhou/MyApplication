@@ -17,12 +17,25 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimaryDark" />
+            android:background="@color/colorPrimaryDark">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+
+                android:text="NEW COMMENT"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
 
 
     </android.support.design.widget.AppBarLayout>
 
     <fj.edittextcount.lib.FJEditTextCount
+        android:layout_margin="10dp"
         android:id="@+id/fjEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,7 +43,7 @@
         app:etHint="What's on your mind?"
         app:etLineColor="@color/colorPrimary"
         app:etMaxLength="400"
-        app:etMinHeight="300dp"
+        app:etMinHeight="900dp"
         app:etPromptTextColor="@color/colorPrimary"
         app:etPromptTextSize="18sp"
 

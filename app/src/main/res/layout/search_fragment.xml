@@ -5,19 +5,35 @@
     android:orientation="vertical"
     android:background="#fff">
 
-
     <!--<ListView-->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
-
-    <com.github.czy1121.view.TurnCardListView
-        android:id="@+id/card_list"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:context="com.carl.recyclerviewdemo.MainActivity"></RelativeLayout>
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/horizontal_recyclerView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--&gt;-->
+
+    <!--</android.support.v7.widget.RecyclerView>-->
+
+    <!--&lt;!&ndash;<ListView&ndash;&gt;-->
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/recyclerView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--</android.support.v7.widget.RecyclerView>-->
+
+    <!--<com.github.czy1121.view.TurnCardListView-->
+    <!--android:id="@+id/card_list"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
     <!--<com.wangxiandeng.swipecardrecyclerview.SwipeCardRecyclerView-->
     <!--android:id="@+id/recyclerView"-->
     <!--android:layout_width="match_parent"-->

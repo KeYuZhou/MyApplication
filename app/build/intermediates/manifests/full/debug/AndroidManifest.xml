@@ -38,7 +38,8 @@
         <activity
             android:name="com.example.chirag.slidingtabsusingviewpager.LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,7 +48,7 @@
         </activity>
         <activity
             android:name="com.example.chirag.slidingtabsusingviewpager.HomeActivity"
-            android:label="@string/app_name"
+            android:label="Find"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -64,6 +65,7 @@
         </activity>
         <activity
             android:name="com.example.chirag.slidingtabsusingviewpager.MainActivity"
+            android:label=""
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -71,8 +73,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.chirag.slidingtabsusingviewpager.RegisterActivity" />
-        <activity android:name="com.example.chirag.slidingtabsusingviewpager.WriteCommentActivity" />
+        <activity
+            android:name="com.example.chirag.slidingtabsusingviewpager.RegisterActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.example.chirag.slidingtabsusingviewpager.WriteCommentActivity"
+            android:label="" />
         <activity android:name="com.example.chirag.slidingtabsusingviewpager.PhotoPickerActivity" />
         <activity android:name="com.example.chirag.slidingtabsusingviewpager.PhotoPagerActivity" />
 

@@ -1,6 +1,7 @@
 package com.example.chirag.slidingtabsusingviewpager;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -42,7 +43,7 @@ public class WriteCommentActivity extends AppCompatActivity {
         accountNo = getIntent().getStringExtra("accountNo");
 
         setSupportActionBar(toolbar);
-
+        toolbar.setTitle("");
         if (getSupportActionBar() != null) {
             // Enable the Up button
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -58,6 +59,7 @@ public class WriteCommentActivity extends AppCompatActivity {
 
 
         fjEdit = (FJEditTextCount) findViewById(R.id.fjEdit);
+
 
 
 //        richEditText = (RichEditText) findViewById(R.id.emoji_edit_text2);
@@ -108,6 +110,15 @@ public class WriteCommentActivity extends AppCompatActivity {
                 //intent = new Intent(WriteCommentActivity.this,MainActivity.class);
 
                 //  comment(accountNo, "pipilu", richEditText.getRealText().toString());
+
+                if (fjEdit.getText().toString().isEmpty()) {
+
+                    Snackbar.make(fjEdit, "Please enter your mind.", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null)
+                            .show();
+                    return false;
+                }
+
                 comment(accountNo, "pipilu", fjEdit.getText().toString());
 
 

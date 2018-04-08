@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.DownloadManager;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
@@ -24,10 +25,12 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -80,16 +83,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     String accountNo;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //KeyboardDismisser.useWith(this);
-
 
         // Set up the login form.
         mEmailView = (EditText) findViewById(R.id.username);
+
+        mEmailView.clearFocus();
+
         populateAutoComplete();
 
 
@@ -350,6 +355,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         requestQueue.cancelAll(tag);
 
 
+
         final StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
@@ -369,6 +375,24 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             } else {
                                 Log.e("TAG", "fail");
                                 //登入失败的操作写在这里***
+                                if (mEmailView.getText().toString().isEmpty()) {
+                                    mEmailView.setError("Please enter your username!");
+                                    mEmailView.requestFocus();
+                                }
+                                if (mPasswordView.getText().toString().isEmpty()) {
+                                    mPasswordView.setError("Please enter your passwords!");
+                                    mEmailView.requestFocus();
+                                } else {
+
+
+                                    mEmailView.setError("The username may not exist!");
+                                    mEmailView.requestFocus();
+                                    mPasswordView.setError("The passwords may be incorrect!");
+                                    mEmailView.requestFocus();
+
+                                }
+
+
 
 
                             }
@@ -378,9 +402,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         }
                     }
                 }, new Response.ErrorListener() {
+
+
             @Override
             public void onErrorResponse(VolleyError error) {
                 //做自己的响应错误操作，如Toast提示（“请稍后重试”等）
+                //   Toast.makeText(getApplicationContext(),"Network Error. Please check your network!",Toast.LENGTH_LONG)
+                Snackbar.make(mLoginFormView, "Network Error", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null)
+                        .show();
                 Log.e("TAG", error.getMessage(), error);
             }
         }) {
@@ -398,6 +428,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         //将请求添加到队列中
         requestQueue.add(request);
+
+
     }
 
 
