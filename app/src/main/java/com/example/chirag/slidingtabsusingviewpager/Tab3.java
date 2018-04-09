@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -104,27 +105,27 @@ public class Tab3 extends Fragment {
 
 //        Log.e("书评大小！！!on Resume1",Integer.toString(bookComments.size()));
 //
-        loadbook("pipilu");
-        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
+//        loadbook("pipilu");
+//        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
 //        try {
 //            Thread.sleep(3000);
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
 
-        bookComments = convert(m.getString("commentResponse", ""), accountNo);
-
-//        Log.e("response",m.getString("commentResponse",""));
-//        Log.e("书评大小！！!on Resume",Integer.toString(bookComments.size()));
+//        bookComments = convert(m.getString("commentResponse", ""), accountNo);
 //
+////        Log.e("response",m.getString("commentResponse",""));
+////        Log.e("书评大小！！!on Resume",Integer.toString(bookComments.size()));
+////
+////
+////        Calendar calendar = Calendar.getInstance();
+////        Date date1 = calendar.getTime();
+////        BookComment bc1 = new BookComment(0, "david", date1, "i am david", 1, 0);
 //
-//        Calendar calendar = Calendar.getInstance();
-//        Date date1 = calendar.getTime();
-//        BookComment bc1 = new BookComment(0, "david", date1, "i am david", 1, 0);
-
-        //  bookComments.add(bc1);
-        //        commentAdapter.addItem(commentAdapter.getItemCount(),bc1);
-        commentAdapter.notifyDataSetChanged();
+//        //  bookComments.add(bc1);
+//        //        commentAdapter.addItem(commentAdapter.getItemCount(),bc1);
+//        commentAdapter.notifyDataSetChanged();
 
 
     }
@@ -139,19 +140,6 @@ public class Tab3 extends Fragment {
 //        Log.e("Tab3", accountNo);
 
         String temp = getActivity().getIntent().getStringExtra("refresh");
-
-//        if (temp == null) {
-//            Log.e("should refresh?", "Yes");
-//        }
-
-        if (temp == "true") {
-            shouldRefresh = true;
-            //Log.e("should refresh?","Yes");
-        }
-
-        if (shouldRefresh) {
-            Log.e("should refresh?", "Yes");
-        }
 
         Log.e("书评大小！！!on Create 1", Integer.toString(bookComments.size()));
         loadbook("pipilu");
@@ -184,7 +172,7 @@ public class Tab3 extends Fragment {
                 intent.putExtra("accountNo", accountNo);
 
 
-                startActivity(intent);
+                startActivityForResult(intent, 1);
 
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
@@ -254,6 +242,22 @@ public class Tab3 extends Fragment {
 
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        if (resultCode == 1) {
+
+
+            String[] temp = data.getStringArrayExtra("result");
+            BookComment bookComment = new BookComment(accountNo, temp[2]);
+            bookComments.add(0, bookComment);
+            commentAdapter.notifyDataSetChanged();
+        }
+
+    }
 
     private void sharedcommentResponse(String response) {
         SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());

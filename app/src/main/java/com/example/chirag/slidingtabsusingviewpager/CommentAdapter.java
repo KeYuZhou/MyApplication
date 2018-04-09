@@ -230,6 +230,10 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
             holder.thumbUpView.setLike();
         }
 
+        if (bookComment.like == 0) {
+            holder.thumbUpView.setUnlike();
+        }
+
 
 
 

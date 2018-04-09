@@ -44,15 +44,23 @@ public class WriteCommentActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         toolbar.setTitle("");
+
+
         if (getSupportActionBar() != null) {
             // Enable the Up button
+
+
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         }
 
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(WriteCommentActivity.this, MainActivity.class);
+                intent.putExtra("cancel", "cancel");
+                WriteCommentActivity.this.setResult(2, intent);
                 finish();
             }
         });
@@ -105,27 +113,34 @@ public class WriteCommentActivity extends AppCompatActivity {
 //
 //              return true;
             case R.id.action_submit:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
-                //intent = new Intent(WriteCommentActivity.this,MainActivity.class);
 
-                //  comment(accountNo, "pipilu", richEditText.getRealText().toString());
 
                 if (fjEdit.getText().toString().isEmpty()) {
 
                     Snackbar.make(fjEdit, "Please enter your mind.", Snackbar.LENGTH_LONG)
                             .setAction("Action", null)
                             .show();
-                    return false;
+
+
+                    return true;
                 }
+
 
                 comment(accountNo, "pipilu", fjEdit.getText().toString());
 
+                String[] result = new String[3];
+                result[0] = accountNo;
+                result[1] = "pipilu";
 
+                result[2] = fjEdit.getText().toString();
 
                 Log.e("write comment", accountNo);
                 Intent intent1 = new Intent(WriteCommentActivity.this, MainActivity.class);
-                intent1.putExtra("refresh", "true");
+
+                intent1.putExtra("result", result);
+
+
+                WriteCommentActivity.this.setResult(1, intent1);
 
                 Log.e("write comment 2", "true");
                 //TODO submit comment
