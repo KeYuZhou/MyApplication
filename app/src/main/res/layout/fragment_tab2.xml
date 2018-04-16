@@ -11,6 +11,26 @@
         android:text="Tab 2"
         android:layout_centerInParent="true"
         android:textSize="30dp"
+        android:visibility="gone"
         />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/map_pager"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">
+
+            </android.support.v4.view.ViewPager>
+        </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
