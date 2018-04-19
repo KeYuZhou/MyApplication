@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +20,15 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.chirag.slidingtabsusingviewpager.Crawler.Book;
+import com.example.chirag.slidingtabsusingviewpager.Crawler.ImageCrawler;
+import com.example.chirag.slidingtabsusingviewpager.Crawler.SearchCrawler;
+
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -32,7 +42,7 @@ import java.util.Random;
  */
 
 
-//TODO: 作为book info界面的接口， 未解决问题：从网上获得图书图片无法显示（ivIntenet)，该线程在之前的版本能够获得图片，但是现在的版本不行，我不知道是怎么回事
+
 
 public class Tab1 extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -48,10 +58,17 @@ public class Tab1 extends Fragment {
 
     private ImageView ivInternet;
     private TextView tvMsgType;
-    private Handler handler;
+    String ISBN;
+    String imgUrl;
+
     private Context mContext;
+    Handler handle;
+    final String url = "https://img3.doubanio.com/lpic/s28509222.jpg";
 
     private OnFragmentInteractionListener mListener;
+    static LruCache<String, Bitmap> mMemoryCache;
+    Handler handlerBook;
+    private TextView tv_bookname;
 
     public Tab1() {
         // Required empty public constructor
@@ -84,34 +101,62 @@ public class Tab1 extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
         mContext = getActivity();
         accountNo = getActivity().getIntent().getStringExtra("accountNo");
+        handle = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case 0:
+                        System.out.println("111");
+                        Bitmap bmp = (Bitmap) msg.obj;
 
-//        handler = new Handler() {
-//            @Override
-//            public void handleMessage(Message msg) {
-//                Bitmap bmp = null;
-//                // 通过消息码确定使用什么方式传递图片信息
-////                if (msg.what == 0) {
-////                    bmp = (Bitmap) msg.obj;
-////                    // tvMsgType.setText("使用obj传递数据");
-////                } else {
-//                    Bundle ble = msg.getData();
-//                    bmp = (Bitmap) ble.get("bmp");
-//                    // tvMsgType.setText("使用Bundle传递数据");
-//                //}
-//                // 设置图片到ImageView中
+
+                        ivInternet.setImageBitmap(bmp);
+                        break;
+
+                    case 2:
+                        Log.e("handle", "imgURL");
+                        Bundle bundle = msg.getData();
+
+//                        String text = bundle.getString("key");
+//                        String s = (String) msg.obj;
+
+                        imgUrl = bundle.getString("imgUrl");
+
+                        new Thread(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                Bitmap bmp = getURLimage(imgUrl);
+                                Message msg = new Message();
+                                msg.what = 0;
+                                msg.obj = bmp;
+                                System.out.println("000");
+                                handle.sendMessage(msg);
+                            }
+                        }).start();
+
+                        Log.e("imgUrl", imgUrl);
+
+
+                }
+            }
+
+            ;
+        };
+
+//handlerBook = new Handler(){
 //
-//                if (bmp == null){
-//                    Log.e("tag",msg.what+"");
-//                }
-//                ivInternet.setImageBitmap(bmp);
-//                Log.e("tag","here");
-//            }
-//        };
-//
+//};
+
+
+
+
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -126,72 +171,115 @@ public class Tab1 extends Fragment {
 //        listView.setEmptyView(emptyTextView);
         ivInternet = (ImageView) layout.findViewById(R.id.ivInternet);
 
-        //  btnInternet = (Button) layout.findViewById(R.id.btnInternet);
-
-//            }
-//        });
-//CustomAdapter customAdapter = new CustomAdapter();
-//setListAdapter(customAdapter);
-//listView.setAdapter(customAdapter);
-
         Bundle bundle = getArguments();
 
 
-        String data = getActivity().getIntent().getStringExtra("query");
+        final String data = getActivity().getIntent().getStringExtra("query");
+        ISBN = getActivity().getIntent().getStringExtra("ISBN");
+
+        // String title = getActivity().getIntent().getStringExtra("bookTitle");
+
+
+
 //data 为用户的搜索词条 bookname authorname等信息通过data来检索
-        TextView tv_bookname = (TextView) layout.findViewById(R.id.tv_bookname);
+        tv_bookname = (TextView) layout.findViewById(R.id.tv_bookname);
+        tv_bookname.setText(data);
+
+
+
+
+
         TextView tv_authorname = (TextView) layout.findViewById(R.id.tv_authorname);
         TextView tv_publicationname = (TextView) layout.findViewById(R.id.tv_publicationName);
         TextView tv_callNo = (TextView) layout.findViewById(R.id.tv_callNo);
         TextView tv_content = (TextView) layout.findViewById(R.id.tv_content);
 
         //TODO:setText  such as  book name, author, callNo...
-        tv_bookname.setText(data);
+        // tv_bookname.setText(data);
         //tv_authorname.setText("")
         //....
 
 
-//                //清空之前获取的数据
-//            tvMsgType.setText("");
-        ivInternet.setImageBitmap(null);
-
-//        //定义一个线程类
-//        new Thread() {
+//        new Thread(new Runnable() {
+//
 //            @Override
 //            public void run() {
-//                try {
-//                    //获取网络图片
-//                    InputStream inputStream = HttpUtils
-//                            .getImageViewInputStream();
 //
-//                    Bitmap bitmap = BitmapFactory
-//                            .decodeStream(inputStream);
-//
-//
-//                    Message msg = new Message();
-//                    Random rd = new Random();
-//                 //   int ird = rd.nextInt(10);
-//                    //通过一个随机数，随机选择通过什么方式传递图片信息到消息中
-////                    if (ird / 2 == 0) {
-////                        msg.what = 0;
-////                        msg.obj = bitmap;
-////                    } else {
-//                        Bundle bun = new Bundle();
-//                        bun.putParcelable("bmp", bitmap);
-//                        msg.what = 1;
-//                        msg.setData(bun);
-////                    }
-//                    //发送消息
-//                   // handler.sendMessage(msg);
-//                    ivInternet.setImageBitmap(bitmap);
-//                } catch (Exception e) {
-//
-//                }
+//                ArrayList<Book> bookList = SearchCrawler.bookCrawler(data);
+//                Book book = bookList.get(0);
+//                Message msg = new Message();
+//                msg.what = 1;
+//                msg.obj = book;
+//                System.out.println("booook");
+//                Log.e("thread","start");
+//                handle.sendMessage(msg);
 //            }
-//        }.start();
+//        }).start();
+//        try {
+//            Thread.sleep(500);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                String imgUrl = ImageCrawler.BookImageCrawler(ISBN);
+                Message msg = new Message();
+                Bundle bundle = new Bundle();
+                bundle.putString("imgUrl", imgUrl);
+
+                msg.setData(bundle);
+
+
+                msg.what = 2;
+                //msg.obj = imgUrl;
+
+
+                Log.e("tread", "imgurl");
+                handle.sendMessage(msg);
+            }
+        }).start();
+
+
+//        new Thread(new Runnable() {
+//
+//            @Override
+//            public void run() {
+//                Bitmap bmp = getURLimage(imgUrl);
+//                Message msg = new Message();
+//                msg.what = 0;
+//                msg.obj = bmp;
+//                System.out.println("000");
+//                handle.sendMessage(msg);
+//            }
+//        }).start();
+
+
 
         return layout;
 
+    }
+
+    public Bitmap getURLimage(String url) {
+        Bitmap bmp = null;
+        try {
+            URL myurl = new URL(url);
+            // 获得连接
+            HttpURLConnection conn = (HttpURLConnection) myurl.openConnection();
+            conn.setConnectTimeout(6000);//设置超时
+            conn.setDoInput(true);
+            conn.setUseCaches(false);//不缓存
+            conn.connect();
+            InputStream is = conn.getInputStream();//获得图片的数据流
+            bmp = BitmapFactory.decodeStream(is);
+            is.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return bmp;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -218,16 +306,6 @@ public class Tab1 extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

@@ -54,5 +54,6 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:4.1.1'
     compile 'me.kareluo.ui:popmenu:1.1.0'
     compile 'com.daasuu:BubbleLayout:1.2.0'
+    compile 'com.wang.avi:library:2.1.3'
 
 }

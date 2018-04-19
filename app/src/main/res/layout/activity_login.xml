@@ -41,13 +41,13 @@
             android:textSize="40sp"
             android:textColor="#fff"
             android:text="FIND MY BOOK" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textColor="#fff"
-            android:layout_marginTop="20dp"
-            android:text="Have you ever encountered such a problem that it is so hard to find out the book you want among mountains of books in the library? Have you ever spent more than 30 minutes finding a book but finished reading it within 3 minutes? This app will help you locate the book at once and save your time!  "/>
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="15sp"-->
+        <!--android:textColor="#fff"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:text="Have you ever encountered such a problem that it is so hard to find out the book you want among mountains of books in the library? Have you ever spent more than 30 minutes finding a book but finished reading it within 3 minutes? This app will help you locate the book at once and save your time!  "/>-->
 
 
 

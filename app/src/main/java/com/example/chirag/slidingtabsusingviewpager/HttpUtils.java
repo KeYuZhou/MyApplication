@@ -25,6 +25,7 @@ public class HttpUtils {
             httpURLConnection.setConnectTimeout(3000);
             httpURLConnection.setRequestMethod("GET");
             httpURLConnection.setDoInput(true);
+//            httpURLConnection.connect();
             int response_code = httpURLConnection.getResponseCode();
             if (response_code == 200) {
                 inputStream = httpURLConnection.getInputStream();

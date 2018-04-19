@@ -24,9 +24,6 @@ import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentInteractionListener,Tab2.OnFragmentInteractionListener,Tab3.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,MenuItem.OnActionExpandListener {
 
-    String[] values={"a","b","c","d"};
-    MaterialSearchView searchView;
-
     public String accountNo;
 
 

@@ -26,6 +26,7 @@ MERGED from [com.android.support:cardview-v7:26.1.0] /Users/effy/.gradle/caches/
 MERGED from [me.yuqirong:cardswipelayout:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/cardswipelayout-1.0.0.aar/8bf7d95b16e2e38f0da169883114ca3a/AndroidManifest.xml:2:1-17:12
 MERGED from [me.iwf.photopicker:PhotoPicker:0.9.12] /Users/effy/.gradle/caches/transforms-1/files-1.1/PhotoPicker-0.9.12.aar/dd1ef8f459eb6639f5296b2cdea9cb10/AndroidManifest.xml:2:1-25:12
 MERGED from [me.kareluo.ui:popmenu:1.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/popmenu-1.1.0.aar/e142120cae28b219defc46b63320c464/AndroidManifest.xml:2:1-16:12
+MERGED from [com.wang.avi:library:2.1.3] /Users/effy/.gradle/caches/transforms-1/files-1.1/library-2.1.3.aar/2a1a2c9cf45cfea769058b2ff948bc63/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:multidex:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/c39a8ded0d42efc9f38df224df5f44a1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.mikepenz:fontawesome-typeface:5.0.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-5.0.6.0.aar/673032bca58db039c5e637ca37dd7c74/AndroidManifest.xml:2:1-12:12
 MERGED from [com.android.support:recyclerview-v7:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.1.aar/6d63ac0844a72e78bd866fdbe53437b0/AndroidManifest.xml:17:1-22:12
@@ -153,7 +154,7 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/effy/.gradle/caches/tr
 activity#com.example.chirag.slidingtabsusingviewpager.LoginActivity
 ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:24:9-34:20
 	android:label
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:26:13-57
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:26:13-49
 	android:windowSoftInputMode
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:28:13-54
 	android:theme
@@ -268,6 +269,8 @@ MERGED from [me.iwf.photopicker:PhotoPicker:0.9.12] /Users/effy/.gradle/caches/t
 MERGED from [me.iwf.photopicker:PhotoPicker:0.9.12] /Users/effy/.gradle/caches/transforms-1/files-1.1/PhotoPicker-0.9.12.aar/dd1ef8f459eb6639f5296b2cdea9cb10/AndroidManifest.xml:5:5-7:41
 MERGED from [me.kareluo.ui:popmenu:1.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/popmenu-1.1.0.aar/e142120cae28b219defc46b63320c464/AndroidManifest.xml:7:5-9:41
 MERGED from [me.kareluo.ui:popmenu:1.1.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/popmenu-1.1.0.aar/e142120cae28b219defc46b63320c464/AndroidManifest.xml:7:5-9:41
+MERGED from [com.wang.avi:library:2.1.3] /Users/effy/.gradle/caches/transforms-1/files-1.1/library-2.1.3.aar/2a1a2c9cf45cfea769058b2ff948bc63/AndroidManifest.xml:7:5-9:41
+MERGED from [com.wang.avi:library:2.1.3] /Users/effy/.gradle/caches/transforms-1/files-1.1/library-2.1.3.aar/2a1a2c9cf45cfea769058b2ff948bc63/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:multidex:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/c39a8ded0d42efc9f38df224df5f44a1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/c39a8ded0d42efc9f38df224df5f44a1/AndroidManifest.xml:20:5-43
 MERGED from [com.mikepenz:fontawesome-typeface:5.0.6.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-5.0.6.0.aar/673032bca58db039c5e637ca37dd7c74/AndroidManifest.xml:8:5-10:41

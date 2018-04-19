@@ -95,7 +95,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderManager
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Log.e("register", "register");
                 register(username.getText().toString(),password.getText().toString(),"77@qq.com");
 
 
