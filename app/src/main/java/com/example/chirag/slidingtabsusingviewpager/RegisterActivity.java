@@ -225,6 +225,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderManager
 
 
                                 Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+                                intent.putExtra("accountNo", accountNumber);
                                 startActivity(intent);
                             } else if (result.equals("uduplicated")) {
                                 username.setError("The username has been registered.");

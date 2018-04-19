@@ -57,6 +57,7 @@ public class Tab3 extends Fragment {
     ArrayList<BookComment> bookComments = new ArrayList<>();
 
     CommentAdapter commentAdapter;
+    String bookTitle;
 
     public boolean shouldRefresh = false;
 
@@ -119,10 +120,18 @@ public class Tab3 extends Fragment {
         accountNo = getActivity().getIntent().getStringExtra("accountNo");
 //        Log.e("Tab3", accountNo);
 
-        String temp = getActivity().getIntent().getStringExtra("refresh");
+
 
         Log.e("书评大小！！!on Create 1", Integer.toString(bookComments.size()));
-        loadbook("pipilu");
+
+
+        bookTitle = getActivity().getIntent().getStringExtra("query");
+        Log.e("bookTab3", bookTitle);
+
+        loadbook(bookTitle);
+
+
+
         SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         bookComments = convert(m.getString("commentResponse", ""), accountNo);
@@ -149,6 +158,7 @@ public class Tab3 extends Fragment {
 
 
                 Intent intent = new Intent(getActivity(), WriteCommentActivity.class);
+                intent.putExtra("bookTitle", bookTitle);
                 intent.putExtra("accountNo", accountNo);
 
 

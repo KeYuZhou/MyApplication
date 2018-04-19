@@ -57,6 +57,8 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
     List<String> mAllValues = new ArrayList<>();
     private ListView listView;
     public AVLoadingIndicatorView indicatorView;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -35,13 +35,14 @@ public class WriteCommentActivity extends AppCompatActivity {
     RichEditText richEditText;
     public String accountNo;
     FJEditTextCount fjEdit;
+    String bookTitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_comment);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         accountNo = getIntent().getStringExtra("accountNo");
-
+        bookTitle = getIntent().getStringExtra("bookTitle");
         setSupportActionBar(toolbar);
         toolbar.setTitle("");
 
@@ -126,11 +127,11 @@ public class WriteCommentActivity extends AppCompatActivity {
                 }
 
 
-                comment(accountNo, "pipilu", fjEdit.getText().toString());
+                comment(accountNo, bookTitle, fjEdit.getText().toString());
 
                 String[] result = new String[3];
                 result[0] = accountNo;
-                result[1] = "pipilu";
+                result[1] = bookTitle;
 
                 result[2] = fjEdit.getText().toString();
 

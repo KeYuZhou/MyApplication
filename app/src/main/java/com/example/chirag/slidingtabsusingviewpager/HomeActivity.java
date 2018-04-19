@@ -155,9 +155,7 @@ public class HomeActivity extends AppCompatActivity implements Tab1.OnFragmentIn
                 fragment.setArguments(bundle);
                 break;
 
-            case 1:
-                fragment = new InitialFragment();
-                fragmentTags = "initial";
+
             case 2:
 
 //            case 2:
