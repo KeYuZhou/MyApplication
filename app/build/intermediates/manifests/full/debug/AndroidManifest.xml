@@ -79,8 +79,6 @@
         <activity
             android:name="com.example.chirag.slidingtabsusingviewpager.WriteCommentActivity"
             android:label="" />
-        <activity android:name="com.example.chirag.slidingtabsusingviewpager.PhotoPickerActivity" />
-        <activity android:name="com.example.chirag.slidingtabsusingviewpager.PhotoPagerActivity" />
 
         <meta-data
             android:name="android.support.VERSION"

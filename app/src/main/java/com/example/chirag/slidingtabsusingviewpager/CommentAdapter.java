@@ -268,7 +268,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
 
         rep = Convertreply(m.getString("Response", ""), Integer.toString(bookComment.id), accountNo);
 
-            // final ReplyAdapter replyAdapter = new ReplyAdapter(holder.context, accountNo, rep);
 
             ReplyRecyclerAdapter replyRecyclerAdapter = new ReplyRecyclerAdapter(holder.context, accountNo, rep);
             holder.recyclerView.setAdapter(replyRecyclerAdapter);
@@ -331,84 +330,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
             });
 
 
-//            holder.listView.setAdapter(replyAdapter);
-//
-//
-//            int totalHeight = refreshReplyViewSize(replyAdapter, holder.listView);
-//
-//            ViewGroup.LayoutParams params = holder.listView.getLayoutParams();
-//            params.height = totalHeight + (holder.listView.getDividerHeight() * (replyAdapter.getCount() - 1));
-//
-//            holder.listView.setLayoutParams(params);
-//            //  Reply reply = new Reply(accountNo,"ddd","2",Calendar.getInstance().getTime(),true);
-//
-//            //    Log.e("replyadpater!!",Integer.toString(replyAdapter.getCount()));
-//
-//
-//            holder.imgButton_comment.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    // Toast.makeText(view.getContext(), "let's comment", Toast.LENGTH_SHORT).show();
-//                    MaterialDialog.Builder dialog = new MaterialDialog.Builder(view.getContext());
-//                    dialog.title("Add Comment")
-//                            .positiveText("Submit")
-//                            .onPositive(new MaterialDialog.SingleButtonCallback() {
-//                                @Override
-//                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-//
-//                                    Log.e("tag", dialog.getInputEditText().getText().toString());
-//                                    Log.e("replyAdapter before", Integer.toString(replyAdapter.getCount()));
-//
-//                                    reply(accountNo, "2", dialog.getInputEditText().getText().toString());
-//                                    //        public Reply(String username,String content,String commentID,Date date,Boolean us
-//                                    Reply reply = new Reply(accountNo, dialog.getInputEditText().getText().toString(), "2", Calendar.getInstance().getTime(), true);
-//
-//
-//                                    replyAdapter.addItem(replyAdapter.getCount(), reply);
-//
-//
-//                                    int totalHeight = refreshReplyViewSize(replyAdapter, holder.listView);
-//
-//                                    ViewGroup.LayoutParams params = holder.listView.getLayoutParams();
-//                                    params.height = totalHeight + (holder.listView.getDividerHeight() * (replyAdapter.getCount() - 1));
-//                                    //listView.getDividerHeight()获取子项间分隔符占用的高度
-//                                    //params.height最后得到整个ListView完整显示需要的高度
-//                                    holder.listView.setLayoutParams(params);
-//
-//                                    Log.e("replyAdapter size", Integer.toString(replyAdapter.getCount()));
-//
-//                                    Log.e("reply success", accountNo);
-//                                }
-//                            })
-//                            .negativeText("Cancel")
-//                            .onNegative(new MaterialDialog.SingleButtonCallback() {
-//                                @Override
-//                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-//
-//                                }
-//                            })
-//
-//                            .cancelListener(new DialogInterface.OnCancelListener() {
-//                                @Override
-//                                public void onCancel(DialogInterface dialog) {
-//                                    dialog.dismiss();
-//                                }
-//                            })
-//                            .inputType(InputType.TYPE_TEXT_VARIATION_LONG_MESSAGE)
-//                            .input("Comment here", "", new MaterialDialog.InputCallback() {
-//                                @Override
-//                                public void onInput(@NonNull MaterialDialog dialog, CharSequence input) {
-//
-//                                }
-//                            })
-//                            .show();
-//
-//
-//                }
-//            });
 
-
-        //  }
     }
 
     public void upvote(final String accountNumber, final String commentID) {
@@ -525,15 +447,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
     }
 
 
-    public int refreshReplyViewSize(ReplyAdapter replyAdapter, ListView listView) {
-        int totalHeight = 0;
-        for (int i = 0, len = replyAdapter.getCount(); i < len; i++) {   //listAdapter.getCount()返回数据项的数目
-            View listItem = replyAdapter.getView(i, null, listView);
-            listItem.measure(0, 0);  //计算子项View 的宽高
-            totalHeight += listItem.getMeasuredHeight();  //统计所有子项的总高度
-        }
-        return totalHeight;
-    }
 
 
     public void DeleteComment(final String commentID) {

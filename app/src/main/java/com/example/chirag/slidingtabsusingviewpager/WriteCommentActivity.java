@@ -107,12 +107,7 @@ public class WriteCommentActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
         switch (item.getItemId()) {
-//            case R.id.action_cancel:
-//                // User chose the "Favorite" action, mark the current item
-//                // as a favorite...
-//
-//
-//              return true;
+
             case R.id.action_submit:
 
 

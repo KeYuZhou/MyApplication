@@ -67,8 +67,6 @@
         <activity
             android:name=".WriteCommentActivity"
             android:label="" />
-        <activity android:name=".PhotoPickerActivity" />
-        <activity android:name=".PhotoPagerActivity"></activity>
     </application>
 
 
