@@ -66,10 +66,6 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
         accountNo = getActivity().getIntent().getStringExtra("accountNo");
         Log.e("searchFragment", accountNo);
         read();
-//populateList();
-
-
-
 
     }
 
@@ -190,6 +186,7 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
             public void onItemClick(View view, int position) {
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 intent.putExtra("accountNo", accountNo);
+                intent.putExtra("ISBN", "9787121325212");
                 intent.putExtra("query", recommendAdapter.dateList.get(position));
                 startActivity(intent);
 

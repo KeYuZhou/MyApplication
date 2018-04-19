@@ -40,25 +40,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link Tab3.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link Tab3#newInstance} factory method to
- * create an instance of this fragment.
- */
 
-//TODO:朋友圈界面接口
 public class Tab3 extends Fragment {
-    /*
-    TODO: Rename parameter arguments, choose names that match
-    the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    */
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+
     private String mParam1;
     private String mParam2;
 
@@ -76,15 +64,7 @@ public class Tab3 extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Tab3.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static Tab3 newInstance(String param1, String param2) {
         Tab3 fragment = new Tab3();
         Bundle args = new Bundle();
@@ -174,8 +154,6 @@ public class Tab3 extends Fragment {
 
                 startActivityForResult(intent, 1);
 
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
             }
         });
 
@@ -184,50 +162,6 @@ public class Tab3 extends Fragment {
         commentRecycler.setLayoutManager(linearLayoutManager);
 
 
-        Date date = new Date();
-        System.out.println(date);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String dateNowStr = sdf.format(date);
-
-        System.out.println("格式化后的日期：" + dateNowStr);
-
-
-        Calendar calendar = Calendar.getInstance();
-
-        Date date1 = calendar.getTime();
-        calendar.add(Calendar.DAY_OF_MONTH, -3);//正数可以得到当前时间+n天，负数可以得到当前时间-n天
-
-        Date date2 = calendar.getTime();
-
-
-        System.out.println("获取当前时间未来的第三天：" + date);
-        calendar.setTime(date);
-
-        String time = sdf.format(date);
-        System.out.println("格式化获取当前时间未来的第三天：" + time);
-
-        calendar.add(Calendar.DAY_OF_MONTH, -4);//正数可以得到当前时间+n天，负数可以得到当前时间-n天
-
-        Date date3 = calendar.getTime();
-        calendar.add(Calendar.DAY_OF_MONTH, -5);//正数可以得到当前时间+n天，负数可以得到当前时间-n天
-
-        Date date4 = calendar.getTime();
-
-        ////0: 他人的评论，1：我的评论，2：他人的热评，3：我的热评
-
-        BookComment bc1 = new BookComment(0, "david", date1, "i am david", 1, 0);
-
-        BookComment bc2 = new BookComment(1, "effy", date2, "i am effy", 30, 1);
-
-        BookComment bc3 = new BookComment(2, "lucy", date1, "i am david", 1, 2);
-
-        BookComment bc4 = new BookComment(3, "effy", date2, "i am effy", 100, 3);
-
-
-//        bookComments.add(bc1);
-//        bookComments.add(bc2);
-//        bookComments.add(bc3);
-//        bookComments.add(bc4);
 
 
         commentAdapter = new CommentAdapter(getActivity(), accountNo, bookComments);
@@ -236,7 +170,6 @@ public class Tab3 extends Fragment {
         commentRecycler.setAdapter(commentAdapter);
 
 
-        //    commentAdapter.notifyDataSetChanged();
 
         return view;
 
@@ -411,17 +344,6 @@ public class Tab3 extends Fragment {
         mListener = null;
     }
 
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

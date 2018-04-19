@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Apr 19 22:36:18 CST 2018
+#Thu Apr 19 22:55:56 CST 2018
 4.path=fonts/fontawesome-font-v5.0.6.0.ttf
 13.baseType=DIRECTORY
 8.set=NATIVE_RESOURCE
