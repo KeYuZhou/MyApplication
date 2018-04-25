@@ -65,6 +65,7 @@ public class SearchRecommendAdapter extends RecyclerView.Adapter<SearchRecommend
     @Override
     public void onBindViewHolder(SearchRecommendHolder holder, int position) {
         holder.tv_title.setText(bookList.get(position).getTitle());
+        holder.tv_author.setText(bookList.get(position).getAuthorName());
         holder.itemView.setTag(position);
 
     }

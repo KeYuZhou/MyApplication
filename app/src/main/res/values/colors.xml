@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#23283a</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="pink">#FF4081</color>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimaryDark">#23283a</color>-->
+    <!--<color name="colorAccent">#FF4081</color>-->
+    <!--<color name="pink">#FF4081</color>-->
+    <!--<color name="colorAccent">#fff</color>-->
+    <!--<color name="pink">#fff</color>-->
+
+    <color name="colorPrimary">#82a0bc</color>
+    <color name="colorPrimaryDark">#5e7b9d</color>
+    <!--<color name="colorAccent">#ffa096</color>-->
+    <color name="colorAccent">#7393bc</color>
+    <color name="pink">#ffaf96</color>
+    <!--<color name="bg">#acc9db</color>-->
+    <color name="bg">#fff</color>
+    <color name="light">#7393bc</color>
 
     <color name="grey">#F5F5F5</color>
 

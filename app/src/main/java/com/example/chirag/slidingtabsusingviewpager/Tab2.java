@@ -4,9 +4,12 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -27,6 +30,24 @@ public class Tab2 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Tab2Surface mGLSurfaceView;
+    private Render2 mRenderer;
+    private Render2_2 mRenderer2;
+
+    private Button next_map;
+    private OnButtonClick onButtonClick;
+//    private Tab2_2.OnButtonClick onButtonClick;
+
+    //楼层（8or9）；书架层（1-6）；书架地图编号（1-34）；书架本体编号（1-8）
+    private float floornumber = 9;
+    private float bookcasefloor = 6;
+    private float casenumber1 = 25;
+    private int casenumber2 = 5;
+//    private float bookX=5;
+//    private float bookY=5;
+//    private float bookX_2=12.5f;
+//    private float bookY_2=4.5f;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -34,15 +55,7 @@ public class Tab2 extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Tab2.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static Tab2 newInstance(String param1, String param2) {
         Tab2 fragment = new Tab2();
         Bundle args = new Bundle();
@@ -65,7 +78,19 @@ public class Tab2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab2, container, false);
+//        return inflater.inflate(R.layout.fragment_tab2, container, false);
+
+
+        View view = inflater.inflate(R.layout.fragment_tab2, container, false);
+        Fragment tab2_firstmap = new Tab2_firstmap();
+        FragmentManager fragmentManager = getFragmentManager();
+
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.animator.left_enter, R.animator.left_exit, R.animator.right_enter, R.animator.right_exit);
+        fragmentTransaction.replace(R.id.content_frame, tab2_firstmap, "first").commit();
+
+        return view;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -73,6 +98,18 @@ public class Tab2 extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+    }
+
+    public OnButtonClick getOnButtonClick() {
+        return onButtonClick;
+    }
+
+    public void setOnButtonClick(OnButtonClick onButtonClick) {
+        this.onButtonClick = onButtonClick;
+    }
+
+    public interface OnButtonClick {
+        void onClick(View view);
     }
 
     @Override
@@ -92,16 +129,7 @@ public class Tab2 extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

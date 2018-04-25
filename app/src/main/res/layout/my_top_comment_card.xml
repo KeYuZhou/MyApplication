@@ -138,14 +138,6 @@
 
                     </android.support.v7.widget.RecyclerView>
 
-                    <!--<ListView-->
-                    <!--android:id="@+id/lv_reply"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:background="#F5F5F5"-->
-                    <!--android:listSelector="#F5F5F5">-->
-
-                    <!--</ListView>-->
 
                 </LinearLayout>
 

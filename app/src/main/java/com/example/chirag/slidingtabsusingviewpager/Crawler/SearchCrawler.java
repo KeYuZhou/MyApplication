@@ -1,11 +1,5 @@
 package com.example.chirag.slidingtabsusingviewpager.Crawler;
 
-/**
- * Created by effy on 2018/4/19.
- */
-
-import android.util.Log;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,8 +15,6 @@ public class SearchCrawler {
     static ArrayList bookList = new ArrayList();
 
     public static ArrayList<Book> bookCrawler(String title) {
-
-        Log.e("SearchCrawer", "SearchCrawer");
         URL url = null;
         URLConnection urlconn = null;
         BufferedReader br = null;
@@ -30,10 +22,11 @@ public class SearchCrawler {
         Pattern compile = Pattern.compile("&#.*?;");
         try {
             String URL = "http://opac.lib.xjtlu.edu.cn/opac/search_rss.php?dept=00&title=" + title + "&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE";
+
             url = new URL(URL);
             urlconn = url.openConnection();
             urlconn.connect();
-            br = new BufferedReader(new InputStreamReader(urlconn.getInputStream()));
+            br = new BufferedReader(new InputStreamReader(urlconn.getInputStream(), "utf-8"));
             String line;
             while ((line = br.readLine()) != null) {
                 Matcher matcher = compile.matcher(line);
@@ -57,7 +50,7 @@ public class SearchCrawler {
                 e.printStackTrace();
             }
         }
-        System.out.println(result);
+        //System.out.println(result);
         return ParseXML(result);
     }
 
@@ -66,12 +59,31 @@ public class SearchCrawler {
         Matcher matchItem = patternItem.matcher(result);
         while (matchItem.find()) {
             String item = "Found value: " + matchItem.group(0);
-            System.out.println(getParameter(item, "title"));
+            String title = getParameter(item, "title").split("\\.")[1];
             String link = getParameter(item, "link");
-            System.out.println(link);
-            System.out.println(getParameter(item, "description"));
             String marcNo = link.split("marc_no=")[1];
-            Book b = new Book(getParameter(item, "title"), getParameter(item, "link"), marcNo, getParameter(item, "description"));
+            String description = getParameter(item, "description");
+            String authorName = (description.split(":")[1]).split(". call no")[0];
+            String callNo = (description.split(":")[2]).split(" ")[0];
+            String publichInformation = description.split(":")[3];
+            String ISBN = InformationCrawler.ParseISBN(marcNo);
+            String available = InformationCrawler.ParseAvailable(marcNo);
+            String imgLink = DoubanCrawler.ParseImgLink(ISBN);
+            String content = DoubanCrawler.ParseContent(ISBN);
+
+            System.out.println(title);
+            System.out.println(link);
+            System.out.println(marcNo);
+            System.out.println(authorName);
+            System.out.println(callNo);
+            System.out.println(publichInformation);
+            System.out.println(ISBN);
+            System.out.println(available);
+            System.out.println(imgLink);
+            System.out.println(content);
+
+
+            Book b = new Book(title, link, marcNo, description, authorName, callNo, publichInformation, ISBN, available, imgLink, content);
             bookList.add(b);
         }
         return bookList;
@@ -101,5 +113,4 @@ public class SearchCrawler {
         }
         return result;
     }
-
 }

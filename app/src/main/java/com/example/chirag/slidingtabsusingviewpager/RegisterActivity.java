@@ -4,23 +4,20 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager;
-import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.Build;
-import android.provider.ContactsContract;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -45,12 +42,22 @@ public class RegisterActivity extends AppCompatActivity implements LoaderManager
     private View progressView;
     private View register_form;
 
-
+    ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+
+        back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                finish();
+                // startActivity(intent);
+            }
+        });
 
         username = findViewById(R.id.et_username_sign_up);
 
@@ -67,16 +74,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderManager
         });
 
         password = findViewById(R.id.et_password_signup);
-//        username.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-//            @Override
-//            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-//                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-//                    attemptRegister();
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
+
         password_again = findViewById(R.id.et_password_again);
         password_again.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override

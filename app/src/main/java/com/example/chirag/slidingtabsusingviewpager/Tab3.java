@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -81,32 +82,6 @@ public class Tab3 extends Fragment {
 
 
         super.onResume();
-//        onDestroy();
-//        onCreate(null);
-
-//        Log.e("书评大小！！!on Resume1",Integer.toString(bookComments.size()));
-//
-//        loadbook("pipilu");
-//        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
-//        bookComments = convert(m.getString("commentResponse", ""), accountNo);
-//
-////        Log.e("response",m.getString("commentResponse",""));
-////        Log.e("书评大小！！!on Resume",Integer.toString(bookComments.size()));
-////
-////
-////        Calendar calendar = Calendar.getInstance();
-////        Date date1 = calendar.getTime();
-////        BookComment bc1 = new BookComment(0, "david", date1, "i am david", 1, 0);
-//
-//        //  bookComments.add(bc1);
-//        //        commentAdapter.addItem(commentAdapter.getItemCount(),bc1);
-//        commentAdapter.notifyDataSetChanged();
 
 
     }
@@ -118,7 +93,6 @@ public class Tab3 extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         accountNo = getActivity().getIntent().getStringExtra("accountNo");
-//        Log.e("Tab3", accountNo);
 
 
 
@@ -135,10 +109,6 @@ public class Tab3 extends Fragment {
         SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         bookComments = convert(m.getString("commentResponse", ""), accountNo);
-
-
-        Log.e("response", m.getString("commentResponse", ""));
-        Log.e("书评大小！！!on create2", Integer.toString(bookComments.size()));
 
 
 
@@ -178,6 +148,11 @@ public class Tab3 extends Fragment {
 
         Log.e("书评大小！！!!!1", Integer.toString(bookComments.size()));
         commentRecycler.setAdapter(commentAdapter);
+
+        TextView tv_noComments = view.findViewById(R.id.tv_noComment);
+        if (bookComments.isEmpty()) {
+            tv_noComments.setVisibility(View.VISIBLE);
+        }
 
 
 
@@ -237,7 +212,7 @@ public class Tab3 extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
 //做自己的响应错误操作，如Toast提示（“请稍后重试”等）
-                Log.e("TAG", error.getMessage(), error);
+                Log.e("loadbook", error.getMessage(), error);
             }
         }) {
             @Override
@@ -268,9 +243,9 @@ public class Tab3 extends Fragment {
             int number = Integer.parseInt(jsonObject.getString("number"));
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
             if (number == 0) {
-                Log.e("TAG", "fail");
+                Log.e("convertcomment", "fail");
             } else {
-                Log.e("TAG", number + "");
+                Log.e("convertcomment", number + "");
                 for (int i = 0; i < number; i++) {
 
                     try {

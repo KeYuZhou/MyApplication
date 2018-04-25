@@ -39,15 +39,18 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
     private OnItemClickListener mOnItemClickListener;
     private LruCache<String, BitmapDrawable> mMemoryCache;
 
+
     ArrayList<Book> bookList = new ArrayList<>();
 
     String accountNo;
 
 
-    public RecommendAdapter(Context context, String accountNo) {
+    public RecommendAdapter(Context context, String accountNo, ArrayList<Book> bookList) {
         this.mInflater = LayoutInflater.from(context);
         this.accountNo = accountNo;
+        this.bookList = bookList;
         setRcm_date();
+
 
         int maxMemory = (int) Runtime.getRuntime().maxMemory();
         int cacheSize = maxMemory / 8;
@@ -63,6 +66,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
     public RecommendAdapter.RecommendHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View item = mInflater.inflate(R.layout.daily_recommend, parent, false);
 
+
         item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +81,8 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 0) {
+
+        if (position == 0 && bookList.size() == 8) {
             return LAST_SEARCH;
         }
         return RECOMMEND;
@@ -87,16 +92,27 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
     @Override
     public void onBindViewHolder(RecommendAdapter.RecommendHolder holder, int position) {
 
-        if (getItemViewType(position) == LAST_SEARCH) {
-            holder.tv_time.setText("THE BOOK SEARCHED BEFORE ");
+
+        Book book = bookList.get(position);
+
+        if (bookList.size() == 8) {
+
+            holder.tv_time.setText(dateList.get(position));
+
+        } else {
+            holder.tv_time.setText(dateList.get(position + 1));
+
         }
-        holder.tv_time.setText(dateList.get(position));
+
+
         holder.itemView.setTag(position);
 
 
-        String url = "https://img1.doubanio.com/view/subject/l/public/s4840817.jpg";
-        // BitmapDrawable drawable = getBitmapFromMemoryCache(url);
-        // DownloadImg downloadImg = new DownloadImg(mInflater);
+        holder.tv_bookname.setText(book.getTitle());
+        holder.tv_authorname.setText(book.getAuthorName());
+
+        String url = book.getimageLink();
+
 
         BitmapDrawable drawable = getBitmapFromMemoryCache(url);
 
@@ -114,7 +130,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
 
     @Override
     public int getItemCount() {
-        return dateList.size();
+        return bookList.size();
     }
 
     private void setRcm_date() {
@@ -137,7 +153,6 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
     }
 
     public void addItem(int position) {
-        // uns.add(position, accountNo);
         dateList.add(position, accountNo);
         notifyItemInserted(position);
     }
@@ -171,6 +186,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
         private TextView tv_time;
         private TextView tv_bookname;
         private TextView tv_authorname;
+        private View view;
 
         public RecommendHolder(View itemView) {
             super(itemView);
@@ -178,7 +194,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
             tv_time = itemView.findViewById(R.id.tv_time);
             tv_bookname = itemView.findViewById(R.id.tv_bookname);
             tv_authorname = itemView.findViewById(R.id.tv_authorname);
-
+            view = itemView;
         }
     }
 

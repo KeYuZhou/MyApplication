@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,11 +25,22 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-;
+import android.widget.TextView;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.chirag.slidingtabsusingviewpager.Crawler.Book;
 import com.example.chirag.slidingtabsusingviewpager.Crawler.SearchCrawler;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.wang.avi.AVLoadingIndicatorView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -36,28 +49,30 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+
+import java.util.Map;
 
 public class SearchFragment extends Fragment implements MaterialSearchView.OnQueryTextListener, MenuItem.OnActionExpandListener, SwipeGestureHelper.OnSwipeListener {
 
 
-    String[] values = new String[100];
-
     private Context mContext;
-    HashMap<String, String> map = new HashMap<>();
+
     RecommendAdapter recommendAdapter;
     String accountNo;
-    ArrayAdapter mAdapter;
+
     ListAdapter adapter;
     SearchRecommendAdapter searchRecommendAdapter;
     Book book;
     RecyclerView rv_search;
     ArrayList<Book> bookList = new ArrayList<>();
     RecyclerView recyclerView;
-    List<String> mAllValues = new ArrayList<>();
-    private ListView listView;
-    public AVLoadingIndicatorView indicatorView;
+    ArrayList<String> mAllValues = new ArrayList<>();
 
+    ArrayList<Book> recommendBooks = new ArrayList<>();
+    public AVLoadingIndicatorView indicatorView;
+    TextView tv_notFound;
+
+    Book searchedBook = new Book();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,7 +82,28 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
         accountNo = getActivity().getIntent().getStringExtra("accountNo");
         Log.e("searchFragment", accountNo);
+
+
         read();
+
+        loadMeiRiTuiJian();
+        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String s = m.getString("MeiRiTuiJian", "");
+        Book booklist[] = ConvertMeiRi(s);
+
+        Book searched = new Book();
+        Log.e("mAllValues", Integer.toString(mAllValues.size()));
+
+
+        // if (mAllValues.size()==11) {
+        searched.setBook(mAllValues);
+        recommendBooks.add(searched);
+        // }
+
+
+        for (Book book : booklist) {
+            recommendBooks.add(book);
+        }
 
     }
 
@@ -81,8 +117,9 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
                     Activity.MODE_PRIVATE);
             String s = new String();
             for (int i = 0; i < mAllValues.size(); i++) {
-                s = s + " " + mAllValues.get(i);
+                s = s + mAllValues.get(i) + ";";
             }
+            Log.e("save", mAllValues.get(0));
             outputStream.write(s.getBytes());
             outputStream.flush();
             outputStream.close();
@@ -101,7 +138,8 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
         super.onResume();
         //save();
-        // read ();
+        //read();
+        recommendAdapter.notifyDataSetChanged();
     }
 
     private void read() {
@@ -115,34 +153,21 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
             inputStream.close();
             arrayOutputStream.close();
             String content = new String(arrayOutputStream.toByteArray());
-            String temp[] = content.split(" ");
+
+            String temp[] = content.split(";");
 
 
             for (int i = 0; i < temp.length; i++) {
                 mAllValues.add(temp[i]);
             }
+
+            Log.e("mAllValues", mAllValues.get(0));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-    }
-
-    private static boolean isExternalStorageReadOnly() {
-        String extStorageState = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(extStorageState)) {
-            return true;
-        }
-        return false;
-    }
-
-    private static boolean isExternalStorageAvailable() {
-        String extStorageState = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(extStorageState)) {
-            return true;
-        }
-        return false;
     }
 
 
@@ -156,17 +181,15 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View layout = inflater.inflate(R.layout.search_fragment, container, false);
 
-        //    mAdapter = new ArrayAdapter(layout.getContext(), android.R.layout.simple_list_item_1, mAllValues);
-        //   listView = (ListView) layout.findViewById(R.id.list);
 
-//        listView.setAdapter(mAdapter);
-        //   listView.setTextFilterEnabled(true);
+        tv_notFound = layout.findViewById(R.id.tv_notFound);
+
 
         RelativeLayout rl = (RelativeLayout) layout.findViewById(R.id.container);
         indicatorView = layout.findViewById(R.id.avi);
         indicatorView.hide();
 
-        recommendAdapter = new RecommendAdapter(getActivity(), accountNo);
+        recommendAdapter = new RecommendAdapter(getActivity(), accountNo, recommendBooks);
 
         recyclerView = new SnappingSwipingViewBuilder(getActivity())
                 .setAdapter(recommendAdapter)
@@ -186,11 +209,31 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
         recommendAdapter.setOnItemClickListener(new RecommendAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                intent.putExtra("accountNo", accountNo);
-                intent.putExtra("ISBN", "9787121325212");
-                intent.putExtra("query", recommendAdapter.dateList.get(position));
-                startActivity(intent);
+                Book book = recommendAdapter.bookList.get(position);
+//                Intent intent = new Intent(getActivity(), MainActivity.class);
+//                intent.putExtra("accountNo", accountNo);
+//                intent.putExtra("query", book.getTitle());
+//                intent.putExtra("author", book.getAuthorName());
+//                intent.putExtra("imgUrl", book.getimageLink());
+//                intent.putExtra("douban", book.getContent());
+//                intent.putExtra("callno", book.getCallNo());
+//                intent.putExtra("publicion", book.getPublisherInformation());
+//                intent.putExtra("avil", book.getAvailable());
+//                intent.putExtra("accountNo", accountNo);
+//                startActivity(intent);
+
+
+                Intent intent1 = new Intent(getActivity(), RefreshActivity.class);
+                intent1.putExtra("accountNo", accountNo);
+                intent1.putExtra("query", book.getTitle());
+                intent1.putExtra("author", book.getAuthorName());
+                intent1.putExtra("imgUrl", book.getimageLink());
+                intent1.putExtra("douban", book.getContent());
+                intent1.putExtra("callno", book.getCallNo());
+                intent1.putExtra("publicion", book.getPublisherInformation());
+                intent1.putExtra("avil", book.getAvailable());
+                //intent1.putExtra("accountNo", accountNo);
+                startActivity(intent1);
 
             }
         });
@@ -209,13 +252,32 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 String title = searchRecommendAdapter.bookList.get(position).getTitle();
 
-                mAllValues.set(0, title);
+                searchedBook = searchRecommendAdapter.bookList.get(position);
+// public Book(String title, String link, String marcNo, String description, String authorName, String callNo, String publisherInformation, String ISBN, String available, String imgLink, String content) {
+
+                mAllValues.clear();
+
+                Log.e("packinfo", Integer.toString(searchedBook.packInfo().size()));
+
+                mAllValues = searchedBook.packInfo();
+
+
+                save();
+
+                recommendBooks.add(0, searchedBook);
                 recommendAdapter.notifyDataSetChanged();
+
                 intent.putExtra("query", searchRecommendAdapter.bookList.get(position).getTitle());
-                intent.putExtra("ISBN", "9787121325212");
+
+                intent.putExtra("author", searchRecommendAdapter.bookList.get(position).getAuthorName());
+                intent.putExtra("imgUrl", searchRecommendAdapter.bookList.get(position).getimageLink());
+                intent.putExtra("douban", searchRecommendAdapter.bookList.get(position).getContent());
+                intent.putExtra("callno", searchRecommendAdapter.bookList.get(position).getCallNo());
+                intent.putExtra("publicion", searchRecommendAdapter.bookList.get(position).getPublisherInformation());
+                intent.putExtra("avil", searchRecommendAdapter.bookList.get(position).getAvailable());
+
                 intent.putExtra("accountNo", accountNo);
-                //intent.putExtra("ISBN",bookList.get(0).getMarcNo());
-                //intent.putExtra("bookTitle",book.getTitle());
+
                 startActivity(intent);
 
             }
@@ -224,7 +286,6 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
         rv_search.setVisibility(View.GONE);
 
-//        listView.setVisibility(View.GONE);
 
         return layout;
     }
@@ -272,7 +333,10 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
             public void onSearchViewClosed() {
                 rv_search.setVisibility(View.GONE);
                 recyclerView.setVisibility(View.VISIBLE);
+
+
                 bookList.clear();
+
                 indicatorView.hide();
                 searchRecommendAdapter.notifyDataSetChanged();
 
@@ -295,26 +359,28 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
                     // Bitmap bmp=(Bitmap)msg.obj;
                     bookList = (ArrayList<Book>) msg.obj;
                     Log.e("booklistSize", Integer.toString(bookList.size()));
-                    //searchRecommendAdapter = new SearchRecommendAdapter(getActivity(), bookList);
-                    rv_search.setVisibility(View.VISIBLE);
-                    for (int i = 0; i < bookList.size(); i++) {
-                        searchRecommendAdapter.addItem(i, bookList.get(i));
+
+                    if (bookList.isEmpty()) {
+                        tv_notFound.setVisibility(View.VISIBLE);
+                    } else {
+                        rv_search.setVisibility(View.VISIBLE);
+                        for (int i = 0; i < bookList.size(); i++) {
+                            searchRecommendAdapter.addItem(i, bookList.get(i));
+                        }
                     }
                     //searchRecommendAdapter.notifyDataSetChanged();
 
 
-                    //   ivInternet.setImageBitmap(bmp);
                     break;
             }
         }
 
-        ;
+
     };
 
 
     @Override
     public boolean onQueryTextSubmit(final String query) {
-
 
 
         Bundle bundle = new Bundle();
@@ -342,7 +408,6 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
         }).start();
 
 
-
         InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
 
@@ -355,16 +420,96 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 //        values[mAllValues.size()] = query;
 
 
-        save();
-
         // read();
-
-
 
 
         return true;
     }
 
+    public void loadMeiRiTuiJian() {//book填写pipilu,加载关于pipilu的书评
+
+
+        String url = "http://39.107.109.19:8080/Groupweb/MeiRiTuiJianServlet";    //注①
+        String tag = "loadMeiRi";    //注②
+
+        //取得请求队列
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+
+        //防止重复请求，所以先取消tag标识的请求队列
+        requestQueue.cancelAll(tag);
+
+        //创建StringRequest，定义字符串请求的请求方式为POST(省略第一个参数会默认为GET方式)
+        final StringRequest request = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        sharedMeiRiTuiJianResponse(response);
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //做自己的响应错误操作，如Toast提示（“请稍后重试”等）
+                Log.e("TAG", error.getMessage(), error);
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+
+                return params;
+            }
+        };
+
+        //设置Tag标签
+        request.setTag(tag);
+
+        //将请求添加到队列中
+        requestQueue.add(request);
+
+    }
+
+    private void sharedMeiRiTuiJianResponse(String response) {
+
+        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences.Editor editor = m.edit();
+        editor.putString("MeiRiTuiJian", response);
+        editor.commit();
+    }
+
+    private Book[] ConvertMeiRi(String response) {
+
+
+        Book booklist[] = new Book[7];
+        try {
+            JSONObject jsonObject = (JSONObject) new JSONObject(response).get("params");  //注③
+
+            for (int i = 0; i < 7; i++) {
+                booklist[i] = new Book(jsonObject.getString("Title" + i), jsonObject.getString("Library Link" + i),
+                        jsonObject.getString("MarcNo" + i), null,
+                        jsonObject.getString("Author" + i),
+                        jsonObject.getString("CallNo" + i),
+                        jsonObject.getString("Publish Information" + i), null, null,
+                        jsonObject.getString("Image Link" + i)
+                        , jsonObject.getString("Content" + i)
+                );
+
+            }
+            //Title
+            //Author
+            //CallNo
+            //Publish Information
+            //Library Link
+            //MarcNo
+            //Image Link
+
+
+        } catch (JSONException e) {
+            //做自己的请求异常操作，如Toast提示（“无网络连接”等）
+            Log.e("TAG", e.getMessage(), e);
+        }
+        return booklist;
+    }
 
     @Override
     public boolean onQueryTextChange(String s) {

@@ -24,6 +24,8 @@ import com.example.chirag.slidingtabsusingviewpager.Crawler.Book;
 import com.example.chirag.slidingtabsusingviewpager.Crawler.ImageCrawler;
 import com.example.chirag.slidingtabsusingviewpager.Crawler.SearchCrawler;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -125,20 +127,21 @@ public class Tab1 extends Fragment {
 
                         imgUrl = bundle.getString("imgUrl");
 
-                        new Thread(new Runnable() {
 
-                            @Override
-                            public void run() {
-                                Bitmap bmp = getURLimage(imgUrl);
-                                Message msg = new Message();
-                                msg.what = 0;
-                                msg.obj = bmp;
-                                System.out.println("000");
-                                handle.sendMessage(msg);
-                            }
-                        }).start();
-
-                        Log.e("imgUrl", imgUrl);
+//                        new Thread(new Runnable() {
+//
+//                            @Override
+//                            public void run() {
+//                                Bitmap bmp = getURLimage(imgUrl);
+//                                Message msg = new Message();
+//                                msg.what = 0;
+//                                msg.obj = bmp;
+//                                System.out.println("000");
+//                                handle.sendMessage(msg);
+//                            }
+//                        }).start();
+//
+//                        Log.e("imgUrl", imgUrl);
 
 
                 }
@@ -161,21 +164,26 @@ public class Tab1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-       // return inflater.inflate(R.layout.fragment_tab1, container, false);
 
 
        View layout = inflater.inflate(R.layout.fragment_tab1, container, false);
         ListView listView = (ListView) layout.findViewById(android.R.id.list);
-//        TextView emptyTextView = (TextView) layout.findViewById(android.R.id.empty);
-//        listView.setEmptyView(emptyTextView);
+
         ivInternet = (ImageView) layout.findViewById(R.id.ivInternet);
 
         Bundle bundle = getArguments();
 
 
         final String data = getActivity().getIntent().getStringExtra("query");
-        ISBN = getActivity().getIntent().getStringExtra("ISBN");
+
+        String author = getActivity().getIntent().getStringExtra("author");
+
+        imgUrl = getActivity().getIntent().getStringExtra("imgUrl");
+        String douban = getActivity().getIntent().getStringExtra("douban");
+        String callno = getActivity().getIntent().getStringExtra("callno");
+        String publication = getActivity().getIntent().getStringExtra("publicion");
+        String avilable = getActivity().getIntent().getStringExtra("avil");
+        //ISBN = getActivity().getIntent().getStringExtra("ISBN");
 
         // String title = getActivity().getIntent().getStringExtra("bookTitle");
 
@@ -185,19 +193,22 @@ public class Tab1 extends Fragment {
         tv_bookname = (TextView) layout.findViewById(R.id.tv_bookname);
         tv_bookname.setText(data);
 
-
-
-
-
         TextView tv_authorname = (TextView) layout.findViewById(R.id.tv_authorname);
+        tv_authorname.setText(author);
+
         TextView tv_publicationname = (TextView) layout.findViewById(R.id.tv_publicationName);
+        tv_publicationname.setText(publication);
+
         TextView tv_callNo = (TextView) layout.findViewById(R.id.tv_callNo);
+        tv_callNo.setText(callno);
+
         TextView tv_content = (TextView) layout.findViewById(R.id.tv_content);
 
-        //TODO:setText  such as  book name, author, callNo...
-        // tv_bookname.setText(data);
-        //tv_authorname.setText("")
-        //....
+        tv_content.setText(douban);
+
+        TextView tv_avil = layout.findViewById(R.id.avaliable);
+        tv_avil.setText(avilable);
+
 
 
 //        new Thread(new Runnable() {
@@ -222,40 +233,40 @@ public class Tab1 extends Fragment {
 //        }
 
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                String imgUrl = ImageCrawler.BookImageCrawler(ISBN);
-                Message msg = new Message();
-                Bundle bundle = new Bundle();
-                bundle.putString("imgUrl", imgUrl);
-
-                msg.setData(bundle);
-
-
-                msg.what = 2;
-                //msg.obj = imgUrl;
-
-
-                Log.e("tread", "imgurl");
-                handle.sendMessage(msg);
-            }
-        }).start();
-
-
 //        new Thread(new Runnable() {
-//
 //            @Override
 //            public void run() {
-//                Bitmap bmp = getURLimage(imgUrl);
+//
+//                String imgUrl = ImageCrawler.BookImageCrawler(ISBN);
 //                Message msg = new Message();
-//                msg.what = 0;
-//                msg.obj = bmp;
-//                System.out.println("000");
+//                Bundle bundle = new Bundle();
+//                bundle.putString("imgUrl", imgUrl);
+//
+//                msg.setData(bundle);
+//
+//
+//                msg.what = 2;
+//                //msg.obj = imgUrl;
+//
+//
+//                Log.e("tread", "imgurl");
 //                handle.sendMessage(msg);
 //            }
 //        }).start();
+
+
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                Bitmap bmp = getURLimage(imgUrl);
+                Message msg = new Message();
+                msg.what = 0;
+                msg.obj = bmp;
+                System.out.println("000");
+                handle.sendMessage(msg);
+            }
+        }).start();
 
 
 
@@ -271,7 +282,7 @@ public class Tab1 extends Fragment {
             HttpURLConnection conn = (HttpURLConnection) myurl.openConnection();
             conn.setConnectTimeout(6000);//设置超时
             conn.setDoInput(true);
-            conn.setUseCaches(false);//不缓存
+            conn.setUseCaches(true);//不缓存
             conn.connect();
             InputStream is = conn.getInputStream();//获得图片的数据流
             bmp = BitmapFactory.decodeStream(is);

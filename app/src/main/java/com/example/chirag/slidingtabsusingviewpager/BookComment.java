@@ -33,6 +33,7 @@ public class BookComment {
         this.kind = kind;
     }
 
+
     public String getTime() {
 
         return RelativeDateFormat.format(date);

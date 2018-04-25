@@ -75,11 +75,11 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
     private int commentLen = 3;
     private int myCommentLen = 1;
 
-    // public String accountNo = LoginActivity.user.getAccountNo();
+
     private LayoutInflater mInflater;
     private String[] usernames = {"AAA", "BBB", "CCC", "DDD", "EEE"};
     private ArrayList<String> uns = new ArrayList<>();
-    // private String[] replyusernames= {};
+
     private String[] replyusernames = {"FFF", "GGG"};
     private String[] replycontent = {"commentF", "comentG"};
     private HashMap<String, String> replymap = new HashMap<>();
@@ -228,10 +228,16 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
 
         if (Convertloadupvote(s)) {
             holder.thumbUpView.setLike();
+
+        } else {
+            holder.thumbUpView.setUnlike();
         }
 
         if (bookComment.like == 0) {
             holder.thumbUpView.setUnlike();
+        }
+        if (bookComment.like == 1) {
+            holder.thumbUpView.setLike();
         }
 
 
@@ -250,12 +256,12 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
 
                     holder.likeNo.setText(String.valueOf(Integer.valueOf(holder.likeNo.getText().toString()) - 1));
                     Cancelupvote(Integer.toString(bookComment.id), accountNo);
-//TODO: 点赞数据更改
+
 
                 }
             }
         });
-//Log.e("!!!!!","111111111111111111111111111111111111111");
+
 
 
         ArrayList<Reply> rep = new ArrayList<>();
@@ -264,22 +270,25 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
 //        if (bookComment.id == 2) {
 
         loadreply(Integer.toString(bookComment.id));//2是书评的id号码，此参数如如书评id
-            SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(mInflater.getContext());//复制粘贴
 
+        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(mInflater.getContext());//复制粘贴
+
+        //   private ArrayList<Reply> Convertreply(String response, String CommentID, String usernanme) {
         rep = Convertreply(m.getString("Response", ""), Integer.toString(bookComment.id), accountNo);
 
+        Log.e("reppppp", Integer.toString(rep.size()));
 
-            ReplyRecyclerAdapter replyRecyclerAdapter = new ReplyRecyclerAdapter(holder.context, accountNo, rep);
+
+        final ReplyRecyclerAdapter replyRecyclerAdapter = new ReplyRecyclerAdapter(holder.context, accountNo, rep, bookComment.id);
+
+
             holder.recyclerView.setAdapter(replyRecyclerAdapter);
 
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(holder.context);
             holder.recyclerView.setLayoutManager(linearLayoutManager);
 
 
-            Log.e("replyyyyy", Integer.toString(replyRecyclerAdapter.replyList.size()));
-
-
-            final ReplyRecyclerAdapter finalReplyRecyclerAdapter = replyRecyclerAdapter;
+        // final ReplyRecyclerAdapter finalReplyRecyclerAdapter = replyRecyclerAdapter;
 
             holder.imgButton_comment.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -292,14 +301,13 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
                                 @Override
                                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
 
-//                                    Log.e("tag", dialog.getInputEditText().getText().toString());
-//                                    Log.e("replyAdapter before", Integer.toString(replyAdapter.getCount()));
 
                                     reply(accountNo, Integer.toString(bookComment.id), dialog.getInputEditText().getText().toString());
-                                    //        public Reply(String username,String content,String commentID,Date date,Boolean us
-                                    Reply reply = new Reply(accountNo, dialog.getInputEditText().getText().toString(), "2", Calendar.getInstance().getTime(), true);
 
-                                    finalReplyRecyclerAdapter.addItem(finalReplyRecyclerAdapter.getItemCount(), reply);
+                                    Reply reply = new Reply(accountNo, dialog.getInputEditText().getText().toString(), Integer.toString(bookComment.id), Calendar.getInstance().getTime(), true);
+
+                                    replyRecyclerAdapter.addItem(replyRecyclerAdapter.getItemCount(), reply);
+                                    // finalReplyRecyclerAdapter.addItem(finalReplyRecyclerAdapter.getItemCount(), reply);
                                 }
                             })
                             .negativeText("Cancel")
@@ -530,7 +538,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
             @Override
             public void onErrorResponse(VolleyError error) {
 //做自己的响应错误操作，如Toast提示（“请稍后重试”等）
-                Log.e("TAG", error.getMessage(), error);
+                Log.e("loadreply", error.getMessage(), error);
             }
         }) {
             @Override
@@ -599,10 +607,11 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         SharedPreferences.Editor editor = m.edit();
         editor.putString("Response", response);
         editor.commit();
-    }//  此方法放在粘贴即可,跟上次一样
+    }
 
 
     public void loadreply(final String CommentID) {//传入书评的id
+
 
         String url = "http://39.107.109.19:8080/Groupweb/LoadReplyServlet";    //注①
         String tag = "loadreply";    //注②
@@ -619,13 +628,14 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
                     @Override
                     public void onResponse(String response) {
 // Convertreply(response, CommentID);
+                        Log.e("loadreply", CommentID);
                         sharedResponse(response);
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
 //做自己的响应错误操作，如Toast提示（“请稍后重试”等）
-                Log.e("TAG", error.getMessage(), error);
+                Log.e("loadReply", error.getMessage(), error);
             }
         }) {
             @Override
@@ -654,10 +664,12 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
             int number = Integer.parseInt(jsonObject.getString("number"));  //注④
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
 
+
             if (number == 0) {
-                Log.e("TAG", "fail");
+                Log.e("convert", "fail");
             } else {
-                Log.e("TAG", number + " f");
+                Log.e("convert", CommentID);
+                Log.e("convert", number + " f");
                 for (int i = 0; i < number; i++) {
                     boolean user = false;
                     if (usernanme.equals(jsonObject.getString(i + "username"))) {
@@ -706,12 +718,13 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
                             String result = jsonObject.getString("Result");  //注④
                             if (result.equals("success")) {  //注⑤
 
-                                Log.e("TAG", "success");
+                                Log.e("reply", "success");
                             } else {
 
-                                Log.e("TAG", "fail");
+                                Log.e("reply", "fail");
                             }
                         } catch (JSONException e) {
+
 //做自己的请求异常操作，如Toast提示（“无网络连接”等）
                             Log.e("TAG", e.getMessage(), e);
                         }
@@ -720,7 +733,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
             @Override
             public void onErrorResponse(VolleyError error) {
 //做自己的响应错误操作，如Toast提示（“请稍后重试”等）
-                Log.e("TAG", error.getMessage(), error);
+                Log.e("reply", error.getMessage(), error);
             }
         }) {
             @Override
@@ -779,11 +792,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
 
             context = itemView.getContext();
 
-//            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(itemView.getContext());
-//            recyclerView.setLayoutManager(linearLayoutManager);
-//
-//            ReplyRecyclerAdapter replyRecyclerAdapter = new ReplyRecyclerAdapter(itemView.getContext(),accountNo,null);
-//            recyclerView.setAdapter(replyRecyclerAdapter);
+
         }
 
 

@@ -3,38 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/side_nav_bar">
 
 
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_navigate_before_black_24dp"
+        android:id="@+id/back"
+        android:layout_gravity="start" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="30dp"
-
-
-
-
-        android:background="@color/colorPrimaryDark">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:textColor="#fff"
-            android:text="REGISTER" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textColor="#fff"
-            android:layout_marginTop="20dp"
-            android:text="Join us and enjoy reading!"/>
-
-
-
-
-    </LinearLayout>
+        android:orientation="vertical">
 
     <ProgressBar
         android:id="@+id/login_progress"
@@ -50,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <LinearLayout
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
@@ -57,6 +41,21 @@
             android:orientation="vertical"
             android:padding="50dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="30dp"
+                android:layout_marginTop="70dp">
+
+                <ImageView
+
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/ic_book" />
+
+            </LinearLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -121,5 +120,6 @@
         </LinearLayout>
     </ScrollView>
 
+    </LinearLayout>
 </LinearLayout>
 

@@ -43,18 +43,19 @@ public class ReplyRecyclerAdapter extends RecyclerView.Adapter<ReplyRecyclerAdap
     private final int ME_TYPE = 0;
     private final int OTHER_TYPE = 1;
     ArrayList<Reply> replyList = new ArrayList<>();
+    String commentID;
 
 
     private LayoutInflater mInflater;
     String accountNo;
 
 
-    public ReplyRecyclerAdapter(Context context, String accountNo, ArrayList<Reply> replyList) {
+    public ReplyRecyclerAdapter(Context context, String accountNo, ArrayList<Reply> replyList, int commentID) {
         this.replyList = replyList;
         this.mInflater = LayoutInflater.from(context);
         this.accountNo = accountNo;
 
-
+        this.commentID = Integer.toString(commentID);
     }
     @Override
     public int getItemViewType(int position) {
@@ -65,16 +66,6 @@ public class ReplyRecyclerAdapter extends RecyclerView.Adapter<ReplyRecyclerAdap
         return OTHER_TYPE;
     }
 
-
-//
-//    @Override
-//    public long getItemId(int position) {
-//        Reply reply = replyList.get(position);
-//        if (reply.user) {
-//            return ME_TYPE;
-//        }
-//        return OTHER_TYPE;
-//    }
 
 
     @Override
@@ -142,8 +133,9 @@ public class ReplyRecyclerAdapter extends RecyclerView.Adapter<ReplyRecyclerAdap
                             @Override
                             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
 
+                                reply(accountNo, commentID, dialog.getInputEditText().getText().toString());
 
-                                Reply replyByaccount = new Reply(accountNo + " @ " + reply.username, dialog.getInputEditText().getText().toString(), "2", Calendar.getInstance().getTime(), true);
+                                Reply replyByaccount = new Reply(accountNo + " @ " + reply.username, dialog.getInputEditText().getText().toString(), commentID, Calendar.getInstance().getTime(), true);
                                 replyList.add(replyByaccount);
                                 notifyDataSetChanged();
 
@@ -180,6 +172,61 @@ public class ReplyRecyclerAdapter extends RecyclerView.Adapter<ReplyRecyclerAdap
 
     }
 
+    public void reply(final String accountNumber, final String commentID, final String content) {
+//请求地址
+        String url = "http://39.107.109.19:8080/Groupweb/ReplyServlet";    //注①
+        String tag = "reply";    //注②
+
+//取得请求队列
+        RequestQueue requestQueue = Volley.newRequestQueue(mInflater.getContext());
+
+//防止重复请求，所以先取消tag标识的请求队列
+        requestQueue.cancelAll(tag);
+
+//创建StringRequest，定义字符串请求的请求方式为POST(省略第一个参数会默认为GET方式)
+        final StringRequest request = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = (JSONObject) new JSONObject(response).get("params");  //注③
+                            String result = jsonObject.getString("Result");  //注④
+                            if (result.equals("success")) {  //注⑤
+
+                                Log.e("replyreply", "success");
+                            } else {
+
+                                Log.e("replyreply", "fail");
+                            }
+                        } catch (JSONException e) {
+//做自己的请求异常操作，如Toast提示（“无网络连接”等）
+                            Log.e("replyreply", e.getMessage(), e);
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+//做自己的响应错误操作，如Toast提示（“请稍后重试”等）
+                Log.e("replyreply", error.getMessage(), error);
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("AccountNumber", accountNumber);  //注⑥
+                params.put("CommentID", commentID);
+                params.put("content", content);
+                return params;
+            }
+        };
+
+//设置Tag标签
+        request.setTag(tag);
+
+//将请求添加到队列中
+        requestQueue.add(request);
+    }
+
 
     public void Deletereply(final String username, final String commentID, final Date date) {
 //请求地址
@@ -204,10 +251,10 @@ public class ReplyRecyclerAdapter extends RecyclerView.Adapter<ReplyRecyclerAdap
                             String result = jsonObject.getString("result");  //注④
                             if (result.equals("success")) {  //注⑤
 
-                                Log.e("TAG", "success");
+                                Log.e("delete", "success");
                             } else {
 
-                                Log.e("TAG", "fail");
+                                Log.e("delete", "fail");
                             }
                         } catch (JSONException e) {
 //做自己的请求异常操作，如Toast提示（“无网络连接”等）

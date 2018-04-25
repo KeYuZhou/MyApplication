@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+
+    <!--<android.support.v4.view.ViewPager-->
+    <!--android:id="@+id/map_pager"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--&gt;-->
+
+    <com.example.chirag.slidingtabsusingviewpager.Tab2Surface
+        android:id="@+id/gl_surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <ImageView
+        android:id="@+id/first_map"
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_alignParentEnd="true"
+
+        android:layout_alignParentTop="true"
+
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_navigate_next_black_24dp" />
+
+    <!--</android.support.v4.view.ViewPager>-->
+    <!--</LinearLayout>-->
+
+</RelativeLayout>

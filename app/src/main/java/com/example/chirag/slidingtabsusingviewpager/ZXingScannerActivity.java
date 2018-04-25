@@ -30,8 +30,8 @@ public class ZXingScannerActivity extends AppCompatActivity implements ZXingScan
     String accountNo;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         accountNo = getIntent().getStringExtra("accountNo");
         scannerView = new ZXingScannerView(this);
 		setContentView(scannerView);

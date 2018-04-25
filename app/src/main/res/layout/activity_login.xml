@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/side_nav_bar"
     tools:context="com.example.chirag.slidingtabsusingviewpager.LoginActivity">
+
 
     <!--<android.support.v7.widget.Toolbar-->
     <!--android:layout_width="match_parent"-->
@@ -25,34 +27,7 @@
 
     <!--</android.support.v7.widget.Toolbar>-->
     <!--&lt;!&ndash; Login progress &ndash;&gt;-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="30dp"
 
-
-
-
-        android:background="@color/colorPrimaryDark">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:textColor="#fff"
-            android:text="FIND MY BOOK" />
-        <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="15sp"-->
-        <!--android:textColor="#fff"-->
-        <!--android:layout_marginTop="20dp"-->
-        <!--android:text="Have you ever encountered such a problem that it is so hard to find out the book you want among mountains of books in the library? Have you ever spent more than 30 minutes finding a book but finished reading it within 3 minutes? This app will help you locate the book at once and save your time!  "/>-->
-
-
-
-
-    </LinearLayout>
 
 
 
@@ -62,8 +37,6 @@
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:text="Join Us!"/>-->
-
-
 
     <ProgressBar
         android:id="@+id/register_progress"
@@ -85,15 +58,48 @@
             android:orientation="vertical"
             android:padding="50dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="100dp"
+                android:padding="50dp"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/ic_book" />
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="40sp"-->
+                <!--android:textColor="#fff"-->
+                <!--android:text="FIND MY BOOK" />-->
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="15sp"-->
+                <!--android:textColor="#fff"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:text="Have you ever encountered such a problem that it is so hard to find out the book you want among mountains of books in the library?\nHave you ever spent more than 30 minutes finding a book but finished reading it within 3 minutes? \nThis app will help you locate the book at once and save your time!\nTry it now!\n Enjoy reading @ xjtlu!"/>-->
+
+
+            </LinearLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+
+                >
 
                 <EditText
                     android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Username"
+                    android:textColor="@color/light"
 
                     android:maxLines="1"
                     android:singleLine="true" />
@@ -109,6 +115,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
+                    android:textColor="@color/light"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
@@ -125,7 +132,7 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/pink"
+                    android:textColor="@color/light"
                     android:text="Don't have an account?"
                     android:textSize="15sp"/>
                 <TextView
@@ -133,7 +140,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
-                    android:textColor="@color/pink"
+                    android:textColor="@color/light"
                     android:text=" SIGN UP"
                     android:textStyle="bold"/>
 
@@ -155,4 +162,5 @@
 
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
 
         accountNo = getIntent().getStringExtra("accountNo");
-//        Log.e("mainActivity", accountNo);
+
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -50,7 +50,10 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                intent.putExtra("accountNo", accountNo);
+                startActivity(intent);
+                // finish();m
             }
         });
 
@@ -84,40 +87,6 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
 
 
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-////        drawer.setDrawerListener(toggle);
-//        toggle.syncState();
-//
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-//        navigationView.setNavigationItemSelectedListener(this);
-
-//
-//        searchView = (MaterialSearchView) findViewById(R.id.search_view);
-//
-//        searchView.setOnQueryTextListener(this);
-//        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
-//            @Override
-//            public void onSearchViewShown() {
-//
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onSearchViewClosed() {
-//                Fragment fragment = new Fragment();
-//
-//
-//
-//
-//            }
-//        });
-//
-//        searchView.setSuggestions(values);
-//        searchView.setHint("Search Here");
 
 
     }
@@ -156,10 +125,6 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
- //       getMenuInflater().inflate(R.menu.search_menu, menu);
-//
-//        MenuItem item = menu.findItem(R.id.action_search);
-//        searchView.setMenuItem(item);
 
         return true;
     }

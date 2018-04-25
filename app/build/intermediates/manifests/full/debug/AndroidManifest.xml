@@ -29,9 +29,8 @@
         android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_book"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
@@ -79,6 +78,8 @@
         <activity
             android:name="com.example.chirag.slidingtabsusingviewpager.WriteCommentActivity"
             android:label="" />
+        <activity android:name="com.example.chirag.slidingtabsusingviewpager.RefreshActivity" />
+        <activity android:name="com.example.chirag.slidingtabsusingviewpager.Refresh2Activity" />
 
         <meta-data
             android:name="android.support.VERSION"
