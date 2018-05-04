@@ -1,23 +1,22 @@
 package com.example.chirag.slidingtabsusingviewpager;
 
 import android.content.res.AssetManager;
+import android.util.Log;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class CallNoToBookshelf {
-    private static final String FILE_NAME = "bookShelf.xlsx";
-    private static Workbook workbook;
+
     AssetManager assetManager;
 
     public CallNoToBookshelf(AssetManager assetManager) {
@@ -53,7 +52,11 @@ public class CallNoToBookshelf {
                 position[1] = 29;
             }
             if (position[1] == 0) {
-                position[1] = ShelfOrder.get(lcc);
+                if (ShelfOrder.containsKey(lcc)) {
+                    position[1] = ShelfOrder.get(lcc);
+                } else {
+                    position[1] = ShelfOrder.get("RD525");
+                }
             }
         }
         if (arr[0] == 'R') {
@@ -68,7 +71,11 @@ public class CallNoToBookshelf {
                 position[1] = 34;
         }
         if (position[1] == 0) {
-            position[1] = ShelfOrder.get(lcc);
+            if (ShelfOrder.containsKey(lcc)) {
+                position[1] = ShelfOrder.get(lcc);
+            } else {
+                position[1] = ShelfOrder.get("N82");
+            }
         }
 
         if (arr[0] == 'N') {
@@ -93,6 +100,9 @@ public class CallNoToBookshelf {
                 position[1] = 34;
             }
         }
+        if (position[0] == 0) {
+            position[0] = 9;
+        }
         System.out.println(position[0]);
         System.out.println(position[1]);
         return position;
@@ -101,29 +111,57 @@ public class CallNoToBookshelf {
     public HashMap<String, Integer> read() {
         try {
             System.out.println("start");
-            // extract Excel file
-
-            // FileInputStream excelFile = new FileInputStream(assetManager.open()new File(FILE_NAME));
-            workbook = new XSSFWorkbook(assetManager.open(FILE_NAME));
-            Sheet dataTypeSheet = workbook.getSheetAt(0);
             Map<String, Integer> dataset = new HashMap<String, Integer>();
-            int rowStart = dataTypeSheet.getFirstRowNum() + 1;
-            int rowEnd = dataTypeSheet.getLastRowNum();
-            // gets rows progressively
-            for (int i = rowStart; i <= rowEnd; i++) {
-                Row currentRow = dataTypeSheet.getRow(i);
-                if (currentRow != null) {
-                    int current = currentRow.getFirstCellNum();
-                    Cell cell = currentRow.getCell(current);
-                    if (null != cell) {
-                        String lcc = cell.getStringCellValue();
-                        current++;
-                        cell = currentRow.getCell(current);
-                        int shelfNo = (int) cell.getNumericCellValue();
-                        dataset.put(lcc, shelfNo);
+
+            InputStream is = assetManager.open("booklocation");
+            InputStreamReader inputStreamReader = null;
+            try {
+                inputStreamReader = new InputStreamReader(is, "gbk");
+            } catch (UnsupportedEncodingException e1) {
+                e1.printStackTrace();
+            }
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+
+            String line;
+            try {
+                while ((line = reader.readLine()) != null) {
+
+                    String[] temp = line.split(",");
+
+                    if (temp.length == 2) {
+                        if (!temp[1].equals("shelfNo")) {
+                            dataset.put(temp[0], Integer.parseInt(temp[1]));
+                        }
                     }
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+
+            // FileInputStream excelFile = new FileInputStream(assetManager.open()new File(FILE_NAME));
+
+//            workbook = new XSSFWorkbook(assetManager.open(FILE_NAME));
+//            //workbook=new XSSFWorkbook(new FileInputStream(FILE_NAME));
+//            Sheet dataTypeSheet = workbook.getSheetAt(0);
+
+//            int rowStart = dataTypeSheet.getFirstRowNum() + 1;
+//            int rowEnd = dataTypeSheet.getLastRowNum();
+//            // gets rows progressively
+//            for (int i = rowStart; i <= rowEnd; i++) {
+//                Row currentRow = dataTypeSheet.getRow(i);
+//                if (currentRow != null) {
+//                    int current = currentRow.getFirstCellNum();
+//                    Cell cell = currentRow.getCell(current);
+//                    if (null != cell) {
+//                        String lcc = cell.getStringCellValue();
+//                        current++;
+//                        cell = currentRow.getCell(current);
+//                        int shelfNo = (int) cell.getNumericCellValue();
+//                        dataset.put(lcc, shelfNo);
+//                    }
+//                }
+//            }
+            Log.e("dataset", Integer.toString(dataset.size()));
             return (HashMap<String, Integer>) dataset;
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -4,8 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,18 +18,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.chirag.slidingtabsusingviewpager.Crawler.Book;
-import com.example.chirag.slidingtabsusingviewpager.Crawler.ImageCrawler;
-import com.example.chirag.slidingtabsusingviewpager.Crawler.SearchCrawler;
-
-import org.w3c.dom.Text;
-
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Random;
 
 
 /**
@@ -190,50 +179,14 @@ public class Tab1 extends Fragment {
         TextView tv_avil = layout.findViewById(R.id.avaliable);
         tv_avil.setText(avilable);
 
+        TextView tv_location = layout.findViewById(R.id.tv_location);
+        CallNoToBookshelf callNoToBookshelf = new CallNoToBookshelf(getActivity().getAssets());
+        int[] location = callNoToBookshelf.findBookShelf(callno);
+        String place = "Floor " + location[0] + ", Bookshelf " + location[1];
+        tv_location.setText(place);
 
 
-//        new Thread(new Runnable() {
-//
-//            @Override
-//            public void run() {
-//
-//                ArrayList<Book> bookList = SearchCrawler.bookCrawler(data);
-//                Book book = bookList.get(0);
-//                Message msg = new Message();
-//                msg.what = 1;
-//                msg.obj = book;
-//                System.out.println("booook");
-//                Log.e("thread","start");
-//                handle.sendMessage(msg);
-//            }
-//        }).start();
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
 
-
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//                String imgUrl = ImageCrawler.BookImageCrawler(ISBN);
-//                Message msg = new Message();
-//                Bundle bundle = new Bundle();
-//                bundle.putString("imgUrl", imgUrl);
-//
-//                msg.setData(bundle);
-//
-//
-//                msg.what = 2;
-//                //msg.obj = imgUrl;
-//
-//
-//                Log.e("tread", "imgurl");
-//                handle.sendMessage(msg);
-//            }
-//        }).start();
 
 
         new Thread(new Runnable() {
