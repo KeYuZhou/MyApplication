@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:ns1="http://schemas.android.com/tools" xmlns:ns2="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
     <attr format="reference" name="constraintSet"/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -146,15 +146,6 @@
     <bool name="abc_config_actionMenuItemAllCaps">true</bool>
     <bool name="abc_config_closeDialogWhenTouchOutside">true</bool>
     <bool name="abc_config_showMenuShortcutsWhenKeyboardPresent">false</bool>
-    <color name="__picker_black_40">#282828</color>
-    <color name="__picker_common_primary">#f3f3f3</color>
-    <color name="__picker_item_photo_border_n">#33ffffff</color>
-    <color name="__picker_item_photo_border_selected">#ff99cc00</color>
-    <color name="__picker_pager_bg">#CA000000</color>
-    <color name="__picker_selected_bg">#44000000</color>
-    <color name="__picker_text_120">#787878</color>
-    <color name="__picker_text_40">#282828</color>
-    <color name="__picker_text_80">#505050</color>
     <color name="abc_input_method_navigation_guard">@android:color/black</color>
     <color name="abc_search_url_text_normal">#7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
@@ -327,16 +318,6 @@
             
             <enum name="auto" value="-1"/>
         </attr><attr format="boolean" name="behavior_hideable"/><attr format="boolean" name="behavior_skipCollapsed"/></declare-styleable>
-    <declare-styleable name="BubbleLayout"><attr format="dimension|reference" name="bl_arrowWidth"/><attr format="dimension|reference" name="bl_cornersRadius"/><attr format="dimension|reference" name="bl_arrowHeight"/><attr format="dimension|reference" name="bl_arrowPosition"/><attr format="color|reference" name="bl_bubbleColor"/><attr format="dimension|reference" name="bl_strokeWidth"/><attr format="color|reference" name="bl_strokeColor"/><attr format="enum" name="bl_arrowDirection">
-            <enum name="left" value="0"/>
-            <enum name="right" value="1"/>
-            <enum name="top" value="2"/>
-            <enum name="bottom" value="3"/>
-            <enum name="left_center" value="4"/>
-            <enum name="right_center" value="5"/>
-            <enum name="top_center" value="6"/>
-            <enum name="bottom_center" value="7"/>
-        </attr></declare-styleable>
     <declare-styleable name="ButtonBarLayout"><attr format="boolean" name="allowStacking"/></declare-styleable>
     <declare-styleable name="CardView"><attr format="color" name="cardBackgroundColor"/><attr format="dimension" name="cardCornerRadius"/><attr format="dimension" name="cardElevation"/><attr format="dimension" name="cardMaxElevation"/><attr format="boolean" name="cardUseCompatPadding"/><attr format="boolean" name="cardPreventCornerOverlap"/><attr format="dimension" name="contentPadding"/><attr format="dimension" name="contentPaddingLeft"/><attr format="dimension" name="contentPaddingRight"/><attr format="dimension" name="contentPaddingTop"/><attr format="dimension" name="contentPaddingBottom"/><attr name="android:minWidth"/><attr name="android:minHeight"/></declare-styleable>
     <declare-styleable name="CollapsingToolbarLayout"><attr format="dimension" name="expandedTitleMargin"/><attr format="dimension" name="expandedTitleMarginStart"/><attr format="dimension" name="expandedTitleMarginTop"/><attr format="dimension" name="expandedTitleMarginEnd"/><attr format="dimension" name="expandedTitleMarginBottom"/><attr format="reference" name="expandedTitleTextAppearance"/><attr format="reference" name="collapsedTitleTextAppearance"/><attr format="color" name="contentScrim"/><attr format="color" name="statusBarScrim"/><attr format="reference" name="toolbarId"/><attr format="dimension" name="scrimVisibleHeightTrigger"/><attr format="integer" name="scrimAnimationDuration"/><attr name="collapsedTitleGravity">
@@ -473,7 +454,6 @@
     <declare-styleable name="DesignTheme"><attr format="reference" name="bottomSheetDialogTheme"/><attr format="reference" name="bottomSheetStyle"/><attr format="color" name="textColorError"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="arrowHeadLength"/><attr format="dimension" name="arrowShaftLength"/><attr format="dimension" name="barLength"/><attr format="dimension" name="thickness"/></declare-styleable>
     <declare-styleable name="EmojiLayout"><attr format="integer|reference" name="richIndicatorFocus"/><attr format="integer|reference" name="richIndicatorUnFocus"/><attr format="string" name="richDeleteIconName"/><attr format="dimension" name="richMarginBottom"/><attr format="dimension" name="richMarginTop"/><attr format="integer|reference" name="richLayoutNumColumns"/><attr format="integer|reference" name="richLayoutNumRows"/></declare-styleable>
-    <declare-styleable name="ExpandableLayout"><attr format="integer|reference" name="expDuration"/><attr format="boolean" name="expWithParentScroll"/><attr format="boolean" name="expExpandScrollTogether"/></declare-styleable>
     <declare-styleable name="FJEditTextCount"><attr format="string" name="etText"/><attr format="string" name="etHint"/><attr format="color" name="etHintColor"/><attr format="dimension" name="etMinHeight"/><attr format="integer" name="etMaxLength"/><attr format="color" name="etLineColor"/><attr format="dimension" name="etTextSize"/><attr format="color" name="etTextColor"/><attr format="dimension" name="etPromptTextSize"/><attr format="color" name="etPromptTextColor"/><attr name="etType">
             
             <enum name="singular" value="0"/>
@@ -596,7 +576,6 @@
         </attr></declare-styleable>
     <declare-styleable name="MenuView"><attr name="android:itemTextAppearance"/><attr name="android:horizontalDivider"/><attr name="android:verticalDivider"/><attr name="android:headerBackground"/><attr name="android:itemBackground"/><attr name="android:windowAnimationStyle"/><attr name="android:itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/><attr format="reference" name="subMenuArrow"/></declare-styleable>
     <declare-styleable name="NavigationView"><attr name="android:background"/><attr name="android:fitsSystemWindows"/><attr name="android:maxWidth"/><attr name="elevation"/><attr format="reference" name="menu"/><attr format="color" name="itemIconTint"/><attr format="color" name="itemTextColor"/><attr format="reference" name="itemBackground"/><attr format="reference" name="itemTextAppearance"/><attr format="reference" name="headerLayout"/></declare-styleable>
-    <declare-styleable name="PopLayout"><attr format="dimension" name="radiusSize"/><attr format="dimension" name="bulgeSize"/><attr format="dimension" name="offsetSize"/><attr format="enum" name="siteMode"><enum name="top" value="0"/><enum name="left" value="1"/><enum name="right" value="2"/><enum name="bottom" value="3"/></attr></declare-styleable>
     <declare-styleable name="PopupWindow"><attr format="boolean" name="overlapAnchor"/><attr name="android:popupBackground"/><attr name="android:popupAnimationStyle"/></declare-styleable>
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
     <declare-styleable name="RecycleListView"><attr format="dimension" name="paddingBottomNoButtons"/><attr format="dimension" name="paddingTopNoTitle"/></declare-styleable>
@@ -679,10 +658,6 @@
             <enum name="add" value="16"/>
         </attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
-    <dimen name="__picker_item_camera_size">80dip</dimen>
-    <dimen name="__picker_item_directory_height">80dp</dimen>
-    <dimen name="__picker_item_photo_size">80dip</dimen>
-    <dimen name="__picker_iwf_actionBarSize">48dip</dimen>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">72dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -757,7 +732,6 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <dimen name="bulge_size" ns1:ignore="ResourceName">7dp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
@@ -871,7 +845,6 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
-    <dimen name="pop_radius" ns1:ignore="ResourceName">7dp</dimen>
     <dimen name="search_icon_padding">12dp</dimen>
     <dimen name="search_view_text_padding">65dp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
@@ -918,19 +891,6 @@
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <integer name="viewfinder_border_length">60</integer>
     <integer name="viewfinder_border_width">4</integer>
-    <string name="__picker_all_image">All Images</string>
-    <string name="__picker_cancel">Cancel</string>
-    <string name="__picker_confirm_to_delete">Confirm to delete?</string>
-    <string name="__picker_delete">Delete</string>
-    <string name="__picker_deleted_a_photo">Deleted a photo</string>
-    <string name="__picker_done">Done</string>
-    <string name="__picker_done_with_count">Done(%1$d/%2$d)</string>
-    <string name="__picker_image_count">%1$d</string>
-    <string name="__picker_image_index">%1$d/%2$d</string>
-    <string name="__picker_over_max_count_tips">You can only select %1$d images</string>
-    <string name="__picker_title">Images</string>
-    <string name="__picker_undo">Undo</string>
-    <string name="__picker_yes">Yes</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
     <string name="abc_action_menu_overflow_description">More options</string>
@@ -958,24 +918,12 @@
     <string name="abc_searchview_description_submit">Submit query</string>
     <string name="abc_searchview_description_voice">Voice search</string>
     <string name="abc_shareactionprovider_share_with">Share with</string>
-    <string name="abc_shareactionprovider_share_with_application">Share with <ns2:g example="Mail" id="application_name">%s</ns2:g></string>
+    <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_name">Test-api</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
-    <string name="define_FontAwesome">year;author;libraryName;libraryWebsite</string>
-    <string name="define_font_fontawesome">com.mikepenz.fontawesome_typeface_library.FontAwesome</string>
-    <string name="library_FontAwesome_author">Dave Gandy</string>
-    <string name="library_FontAwesome_authorWebsite">https://materialdesignicons.com/</string>
-    <string name="library_FontAwesome_isOpenSource">true</string>
-    <string name="library_FontAwesome_libraryDescription">Font Awesome gives you scalable vector icons that can instantly be customized - size, color, drop shadow, and anything that can be done with the power of CSS.</string>
-    <string name="library_FontAwesome_libraryName">Font Awesome</string>
-    <string name="library_FontAwesome_libraryVersion">4.7.0.2</string>
-    <string name="library_FontAwesome_libraryWebsite">http://fontawesome.io/icons/</string>
-    <string name="library_FontAwesome_licenseId">sil_ofl_1_1</string>
-    <string name="library_FontAwesome_repositoryLink">https://github.com/FortAwesome/Font-Awesome</string>
-    <string name="library_FontAwesome_year"> </string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
@@ -2079,7 +2027,7 @@
     <item name="android:layout_height">@dimen/md_button_height</item>
     <item name="android:layout_gravity">center_vertical</item>
   </style>
-    <style name="MD_ActionButton.Text" ns1:ignore="NewApi">
+    <style name="MD_ActionButton.Text" ns2:ignore="NewApi">
     <item name="android:textSize">@dimen/md_button_textsize</item>
     <item name="android:singleLine">true</item>
     <item name="android:layout_gravity">center_vertical</item>
@@ -2090,7 +2038,7 @@
     <item name="android:paddingLeft">@dimen/md_button_textpadding_horizontal</item>
     <item name="android:paddingRight">@dimen/md_button_textpadding_horizontal</item>
   </style>
-    <style name="MD_ActionButtonStacked" ns1:ignore="NewApi" parent="@style/MD_ActionButton">
+    <style name="MD_ActionButtonStacked" ns2:ignore="NewApi" parent="@style/MD_ActionButton">
     <item name="android:layout_width">match_parent</item>
     <item name="android:paddingLeft">@dimen/md_button_padding_horizontal_internalexternal</item>
     <item name="android:paddingStart">@dimen/md_button_padding_horizontal_internalexternal
@@ -2131,22 +2079,6 @@
         <item name="android:background">?android:attr/selectableItemBackground</item>
         <item name="android:paddingLeft">@dimen/search_icon_padding</item>
         <item name="android:paddingRight">@dimen/search_icon_padding</item>
-    </style>
-    <style name="OptionMenuStyle" ns1:ignore="ResourceName" parent="android:Widget.Material.TextView">
-        <item name="android:clickable">true</item>
-        <item name="android:paddingTop">6dp</item>
-        <item name="android:paddingBottom">6dp</item>
-        <item name="android:paddingLeft">12dp</item>
-        <item name="android:paddingRight">12dp</item>
-        <item name="android:textColor">#fefefe</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:drawablePadding">2dp</item>
-        <item name="android:background">@drawable/bg_menu</item>
-        <item name="android:gravity">center_vertical</item>
     </style>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
@@ -2559,7 +2491,7 @@
     </style>
     <style name="Widget.Design.BottomSheet.Modal" parent="android:Widget">
         <item name="android:background">?android:attr/colorBackground</item>
-        <item name="android:elevation" ns1:ignore="NewApi">@dimen/design_bottom_sheet_modal_elevation</item>
+        <item name="android:elevation" ns2:ignore="NewApi">@dimen/design_bottom_sheet_modal_elevation</item>
         <item name="behavior_peekHeight">auto</item>
         <item name="behavior_hideable">true</item>
         <item name="behavior_skipCollapsed">false</item>

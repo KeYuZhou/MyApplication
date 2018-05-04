@@ -5,6 +5,7 @@ package com.example.chirag.slidingtabsusingviewpager;
  */
 
 
+import android.content.res.AssetManager;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -25,7 +26,7 @@ public class Tab2_secondmap extends Fragment {
     private float bookX_2 = 12.5f;
     private float bookY_2 = 4.5f;
     private ImageView next_map;
-
+    String callNo;
 
     public Tab2_secondmap() {
 
@@ -41,7 +42,14 @@ public class Tab2_secondmap extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+
+//        AssetManager assetManager = getActivity().getAssets();
+//        CallNoToBookshelf callNoToBookshelf = new CallNoToBookshelf(assetManager);
+//        int[] location=callNoToBookshelf.findBookShelf(callNo);
+
+
+
         final DisplayMetrics displayMetrics = new DisplayMetrics();
         View view2 = inflater.inflate(R.layout.fragment_tab2_secondmap, container, false);
         mGLSurfaceView = view2.findViewById(R.id.gl_Second_surface_view);

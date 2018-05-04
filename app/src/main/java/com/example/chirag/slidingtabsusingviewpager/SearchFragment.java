@@ -95,10 +95,12 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
         Log.e("mAllValues", Integer.toString(mAllValues.size()));
 
 
-        // if (mAllValues.size()==11) {
+        if (!mAllValues.isEmpty()) {
         searched.setBook(mAllValues);
-        recommendBooks.add(searched);
-        // }
+            if (searched.getAvailable().contains("Total")) {
+                recommendBooks.add(searched);
+            }
+        }
 
 
         for (Book book : booklist) {
@@ -159,9 +161,10 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
             for (int i = 0; i < temp.length; i++) {
                 mAllValues.add(temp[i]);
+                Log.e("mAllValues", mAllValues.get(i));
             }
 
-            Log.e("mAllValues", mAllValues.get(0));
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -210,30 +213,18 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
             @Override
             public void onItemClick(View view, int position) {
                 Book book = recommendAdapter.bookList.get(position);
-//                Intent intent = new Intent(getActivity(), MainActivity.class);
-//                intent.putExtra("accountNo", accountNo);
-//                intent.putExtra("query", book.getTitle());
-//                intent.putExtra("author", book.getAuthorName());
-//                intent.putExtra("imgUrl", book.getimageLink());
-//                intent.putExtra("douban", book.getContent());
-//                intent.putExtra("callno", book.getCallNo());
-//                intent.putExtra("publicion", book.getPublisherInformation());
-//                intent.putExtra("avil", book.getAvailable());
-//                intent.putExtra("accountNo", accountNo);
-//                startActivity(intent);
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.putExtra("accountNo", accountNo);
+                intent.putExtra("query", book.getTitle());
+                intent.putExtra("author", book.getAuthorName());
+                intent.putExtra("imgUrl", book.getimageLink());
+                intent.putExtra("douban", book.getContent());
+                intent.putExtra("callno", book.getCallNo());
+                intent.putExtra("publicion", book.getPublisherInformation());
+                intent.putExtra("avil", book.getAvailable());
+                intent.putExtra("accountNo", accountNo);
+                startActivity(intent);
 
-
-                Intent intent1 = new Intent(getActivity(), RefreshActivity.class);
-                intent1.putExtra("accountNo", accountNo);
-                intent1.putExtra("query", book.getTitle());
-                intent1.putExtra("author", book.getAuthorName());
-                intent1.putExtra("imgUrl", book.getimageLink());
-                intent1.putExtra("douban", book.getContent());
-                intent1.putExtra("callno", book.getCallNo());
-                intent1.putExtra("publicion", book.getPublisherInformation());
-                intent1.putExtra("avil", book.getAvailable());
-                //intent1.putExtra("accountNo", accountNo);
-                startActivity(intent1);
 
             }
         });
@@ -304,10 +295,9 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
         for (int i = 0; i < mAllValues.size(); i++) {
             temp[i] = mAllValues.get(i);
         }
-        //searchView.setSuggestions(temp);
+
         searchView.setHint("Search Here");
 
-        //  searchView.setAdapter(mAdapter);
 
         searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
             @Override
@@ -319,13 +309,6 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
 
                 searchRecommendAdapter.notifyDataSetChanged();
-//                populateList();
-//
-////
-////                  listView = (ListView) getView().findViewById(android.R.id.list);
-////                  listView.setAdapter(mAdapter);
-//listView.setVisibility(View.VISIBLE);
-
 
             }
 
@@ -395,14 +378,13 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
                 System.out.println("booook");
 
                 ArrayList<Book> bookList = SearchCrawler.bookCrawler(query);
-                //Book book = bookList.get(0);
 
 
                 Message msg = new Message();
                 msg.what = 0;
                 msg.obj = bookList;
 
-                Log.e("thread", "start");
+                Log.e("thdSearch", "start");
                 handle.sendMessage(msg);
             }
         }).start();
@@ -414,13 +396,8 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
         searchRecommendAdapter.notifyDataSetChanged();
 
 
-        //searchRecommendAdapter.notifyDataSetChanged();
 
         rv_search.setVisibility(View.VISIBLE);
-//        values[mAllValues.size()] = query;
-
-
-        // read();
 
 
         return true;

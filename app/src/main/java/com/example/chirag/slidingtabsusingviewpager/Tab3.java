@@ -1,10 +1,15 @@
 package com.example.chirag.slidingtabsusingviewpager;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.Loader;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -25,6 +30,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.chirag.slidingtabsusingviewpager.Crawler.Httprequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,6 +46,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+
+import static com.example.chirag.slidingtabsusingviewpager.Crawler.Httprequest.loadall;
 
 
 public class Tab3 extends Fragment {
@@ -59,7 +67,7 @@ public class Tab3 extends Fragment {
 
     CommentAdapter commentAdapter;
     String bookTitle;
-
+    TextView tv_noComments;
     public boolean shouldRefresh = false;
 
     public Tab3() {
@@ -94,32 +102,88 @@ public class Tab3 extends Fragment {
         }
         accountNo = getActivity().getIntent().getStringExtra("accountNo");
 
-
-
-        Log.e("书评大小！！!on Create 1", Integer.toString(bookComments.size()));
-
-
         bookTitle = getActivity().getIntent().getStringExtra("query");
+
+
         Log.e("bookTab3", bookTitle);
-
-        loadbook(bookTitle);
-
-
-
-        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(getContext());
-
-        bookComments = convert(m.getString("commentResponse", ""), accountNo);
-
-
 
 
     }
+
+
+    @SuppressLint("HandlerLeak")
+    Handler handle = new Handler() {
+        @Override
+        public void handleMessage(final Message msg) {
+            switch (msg.what) {
+                case 0:
+                    Log.e("handle", "bookcommets");
+                    Bundle bundle = msg.getData();
+                    String result = bundle.getString("bookComments");
+
+                    tv_noComments.setVisibility(View.GONE);
+                    bookComments = convert(result, accountNo);
+                    if (bookComments.isEmpty()) {
+                        tv_noComments.setVisibility(View.VISIBLE);
+                    }
+                    int i = 0;
+                    for (BookComment book : bookComments) {
+                        commentAdapter.addItem(i, book);
+                        i++;
+                    }
+
+
+                    Log.e("Tab3", Integer.toString(bookComments.size()));
+
+
+                    break;
+
+                case 1:
+                    Log.e("handle", "addcomment");
+                    tv_noComments.setVisibility(View.GONE);
+                    BookComment bookComment = (BookComment) msg.obj;
+                    commentAdapter.addItem(0, bookComment);
+                    break;
+                case 2:
+
+
+                    int j = 0;
+                    for (BookComment book : bookComments) {
+                        commentAdapter.addItem(j, book);
+                        j++;
+                    }
+
+            }
+        }
+
+        ;
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab3, container, false);
 
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String bookComments = Httprequest.loadBookComment(bookTitle);
+
+                Message msg = new Message();
+                Bundle bundle = new Bundle();
+                bundle.putString("bookComments", bookComments);
+                msg.setData(bundle);
+
+                msg.what = 0;
+
+
+                handle.sendMessage(msg);
+                Log.e("thd-loadbook", "start");
+
+
+            }
+        }).start();
 
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -142,20 +206,15 @@ public class Tab3 extends Fragment {
         commentRecycler.setLayoutManager(linearLayoutManager);
 
 
-
-
         commentAdapter = new CommentAdapter(getActivity(), accountNo, bookComments);
 
-        Log.e("书评大小！！!!!1", Integer.toString(bookComments.size()));
+
         commentRecycler.setAdapter(commentAdapter);
 
-        TextView tv_noComments = view.findViewById(R.id.tv_noComment);
+        tv_noComments = view.findViewById(R.id.tv_noComment);
         if (bookComments.isEmpty()) {
             tv_noComments.setVisibility(View.VISIBLE);
         }
-
-
-
         return view;
 
     }
@@ -170,10 +229,22 @@ public class Tab3 extends Fragment {
 
 
             String[] temp = data.getStringArrayExtra("result");
-            BookComment bookComment = new BookComment(accountNo, temp[2]);
-            bookComments.add(0, bookComment);
-            commentAdapter.notifyDataSetChanged();
+            final BookComment bookComment = new BookComment(accountNo, temp[2]);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Message msg = new Message();
+
+                    msg.what = 1;
+                    msg.obj = bookComment;
+
+                    handle.sendMessage(msg);
+                    Log.e("thd-addcomment", "start");
+                }
+            }).start();
+
         }
+
 
     }
 
@@ -233,19 +304,18 @@ public class Tab3 extends Fragment {
 
     }
 
-
-    private ArrayList<BookComment> convert(String result, String username) {
+    public static ArrayList<BookComment> convert(String result, String username) {
         ArrayList<BookComment> com = new ArrayList<BookComment>();
-        Log.e("result1", result);
         try {
+
 
             JSONObject jsonObject = (JSONObject) new JSONObject(result).get("params");
             int number = Integer.parseInt(jsonObject.getString("number"));
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
             if (number == 0) {
-                Log.e("convertcomment", "fail");
+                System.out.println("fail");
             } else {
-                Log.e("convertcomment", number + "");
+                System.out.println("good");
                 for (int i = 0; i < number; i++) {
 
                     try {
@@ -253,7 +323,7 @@ public class Tab3 extends Fragment {
                         if (jsonObject.getString(i + "username").equals(username)) {
                             kind = 1;
                         }
-                        if (Integer.parseInt(jsonObject.getString(i + "like")) > 100) {
+                        if (Integer.parseInt(jsonObject.getString(i + "like")) > 10) {
                             kind += 2;
                         }
 
@@ -262,47 +332,97 @@ public class Tab3 extends Fragment {
                                 df.parse(jsonObject.getString(i + "date")),
                                 jsonObject.getString(i + "content"), Integer.parseInt(jsonObject.getString(i + "like")), kind);
                         com.add(a);
-                        Log.e(i + "comment", jsonObject.getString(i + "id") + "");
 
-// Log.e("TAG",result);
+                        // Log.e("TAG",result);
                     } catch (Exception e) {
-                        Log.e("TAG", "time error");
+                        System.out.println("error");
                     }
 
                 }
-
-                ArrayList<BookComment> temp = new ArrayList<>();
-
-
-                Iterator<BookComment> iter = com.iterator();
-                while (iter.hasNext()) {
-                    BookComment bookComment = iter.next();
-                    if (bookComment.kind == 2 || bookComment.kind == 3) {
-                        temp.add(bookComment);
-                        iter.remove();
-                    }
-                }
-
-
-                Collections.sort(temp, new com());
-
                 Collections.sort(com, new com());
 
-                for (BookComment bookComment : com) {
-                    temp.add(bookComment);
-                }
-                com = temp;
 
 
             }
 
 
         } catch (JSONException e) {
-//做自己的请求异常操作，如Toast提示（“无网络连接”等）
-            Log.e("TAG", e.getMessage(), e);
+            //做自己的请求异常操作，如Toast提示（“无网络连接”等）
+
         }
         return com;
     }
+
+
+//    private ArrayList<BookComment> convert(String result, String username) {
+//        ArrayList<BookComment> com = new ArrayList<BookComment>();
+//        Log.e("result1", result);
+//        try {
+//
+//            JSONObject jsonObject = (JSONObject) new JSONObject(result).get("params");
+//            int number = Integer.parseInt(jsonObject.getString("number"));
+//            DateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+//            if (number == 0) {
+//                Log.e("convertcomment", "fail");
+//            } else {
+//                Log.e("convertcomment", number + "");
+//                for (int i = 0; i < number; i++) {
+//
+//                    try {
+//                        int kind = 0;
+//                        if (jsonObject.getString(i + "username").equals(username)) {
+//                            kind = 1;
+//                        }
+//                        if (Integer.parseInt(jsonObject.getString(i + "like")) > 100) {
+//                            kind += 2;
+//                        }
+//
+//                        BookComment a = new BookComment(Integer.parseInt(jsonObject.getString(i + "id")),
+//                                jsonObject.getString(i + "username"),
+//                                df.parse(jsonObject.getString(i + "date")),
+//                                jsonObject.getString(i + "content"), Integer.parseInt(jsonObject.getString(i + "like")), kind);
+//                        com.add(a);
+//                        Log.e(i + "comment", jsonObject.getString(i + "id") + "");
+//
+//// Log.e("TAG",result);
+//                    } catch (Exception e) {
+//                        Log.e("TAG", "time error");
+//                    }
+//
+//                }
+//
+//                ArrayList<BookComment> temp = new ArrayList<>();
+//
+//
+//                Iterator<BookComment> iter = com.iterator();
+//                while (iter.hasNext()) {
+//                    BookComment bookComment = iter.next();
+//                    if (bookComment.kind == 2 || bookComment.kind == 3) {
+//                        temp.add(bookComment);
+//                        iter.remove();
+//                    }
+//                }
+//
+//
+//                Collections.sort(temp, new com());
+//
+//                Collections.sort(com, new com());
+//
+//                for (BookComment bookComment : com) {
+//                    temp.add(bookComment);
+//                }
+//                com = temp;
+//
+//
+//            }
+//
+//
+//        } catch (JSONException e) {
+////做自己的请求异常操作，如Toast提示（“无网络连接”等）
+//            Log.e("TAG", e.getMessage(), e);
+//        }
+//        return com;
+//    }
 
 
     // TODO: Rename method, update argument and hook method into UI event

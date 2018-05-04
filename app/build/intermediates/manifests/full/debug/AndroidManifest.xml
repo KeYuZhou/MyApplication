@@ -19,11 +19,12 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <meta-data
         android:name="android.support.VERSION"
         android:value="26.0.0-alpha1" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name="android.support.multidex.MultiDexApplication"
@@ -78,23 +79,10 @@
         <activity
             android:name="com.example.chirag.slidingtabsusingviewpager.WriteCommentActivity"
             android:label="" />
-        <activity android:name="com.example.chirag.slidingtabsusingviewpager.RefreshActivity" />
-        <activity android:name="com.example.chirag.slidingtabsusingviewpager.Refresh2Activity" />
 
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.1.0" />
-
-        <provider
-            android:name="me.iwf.photopicker.utils.PhotoFileProvider"
-            android:authorities="com.example.chirag.slidingtabsusingviewpager.provider"
-            android:exported="false"
-            android:grantUriPermissions="true" >
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/__picker_provider_paths" />
-        </provider>
-
         <meta-data
             android:name="android.arch.lifecycle.VERSION"
             android:value="27.0.0-SNAPSHOT" />

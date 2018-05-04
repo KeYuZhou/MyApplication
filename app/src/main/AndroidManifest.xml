@@ -64,8 +64,6 @@
         <activity
             android:name=".WriteCommentActivity"
             android:label="" />
-        <activity android:name=".RefreshActivity" />
-        <activity android:name=".Refresh2Activity"></activity>
     </application>
 
 </manifest>

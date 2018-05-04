@@ -1,7 +1,28 @@
-#Wed Apr 25 22:07:32 CST 2018
-base.0=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/1
+#Fri May 04 20:40:14 CST 2018
 path.1=classes.dex
-renamed.1=classes2.dex
 path.0=classes.dex
+renamed.8=classes9.dex
+renamed.7=classes8.dex
+renamed.6=classes7.dex
+renamed.5=classes6.dex
+renamed.4=classes5.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+base.8=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/1
 renamed.0=classes.dex
+base.7=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/1
+base.6=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/5
+base.5=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/3
+base.4=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/6
+base.3=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/1
+base.2=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/4
 base.1=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/2
+base.0=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/0
+path.8=classes3.dex
+path.7=classes2.dex
+path.6=classes.dex
+path.5=classes.dex
+path.4=classes.dex
+path.3=classes.dex
+path.2=classes.dex

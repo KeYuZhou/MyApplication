@@ -50,10 +50,10 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                intent.putExtra("accountNo", accountNo);
-                startActivity(intent);
-                // finish();m
+//                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+//                intent.putExtra("accountNo", accountNo);
+//                startActivity(intent);
+                finish();
             }
         });
 

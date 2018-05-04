@@ -1,9 +1,11 @@
 package com.example.chirag.slidingtabsusingviewpager;
 
+import android.content.res.AssetManager;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 
 import android.support.v4.app.FragmentManager;
+import android.telecom.Call;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,11 +27,17 @@ public class Tab2_firstmap extends Fragment {
 //    private Tab2_2.OnButtonClick onButtonClick;
 
     //楼层（8or9）；书架层（1-6）；书架地图编号（1-34）；书架本体编号（1-8）
-    private float floornumber = 9;
-    private float bookcasefloor = 6;
-    private float casenumber1 = 25;
-    private int casenumber2 = 5;
+//    private float floornumber = 9;
+//    private float bookcasefloor = 6;
+//    private float casenumber1 = 25;
+//    private int casenumber2 = 5;
+    private float floornumber;
+    private float bookcasefloor;
+    private float casenumber1;
+    private int casenumber2;
 
+
+    String callNo;
     //    private float bookX=5;
 //    private float bookY=5;
 //    private float bookX_2=12.5f;
@@ -38,14 +46,19 @@ public class Tab2_firstmap extends Fragment {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        callNo = getActivity().getIntent().getStringExtra("callno");
+        AssetManager assetManager = getActivity().getAssets();
+        CallNoToBookshelf callNoToBookshelf = new CallNoToBookshelf(assetManager);
+        int[] location = callNoToBookshelf.findBookShelf(callNo);
+        this.floornumber = location[0];
+        this.bookcasefloor = location[1];
+        this.casenumber1 = location[2];
+        this.casenumber2 = location[3];
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_tab2, container, false);
 
         final DisplayMetrics displayMetrics = new DisplayMetrics();
         View view = inflater.inflate(R.layout.fragment_tab2_firstmap, container, false);

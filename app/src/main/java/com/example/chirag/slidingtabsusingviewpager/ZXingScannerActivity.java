@@ -15,6 +15,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.chirag.slidingtabsusingviewpager.Crawler.Book;
+import com.example.chirag.slidingtabsusingviewpager.Crawler.FromISBNtoBook;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -146,6 +148,8 @@ public class ZXingScannerActivity extends AppCompatActivity implements ZXingScan
 				startActivity(browserIntent);
 			}
 		});
+
+		Book book = FromISBNtoBook.getBookByISBN(result.getText());
 		builder.setMessage(result.getText());
 		AlertDialog alert1 = builder.create();
 		alert1.show();

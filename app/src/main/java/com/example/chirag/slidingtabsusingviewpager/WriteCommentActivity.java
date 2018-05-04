@@ -108,7 +108,7 @@ public class WriteCommentActivity extends AppCompatActivity {
 
                 result[2] = fjEdit.getText().toString();
 
-                Log.e("write comment", accountNo);
+
                 Intent intent1 = new Intent(WriteCommentActivity.this, MainActivity.class);
 
                 intent1.putExtra("result", result);
@@ -116,7 +116,7 @@ public class WriteCommentActivity extends AppCompatActivity {
 
                 WriteCommentActivity.this.setResult(1, intent1);
 
-                Log.e("write comment 2", "true");
+
                 //TODO submit comment
 
                 // startActivity(intent1);

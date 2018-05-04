@@ -3,8 +3,11 @@ package com.example.chirag.slidingtabsusingviewpager;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,36 +17,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
+import com.example.chirag.slidingtabsusingviewpager.Crawler.Httprequest;
 import com.ldoublem.thumbUplib.ThumbUpView;
 
-import org.w3c.dom.Text;
-
-import java.net.ConnectException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
-import android.content.Intent;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -56,7 +48,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -168,6 +159,15 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         holder.time.setText(bookComment.getTime());
         holder.comment.setText(bookComment.content);
 
+        loadupvote(bookComment.usernmae, Integer.toString(bookComment.id));//用户名和commentid
+
+        SharedPreferences m2 = PreferenceManager.getDefaultSharedPreferences(mInflater.getContext());
+
+        String s = m2.getString("upvoteResponse", "");
+
+
+        Log.e("response", s);
+
         if (getItemViewType(position) == COMMENT_VIEWTYPE) {
             holder.delete.setVisibility(View.GONE);
             holder.top.setVisibility(View.GONE);
@@ -216,14 +216,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         }
 
 
-        loadupvote(bookComment.usernmae, Integer.toString(bookComment.id));//用户名和commentid
 
-        SharedPreferences m2 = PreferenceManager.getDefaultSharedPreferences(mInflater.getContext());
-
-        String s = m2.getString("upvoteResponse", "");
-
-
-        Log.e("response", s);
 
 
         if (Convertloadupvote(s)) {
@@ -239,8 +232,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         if (bookComment.like == 1) {
             holder.thumbUpView.setLike();
         }
-
-
 
 
         holder.thumbUpView.setOnThumbUp(new ThumbUpView.OnThumbUp() {
@@ -263,80 +254,79 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         });
 
 
-
         ArrayList<Reply> rep = new ArrayList<>();
+
 
 
 //        if (bookComment.id == 2) {
 
-        loadreply(Integer.toString(bookComment.id));//2是书评的id号码，此参数如如书评id
-
-        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(mInflater.getContext());//复制粘贴
-
-        //   private ArrayList<Reply> Convertreply(String response, String CommentID, String usernanme) {
-        rep = Convertreply(m.getString("Response", ""), Integer.toString(bookComment.id), accountNo);
-
-        Log.e("reppppp", Integer.toString(rep.size()));
-
+//        loadreply(Integer.toString(bookComment.id));//2是书评的id号码，此参数如如书评id
+//
+//        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(mInflater.getContext());//复制粘贴
+//
+//        //   private ArrayList<Reply> Convertreply(String response, String CommentID, String usernanme) {
+//        rep = Convertreply(m.getString("Response", ""), Integer.toString(bookComment.id), accountNo);
+//
+//        Log.e("reppppp", Integer.toString(rep.size()));
+//
 
         final ReplyRecyclerAdapter replyRecyclerAdapter = new ReplyRecyclerAdapter(holder.context, accountNo, rep, bookComment.id);
 
 
-            holder.recyclerView.setAdapter(replyRecyclerAdapter);
+        holder.recyclerView.setAdapter(replyRecyclerAdapter);
 
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(holder.context);
-            holder.recyclerView.setLayoutManager(linearLayoutManager);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(holder.context);
+        holder.recyclerView.setLayoutManager(linearLayoutManager);
 
-
+        LoadReplyTask loadReplyTask = new LoadReplyTask(replyRecyclerAdapter, holder.context, bookComment);
+        loadReplyTask.execute("");
         // final ReplyRecyclerAdapter finalReplyRecyclerAdapter = replyRecyclerAdapter;
 
-            holder.imgButton_comment.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Toast.makeText(view.getContext(), "let's comment", Toast.LENGTH_SHORT).show();
-                    MaterialDialog.Builder dialog = new MaterialDialog.Builder(view.getContext());
-                    dialog.title("Add Comment to " + bookComment.usernmae)
-                            .positiveText("Submit")
-                            .onPositive(new MaterialDialog.SingleButtonCallback() {
-                                @Override
-                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+        holder.imgButton_comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Toast.makeText(view.getContext(), "let's comment", Toast.LENGTH_SHORT).show();
+                MaterialDialog.Builder dialog = new MaterialDialog.Builder(view.getContext());
+                dialog.title("Add Comment to " + bookComment.usernmae)
+                        .positiveText("Submit")
+                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
 
 
-                                    reply(accountNo, Integer.toString(bookComment.id), dialog.getInputEditText().getText().toString());
+                                reply(accountNo, Integer.toString(bookComment.id), dialog.getInputEditText().getText().toString());
 
-                                    Reply reply = new Reply(accountNo, dialog.getInputEditText().getText().toString(), Integer.toString(bookComment.id), Calendar.getInstance().getTime(), true);
+                                Reply reply = new Reply(accountNo, dialog.getInputEditText().getText().toString(), Integer.toString(bookComment.id), Calendar.getInstance().getTime(), true);
 
-                                    replyRecyclerAdapter.addItem(replyRecyclerAdapter.getItemCount(), reply);
-                                    // finalReplyRecyclerAdapter.addItem(finalReplyRecyclerAdapter.getItemCount(), reply);
-                                }
-                            })
-                            .negativeText("Cancel")
-                            .onNegative(new MaterialDialog.SingleButtonCallback() {
-                                @Override
-                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                replyRecyclerAdapter.addItem(replyRecyclerAdapter.getItemCount(), reply);
+                            }
+                        })
+                        .negativeText("Cancel")
+                        .onNegative(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
 
-                                }
-                            })
+                            }
+                        })
 
-                            .cancelListener(new DialogInterface.OnCancelListener() {
-                                @Override
-                                public void onCancel(DialogInterface dialog) {
-                                    dialog.dismiss();
-                                }
-                            })
-                            .inputType(InputType.TYPE_TEXT_VARIATION_LONG_MESSAGE)
-                            .input("Comment here", "", new MaterialDialog.InputCallback() {
-                                @Override
-                                public void onInput(@NonNull MaterialDialog dialog, CharSequence input) {
+                        .cancelListener(new DialogInterface.OnCancelListener() {
+                            @Override
+                            public void onCancel(DialogInterface dialog) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .inputType(InputType.TYPE_TEXT_VARIATION_LONG_MESSAGE)
+                        .input("Comment here", "", new MaterialDialog.InputCallback() {
+                            @Override
+                            public void onInput(@NonNull MaterialDialog dialog, CharSequence input) {
 
-                                }
-                            })
-                            .show();
+                            }
+                        })
+                        .show();
 
 
-                }
-            });
-
+            }
+        });
 
 
     }
@@ -453,8 +443,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         //将请求添加到队列中
         requestQueue.add(request);
     }
-
-
 
 
     public void DeleteComment(final String commentID) {
@@ -595,11 +583,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
         }
         return true;
     }
-
-
-
-
-
 
 
     private void sharedResponse(String response) {
@@ -797,4 +780,51 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
 
 
     }
+
+    class LoadReplyTask extends AsyncTask<String, Void, ArrayList<Reply>> {
+
+        private ReplyRecyclerAdapter replyRecyclerAdapter;
+        private BookComment bookComment;
+        private RecyclerView recyclerView;
+        private Context context;
+
+        public LoadReplyTask(ReplyRecyclerAdapter replyRecyclerAdapter, Context context, BookComment bookComment) {
+            this.replyRecyclerAdapter = replyRecyclerAdapter;
+            this.bookComment = bookComment;
+
+            this.context = context;
+        }
+
+        @Override
+        protected ArrayList<Reply> doInBackground(String... params) {
+            String imageUrl = params[0];
+
+
+            ArrayList<Reply> replies = downloadReply(imageUrl);
+            return replies;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<Reply> replies) {
+
+            int i = 0;
+            for (Reply reply : replies) {
+                replyRecyclerAdapter.addItem(i, reply);
+                i++;
+            }
+
+        }
+
+        private ArrayList<Reply> downloadReply(String imageUrl) {
+            ArrayList<Reply> replies = new ArrayList<>();
+            String response = Httprequest.loadreply(Integer.toString(bookComment.id));
+
+
+            return Reply.Convertreply(response, Integer.toString(bookComment.id), bookComment.usernmae);
+
+        }
+
+    }
+
+
 }

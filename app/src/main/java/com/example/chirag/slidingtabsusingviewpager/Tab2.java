@@ -1,11 +1,13 @@
 package com.example.chirag.slidingtabsusingviewpager;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +49,7 @@ public class Tab2 extends Fragment {
 //    private float bookY=5;
 //    private float bookX_2=12.5f;
 //    private float bookY_2=4.5f;
+String callNo;
 
 
     private OnFragmentInteractionListener mListener;
@@ -79,9 +82,12 @@ public class Tab2 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_tab2, container, false);
-
+        callNo = getActivity().getIntent().getStringExtra("callno");
+        Log.e("tab2", callNo);
 
         View view = inflater.inflate(R.layout.fragment_tab2, container, false);
+
+
         Fragment tab2_firstmap = new Tab2_firstmap();
         FragmentManager fragmentManager = getFragmentManager();
 

@@ -122,26 +122,7 @@ public class Tab1 extends Fragment {
                         Log.e("handle", "imgURL");
                         Bundle bundle = msg.getData();
 
-//                        String text = bundle.getString("key");
-//                        String s = (String) msg.obj;
-
                         imgUrl = bundle.getString("imgUrl");
-
-
-//                        new Thread(new Runnable() {
-//
-//                            @Override
-//                            public void run() {
-//                                Bitmap bmp = getURLimage(imgUrl);
-//                                Message msg = new Message();
-//                                msg.what = 0;
-//                                msg.obj = bmp;
-//                                System.out.println("000");
-//                                handle.sendMessage(msg);
-//                            }
-//                        }).start();
-//
-//                        Log.e("imgUrl", imgUrl);
 
 
                 }
@@ -276,6 +257,7 @@ public class Tab1 extends Fragment {
 
     public Bitmap getURLimage(String url) {
         Bitmap bmp = null;
+
         try {
             URL myurl = new URL(url);
             // 获得连接

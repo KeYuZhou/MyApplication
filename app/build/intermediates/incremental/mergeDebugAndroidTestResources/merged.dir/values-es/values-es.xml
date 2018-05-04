@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="__picker_all_image">Todas las imágenes</string>
-    <string name="__picker_cancel">Cancelar</string>
-    <string name="__picker_confirm_to_delete">¿Eliminar seguro?</string>
-    <string name="__picker_delete">Eliminar</string>
-    <string name="__picker_deleted_a_photo">Eliminar una imagen</string>
-    <string name="__picker_done">Ok</string>
-    <string name="__picker_done_with_count">Ok(%1$d/%2$d)</string>
-    <string name="__picker_image_count">%1$d</string>
-    <string name="__picker_image_index">%1$d/%2$d</string>
-    <string name="__picker_over_max_count_tips">Sólo se pueden seleccionar %1$d imágenes</string>
-    <string name="__picker_title">Imágenes</string>
-    <string name="__picker_undo">Deshacer</string>
-    <string name="__picker_yes">Si</string>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Ir a la pantalla de inicio"</string>
     <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Desplazarse hacia arriba"</string>
     <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Más opciones"</string>
