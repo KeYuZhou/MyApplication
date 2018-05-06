@@ -1,4 +1,4 @@
-#Fri May 04 22:42:16 CST 2018
+#Sun May 06 14:17:03 CST 2018
 base.2=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/4
 base.1=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/2
 base.0=/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/transforms/dexMerger/debug/0
