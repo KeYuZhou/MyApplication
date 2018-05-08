@@ -16,7 +16,7 @@
     <!--android:layout_height="wrap_content"-->
     <!--&gt;-->
 
-    <com.example.chirag.slidingtabsusingviewpager.Tab2Surface
+    <com.example.chirag.librarybooklocator.Tab2Surface
         android:id="@+id/gl_surface_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.chirag.slidingtabsusingviewpager"
+    package="com.example.chirag.booklocator"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -36,7 +36,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.chirag.slidingtabsusingviewpager.LoginActivity"
+            android:name="com.example.chirag.librarybooklocator.LoginActivity"
             android:label="Library Book Locator"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden" >
@@ -47,7 +47,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.chirag.slidingtabsusingviewpager.HomeActivity"
+            android:name="com.example.chirag.librarybooklocator.HomeActivity"
             android:label="Find"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -56,7 +56,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.chirag.slidingtabsusingviewpager.ZXingScannerActivity" >
+        <activity android:name="com.example.chirag.librarybooklocator.ZXingScannerActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -64,7 +64,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.chirag.slidingtabsusingviewpager.MainActivity"
+            android:name="com.example.chirag.librarybooklocator.MainActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -74,10 +74,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.chirag.slidingtabsusingviewpager.RegisterActivity"
+            android:name="com.example.chirag.librarybooklocator.RegisterActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name="com.example.chirag.slidingtabsusingviewpager.WriteCommentActivity"
+            android:name="com.example.chirag.librarybooklocator.WriteCommentActivity"
             android:label="" />
 
         <meta-data

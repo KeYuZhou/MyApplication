@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-69:12
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-75:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-75:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-75:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-75:12
 MERGED from [me.dm7.barcodescanner:zxing:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zxing-1.9.8.aar/cbf474172ef14963670bfa73131c498a/AndroidManifest.xml:2:1-13:12
 MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zbar-1.9.8.aar/7ae878f629c4d9c472c8e67ec024751a/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/effy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/29026e88adb46f5a86deb2fd7c04df72/AndroidManifest.xml:2:1-11:12
@@ -31,20 +31,20 @@ MERGED from [com.android.support:support-core-utils:27.0.1] /Users/effy/.gradle/
 MERGED from [com.android.support:support-core-ui:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.1.aar/73abe0c50108117f01f93cc42527f912/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.0.1] /Users/effy/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b8a66b0455789465fcf3ff03195ff6a3/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/effy/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8f1cbc3862a87cb41199061d90a9c89a/AndroidManifest.xml:17:1-30:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-75:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-75:12
+INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-75:12
 	package
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:3:5-59
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:3:5-52
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-69:12
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-75:12
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-69:12
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:1-75:12
 		INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:2:11-69
@@ -85,7 +85,7 @@ ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidMan
 	android:name
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:15:22-64
 application
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:17:5-67:19
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:17:5-73:19
 MERGED from [me.dm7.barcodescanner:zxing:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zxing-1.9.8.aar/cbf474172ef14963670bfa73131c498a/AndroidManifest.xml:11:5-20
 MERGED from [me.dm7.barcodescanner:zxing:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zxing-1.9.8.aar/cbf474172ef14963670bfa73131c498a/AndroidManifest.xml:11:5-20
 MERGED from [me.dm7.barcodescanner:zbar:1.9.8] /Users/effy/.gradle/caches/transforms-1/files-1.1/zbar-1.9.8.aar/7ae878f629c4d9c472c8e67ec024751a/AndroidManifest.xml:11:5-20
@@ -128,7 +128,7 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/effy/.gradle/caches/tr
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:18:9-35
 	android:theme
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:22:9-40
-activity#com.example.chirag.slidingtabsusingviewpager.LoginActivity
+activity#com.example.chirag.librarybooklocator.LoginActivity
 ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:23:9-33:20
 	android:label
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:25:13-49
@@ -137,7 +137,7 @@ ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidMan
 	android:theme
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:26:13-56
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:24:13-42
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:24:13-79
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:28:13-32:29
 action#android.intent.action.MAIN
@@ -148,48 +148,48 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:31:17-77
 	android:name
 		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:31:27-74
-activity#com.example.chirag.slidingtabsusingviewpager.HomeActivity
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:34:9-43:20
+activity#com.example.chirag.librarybooklocator.HomeActivity
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:35:9-44:20
 	android:label
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:36:13-33
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:37:13-33
 	android:theme
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:37:13-56
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:38:13-56
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:35:13-41
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:36:13-78
 intent-filter#android.intent.action.VIEW+android.intent.category.DEFAULT
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:38:13-42:29
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:39:13-43:29
 action#android.intent.action.VIEW
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:39:17-69
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:40:17-69
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:39:25-66
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:40:25-66
 category#android.intent.category.DEFAULT
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:41:17-76
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:42:17-76
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:41:27-73
-activity#com.example.chirag.slidingtabsusingviewpager.ZXingScannerActivity
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:44:9-50:20
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:42:27-73
+activity#com.example.chirag.librarybooklocator.ZXingScannerActivity
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:46:9-52:20
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:44:19-55
-activity#com.example.chirag.slidingtabsusingviewpager.MainActivity
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:51:9-60:20
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:46:19-92
+activity#com.example.chirag.librarybooklocator.MainActivity
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:54:9-63:20
 	android:label
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:53:13-29
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:56:13-29
 	android:theme
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:54:13-56
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:57:13-56
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:52:13-41
-activity#com.example.chirag.slidingtabsusingviewpager.RegisterActivity
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:61:9-63:57
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:55:13-78
+activity#com.example.chirag.librarybooklocator.RegisterActivity
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:65:9-67:57
 	android:windowSoftInputMode
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:63:13-54
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:67:13-54
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:62:13-45
-activity#com.example.chirag.slidingtabsusingviewpager.WriteCommentActivity
-ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:64:9-66:32
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:66:13-82
+activity#com.example.chirag.librarybooklocator.WriteCommentActivity
+ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:70:9-72:32
 	android:label
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:66:13-29
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:72:13-29
 	android:name
-		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:65:13-49
+		ADDED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml:71:13-86
 uses-sdk
 INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/AndroidManifest.xml

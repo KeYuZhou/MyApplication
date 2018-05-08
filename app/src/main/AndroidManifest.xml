@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.chirag.slidingtabsusingviewpager">
+    package="com.example.chirag.librarybooklocator">
 
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.chirag.librarybooklocator.LoginActivity"
             android:label="Library Book Locator"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden">
@@ -31,8 +31,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".HomeActivity"
+            android:name="com.example.chirag.librarybooklocator.HomeActivity"
             android:label="Find"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -41,15 +42,17 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ZXingScannerActivity">
+
+        <activity android:name="com.example.chirag.librarybooklocator.ZXingScannerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.chirag.librarybooklocator.MainActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -58,11 +61,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.example.chirag.librarybooklocator.RegisterActivity"
             android:windowSoftInputMode="stateHidden" />
+
+
         <activity
-            android:name=".WriteCommentActivity"
+            android:name="com.example.chirag.librarybooklocator.WriteCommentActivity"
             android:label="" />
     </application>
 

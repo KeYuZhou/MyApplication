@@ -444,10 +444,6 @@
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_activity_refresh2.xml.flat",
-        "source": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/res/layout/activity_refresh2.xml"
-    },
-    {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-xxhdpi-v4/abc_list_longpressed_holo.9.png"
     },
@@ -1044,10 +1040,6 @@
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-mdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_initial_fragment.xml.flat",
-        "source": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/res/layout/initial_fragment.xml"
-    },
-    {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-xhdpi-v4/abc_ic_star_black_48dp.png"
     },
@@ -1514,10 +1506,6 @@
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/color_abc_tint_btn_checkable.xml.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/color/abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_activity_refresh.xml.flat",
-        "source": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/res/layout/activity_refresh.xml"
     },
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -2306,10 +2294,6 @@
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/anim_design_bottom_sheet_slide_out.xml.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/res/anim/design_bottom_sheet_slide_out.xml"
-    },
-    {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_nav_header_main.xml.flat",
-        "source": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/res/layout/nav_header_main.xml"
     },
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-v23_abc_control_background_material.xml.flat",

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.chirag.slidingtabsusingviewpager.Tab2_secSurface
+    <com.example.chirag.librarybooklocator.Tab2_secSurface
         android:id="@+id/gl_Second_surface_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

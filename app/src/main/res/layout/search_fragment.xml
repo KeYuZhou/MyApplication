@@ -24,6 +24,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
+        android:id="@+id/tv_nocontent"
+        android:text="Not found! \nPlease try another keyword!"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:id="@+id/tv_notFound"
         android:text="Not found! \nPlease try another keyword!"
         android:gravity="center"
@@ -44,42 +53,7 @@
         android:layout_height="match_parent"
         tools:context="com.carl.recyclerviewdemo.MainActivity"></RelativeLayout>
 
-    <!--<android.support.v7.widget.RecyclerView-->
-    <!--android:id="@+id/horizontal_recyclerView"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--&gt;-->
 
-    <!--</android.support.v7.widget.RecyclerView>-->
-
-    <!--&lt;!&ndash;<ListView&ndash;&gt;-->
-    <!--<android.support.v7.widget.RecyclerView-->
-    <!--android:id="@+id/recyclerView"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent">-->
-
-    <!--</android.support.v7.widget.RecyclerView>-->
-
-    <!--<com.github.czy1121.view.TurnCardListView-->
-    <!--android:id="@+id/card_list"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent" />-->
-    <!--<com.wangxiandeng.swipecardrecyclerview.SwipeCardRecyclerView-->
-    <!--android:id="@+id/recyclerView"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent">-->
-    <!--</com.wangxiandeng.swipecardrecyclerview.SwipeCardRecyclerView>-->
-
-        <!--android:id="@android:id/list"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"/>-->
-
-    <!--<TextView-->
-        <!--android:id="@android:id/empty"-->
-        <!--android:text="No results found."-->
-        <!--android:gravity="center"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" />-->
 
 
 </LinearLayout>

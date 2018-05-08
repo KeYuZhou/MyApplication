@@ -6,8 +6,8 @@ android {
     compileSdkVersion 26
     buildToolsVersion '26.0.2'
     defaultConfig {
-        applicationId "com.example.chirag.slidingtabsusingviewpager"
-        //applicationId "com.example.chirag.booklocator"
+        //applicationId "com.example.chirag.slidingtabsusingviewpager"
+        applicationId "com.example.chirag.booklocator"
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
@@ -41,10 +41,38 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:26.0.0-alpha1'
     compile 'com.android.support:support-v4:25.3.1'
+
     testCompile 'junit:junit:4.12'
     //implementation 'com.android.support:appcompat-v7:26.+'
+
+    // Required -- JUnit 4 framework
+//    testImplementation 'junit:junit:4.12'
+//    // Optional -- Mockito framework
+//    testImplementation 'org.mockito:mockito-core:1.10.19'
+
+//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2', {
+//        exclude group: 'com.android.support', module: 'support-annotations'
+//    }
+//
+//    // Android JUnit Runner
+//    androidTestCompile 'com.android.support.test:runner:0.5'
+//// JUnit4 Rules
+//    androidTestCompile 'com.android.support.test:rules:0.5'
+
+
     androidTestImplementation 'com.android.support.test:runner:0.4'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+
+
+
+   // androidTestCompile 'com.android.support.test:rules:0.5'
+  //  androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.2'
+// Espresso-web for WebView support
+  //  androidTestCompile 'com.android.support.test.espresso:espresso-web:2.2.2'
+// Espresso-idling-resource for synchronization with background jobs
+  //  androidTestCompile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
+
+
     //compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.miguelcatalan:materialsearchview:1.4.0'
     //compile 'com.github.SilenceDut:ExpandableLayout:1.2.0'
@@ -89,4 +117,5 @@ dependencies {
 //    compile 'org.hibernate:hibernate-validator:5.1.3.Final'
 //    compile 'javax.el:javax.el-api:2.2.4'
 //    compile 'org.glassfish.web:javax.el:2.2.4'
+
 }

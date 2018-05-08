@@ -6,37 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/side_nav_bar"
-    tools:context="com.example.chirag.slidingtabsusingviewpager.LoginActivity">
+    tools:context="com.example.chirag.librarybooklocator.LoginActivity">
 
 
-    <!--<android.support.v7.widget.Toolbar-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:id="@+id/toolbar"-->
-    <!--android:background="@color/colorPrimary"-->
-    <!--android:minHeight="?attr/actionBarSize"-->
-    <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-    <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light">-->
-
-    <!--<TextView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="Library Book Locator"-->
-    <!--android:textSize="20dp"/>-->
-
-
-    <!--</android.support.v7.widget.Toolbar>-->
-    <!--&lt;!&ndash; Login progress &ndash;&gt;-->
-
-
-
-
-    <!--<Button-->
-        <!--android:textColor="#fff"-->
-        <!--android:background="@drawable/buttonstylepink"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Join Us!"/>-->
 
     <ProgressBar
         android:id="@+id/register_progress"
@@ -72,27 +44,11 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
                     android:src="@mipmap/ic_book" />
-                <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textSize="40sp"-->
-                <!--android:textColor="#fff"-->
-                <!--android:text="FIND MY BOOK" />-->
-                <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textSize="15sp"-->
-                <!--android:textColor="#fff"-->
-                <!--android:layout_marginTop="20dp"-->
-                <!--android:text="Have you ever encountered such a problem that it is so hard to find out the book you want among mountains of books in the library?\nHave you ever spent more than 30 minutes finding a book but finished reading it within 3 minutes? \nThis app will help you locate the book at once and save your time!\nTry it now!\n Enjoy reading @ xjtlu!"/>-->
-
 
             </LinearLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                >
+                android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/username"
