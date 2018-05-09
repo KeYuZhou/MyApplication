@@ -66,10 +66,11 @@ public class SearchCrawler {
             String authorName = (description.split(":")[1]).split(". call no")[0];
             String callNo = (description.split(":")[2]).split(" ")[0];
             String publichInformation = description.split(":")[3];
-            String ISBN = InformationCrawler.ParseISBN(marcNo);
-            String available = InformationCrawler.ParseAvailable(marcNo);
-            String imgLink = DoubanCrawler.ParseImgLink(ISBN);
-            String content = DoubanCrawler.ParseContent(ISBN);
+
+//            String ISBN = InformationCrawler.ParseISBN(marcNo);
+//            String available = InformationCrawler.ParseAvailable(marcNo);
+//            String imgLink = DoubanCrawler.ParseImgLink(ISBN);
+//            String content = DoubanCrawler.ParseContent(ISBN);
 
             System.out.println(title);
             System.out.println(link);
@@ -77,13 +78,15 @@ public class SearchCrawler {
             System.out.println(authorName);
             System.out.println(callNo);
             System.out.println(publichInformation);
-            System.out.println(ISBN);
-            System.out.println(available);
-            System.out.println(imgLink);
-            System.out.println(content);
 
+//            System.out.println(ISBN);
+//            System.out.println(available);
+//            System.out.println(imgLink);
+//            System.out.println(content);
 
-            Book b = new Book(title, link, marcNo, description, authorName, callNo, publichInformation, ISBN, available, imgLink, content);
+            Book b = new Book(title, link, marcNo, description, authorName, callNo, publichInformation);
+
+            //Book b = new Book(title, link, marcNo, description, authorName, callNo, publichInformation, ISBN, available, imgLink, content);
             bookList.add(b);
         }
         return bookList;

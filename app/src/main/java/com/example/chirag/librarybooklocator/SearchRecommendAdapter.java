@@ -45,6 +45,12 @@ public class SearchRecommendAdapter extends RecyclerView.Adapter<SearchRecommend
 
     }
 
+    public void removeItem(Book book) {
+        bookList.remove(book);
+        notifyDataSetChanged();
+
+
+    }
 
     @Override
     public SearchRecommendHolder onCreateViewHolder(ViewGroup parent, int viewType) {

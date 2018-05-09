@@ -12,16 +12,16 @@
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable_abc_btn_radio_material.xml.flat",
-        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable/abc_btn_radio_material.xml"
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_design_bottom_sheet_dialog.xml.flat",
+        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/res/layout/design_bottom_sheet_dialog.xml"
     },
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable_abc_seekbar_thumb_material.xml.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable/abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_design_bottom_sheet_dialog.xml.flat",
-        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/res/layout/design_bottom_sheet_dialog.xml"
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable_abc_btn_radio_material.xml.flat",
+        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable/abc_btn_radio_material.xml"
     },
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_content_main.xml.flat",
@@ -36,12 +36,12 @@
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/res/drawable/design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
-        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/anim_design_snackbar_out.xml.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
+        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-v21_design_password_eye.xml.flat",
@@ -56,12 +56,12 @@
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
-        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-xxhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
-    },
-    {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_action_action_search.png.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/851e56dfc205a02c2c85e2b780ae4d0b/res/drawable-hdpi/ic_action_action_search.png"
+    },
+    {
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-xxhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
     },
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_navigate_before_black_24dp.png.flat",
@@ -76,32 +76,32 @@
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/layout/abc_action_bar_up_container.xml"
     },
     {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_design_ic_visibility.png.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/design-26.0.0-alpha1.aar/026eae4be4f915b2a82cecb8b565c8ad/res/drawable-mdpi-v4/design_ic_visibility.png"
+    },
+    {
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-mdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xxhdpi_demo_social_sns_bg.9.png.flat",
-        "source": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/res/drawable-xxhdpi/demo_social_sns_bg.9.png"
-    },
-    {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_abc_screen_toolbar.xml.flat",
-        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/layout/abc_screen_toolbar.xml"
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xxhdpi_demo_social_sns_bg.9.png.flat",
+        "source": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/res/drawable-xxhdpi/demo_social_sns_bg.9.png"
     },
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_abc_screen_toolbar.xml.flat",
+        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/layout/abc_screen_toolbar.xml"
     },
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/layout_design_layout_tab_text.xml.flat",
@@ -128,12 +128,12 @@
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/layout/tooltip.xml"
     },
     {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/color_switch_thumb_material_dark.xml.flat",
-        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/color/switch_thumb_material_dark.xml"
-    },
-    {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/anim_abc_shrink_fade_out_from_bottom.xml.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/color_switch_thumb_material_dark.xml.flat",
+        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/color/switch_thumb_material_dark.xml"
     },
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
@@ -168,12 +168,12 @@
         "source": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/src/main/res/drawable/icon_praise.png"
     },
     {
-        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
-        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
+        "source": "/Users/effy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/b5701cf2244974daaee91e2a43d68a77/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/effy/Desktop/SlidingTabsUsingViewPager/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",

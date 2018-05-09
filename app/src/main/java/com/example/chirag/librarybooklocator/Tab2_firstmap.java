@@ -29,9 +29,9 @@ public class Tab2_firstmap extends Fragment {
 //    private float bookcasefloor = 6;
 //    private float casenumber1 = 25;
 //    private int casenumber2 = 5;
-    private float floornumber;
-    private float bookcasefloor;
-    private float casenumber1;
+    private int floornumber;
+    private int bookcasefloor;
+    private int casenumber1;
     private int casenumber2;
 
 

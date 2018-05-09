@@ -102,15 +102,12 @@ public class Tab1 extends Fragment {
                     case 0:
                         System.out.println("111");
                         Bitmap bmp = (Bitmap) msg.obj;
-
-
                         ivInternet.setImageBitmap(bmp);
                         break;
 
                     case 2:
                         Log.e("handle", "imgURL");
                         Bundle bundle = msg.getData();
-
                         imgUrl = bundle.getString("imgUrl");
 
 
@@ -193,6 +190,7 @@ public class Tab1 extends Fragment {
             }).start();
 
         }
+
 
         return layout;
 

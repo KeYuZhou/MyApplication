@@ -32,6 +32,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.chirag.librarybooklocator.Crawler.Book;
+import com.example.chirag.librarybooklocator.Crawler.DoubanCrawler;
+import com.example.chirag.librarybooklocator.Crawler.InformationCrawler;
 import com.example.chirag.librarybooklocator.Crawler.SearchCrawler;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -265,39 +267,42 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
             public void onItemClick(View view, int position) {
 
 
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                String title = searchRecommendAdapter.bookList.get(position).getTitle();
-
                 searchedBook = searchRecommendAdapter.bookList.get(position);
 // public Book(String title, String link, String marcNo, String description, String authorName, String callNo, String publisherInformation, String ISBN, String available, String imgLink, String content) {
 
 
-                mAllValues.clear();
-
                 Log.e("packinfo", Integer.toString(searchedBook.packInfo().size()));
 
 
-                mAllValues = searchedBook.packInfo();
 
 
-
-                save();
                 recommendBooks.remove(0);
                 recommendBooks.add(0, searchedBook);
                 recommendAdapter.notifyDataSetChanged();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Message msg = new Message();
+                        String[] results = new String[3];
+                        String ISBN = InformationCrawler.ParseISBN(searchedBook.getMarcNo());
+                        String available = InformationCrawler.ParseAvailable(searchedBook.getMarcNo());
+                        String imgLink = DoubanCrawler.ParseImgLink(ISBN);
+                        String content = DoubanCrawler.ParseContent(ISBN);
+                        searchedBook.setAvailable(available);
+                        searchedBook.setimageLink(imgLink);
+                        searchedBook.setContent(content);
+                        msg.obj = searchedBook;
+                        msg.what = 1;
+                        handle.handleMessage(msg);
 
-                intent.putExtra("query", searchRecommendAdapter.bookList.get(position).getTitle());
+                        mAllValues.clear();
 
-                intent.putExtra("author", searchRecommendAdapter.bookList.get(position).getAuthorName());
-                intent.putExtra("imgUrl", searchRecommendAdapter.bookList.get(position).getimageLink());
-                intent.putExtra("douban", searchRecommendAdapter.bookList.get(position).getContent());
-                intent.putExtra("callno", searchRecommendAdapter.bookList.get(position).getCallNo());
-                intent.putExtra("publicion", searchRecommendAdapter.bookList.get(position).getPublisherInformation());
-                intent.putExtra("avil", searchRecommendAdapter.bookList.get(position).getAvailable());
+                        mAllValues = searchedBook.packInfo();
+                        save();
 
-                intent.putExtra("accountNo", accountNo);
+                    }
+                }).start();
 
-                startActivity(intent);
 
             }
         });
@@ -350,6 +355,8 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
             @Override
             public void onSearchViewClosed() {
 
+                // searchRecommendAdapter.removeItem();
+
                 closed = true;
                 Log.e("closed", "true_closed");
                 if (nocontent) {
@@ -358,10 +365,7 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
                 rv_search.setVisibility(View.GONE);
                 recyclerView.setVisibility(View.VISIBLE);
-//
-//                handle.removeCallbacks(getSearchResults);
-//
-//                handle.removeMessages(0);
+
 
                 tv_notFound.setVisibility(View.GONE);
 
@@ -392,6 +396,7 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
                     if (closed) {
                         Log.e("closed", "closed");
+
                         if (nocontent) {
                             tv_nocontent.setVisibility(View.VISIBLE);
                         }
@@ -423,6 +428,30 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
                     Log.d("SearchFragment", "loadresults_success");
 
                     break;
+                case 1:
+
+
+                    Book book = (Book) msg.obj;
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+
+                    intent.putExtra("query", book.getTitle());
+
+                    intent.putExtra("author", book.getAuthorName());
+                    intent.putExtra("callno", book.getCallNo());
+
+                    intent.putExtra("douban", book.getContent());
+                    intent.putExtra("imgUrl", book.getimageLink());
+                    intent.putExtra("avil", book.getAvailable());
+
+
+                    intent.putExtra("publicion", book.getPublisherInformation());
+
+
+                    intent.putExtra("accountNo", accountNo);
+
+
+                    startActivity(intent);
+                    break;
             }
         }
 
@@ -442,25 +471,6 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
         tv_notFound.setVisibility(View.GONE);
 
 
-//        getSearchResults=new Runnable() {
-//            @Override
-//            public void run() {
-//
-//
-//                System.out.println("booook");
-//                Log.e("search start",Long.toString(System.currentTimeMillis()));
-//                ArrayList<Book> bookList = SearchCrawler.bookCrawler(query);
-//
-//
-//                Message msg = new Message();
-//                msg.what = 0;
-//                msg.obj = bookList;
-//
-//                Log.e("thdSearch", "start");
-//                handle.sendMessage(msg);
-//            }
-//        };
-//        new Thread(getSearchResults).start();
 //
         new Thread(new Runnable() {
 
@@ -484,7 +494,6 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
 
         InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
-
 
 
         rv_search.setVisibility(View.VISIBLE);
@@ -585,10 +594,19 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
     @Override
     public boolean onQueryTextChange(String s) {
         indicatorView.hide();
+
+
+        for (Book book : bookList) {
+            searchRecommendAdapter.removeItem(book);
+        }
+        //  handle.removeMessages(0);
+
         bookList.clear();
+
         tv_notFound.setVisibility(View.GONE);
 
-        searchRecommendAdapter.notifyDataSetChanged();
+
+        // searchRecommendAdapter.notifyDataSetChanged();
 
 
         return false;
@@ -609,10 +627,6 @@ public class SearchFragment extends Fragment implements MaterialSearchView.OnQue
         rv_search.setVisibility(View.GONE);
         closed = true;
 
-//        if (nocontent){
-//            tv_nocontent.setVisibility(View.VISIBLE);
-//        }
-        //handle.removeCallbacks(getSearchResults);
         Log.e("clapsed", "closed");
 
         return true;

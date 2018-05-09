@@ -46,6 +46,17 @@ public class Book {
         this.content = content;
     }
 
+    public Book(String title, String link, String marcNo, String description, String authorName, String callNo, String publisherInformation) {
+        super();
+        this.title = title;
+        this.link = link;
+        this.marcNo = marcNo;
+        this.description = description;
+        this.authorName = authorName;
+        this.callNo = callNo;
+        this.publisherInformation = publisherInformation;
+    }
+
     public Book(String title, String link, String marcNo, String description, String authorName, String callNo, String publisherInformation, String ISBN, String available, String imgLink, String content) {
         super();
         this.title = title;
