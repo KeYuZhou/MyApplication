@@ -50,12 +50,12 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
 
         int maxMemory = (int) Runtime.getRuntime().maxMemory();
         int cacheSize = maxMemory / 8;
-//        mMemoryCache = new LruCache<String, BitmapDrawable>(cacheSize) {
-//            @Override
-//            protected int sizeOf(String key, BitmapDrawable drawable) {
-//                return drawable.getBitmap().getByteCount();
-//            }
-//        };
+        mMemoryCache = new LruCache<String, BitmapDrawable>(cacheSize) {
+            @Override
+            protected int sizeOf(String key, BitmapDrawable drawable) {
+                return drawable.getBitmap().getByteCount();
+            }
+        };
     }
 
     @Override
@@ -114,18 +114,15 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
         }
 
 
-//        BitmapDrawable drawable = getBitmapFromMemoryCache(url);
+        BitmapDrawable drawable = getBitmapFromMemoryCache(url);
+        if (drawable != null) {
+            holder.imageView.setImageDrawable(drawable);
+        } else {
 
 
-//        if (drawable != null || book.getimageLink().isEmpty()) {
-//            holder.imageView.setImageDrawable(drawable);
-////            BitmapWorkerTask task = new BitmapWorkerTask(holder.imageView);
-////            String  s = "http://www.51allout.co.uk/wp-content/uploads/2012/02/Image-not-found.gif";
-////            task.execute(s);
-//        } else {
             BitmapWorkerTask task = new BitmapWorkerTask(holder.imageView);
             task.execute(url);
-        // }
+        }
 
 
     }
@@ -222,7 +219,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
             Bitmap bitmap = downloadBitmap(imageUrl);
 
             BitmapDrawable drawable = new BitmapDrawable(mInflater.getContext().getResources(), bitmap);
-            //addBitmapToMemoryCache(imageUrl, drawable);
+            addBitmapToMemoryCache(imageUrl, drawable);
             return drawable;
         }
 
